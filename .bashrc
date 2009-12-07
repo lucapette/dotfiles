@@ -31,6 +31,7 @@ alias vi="vim -p"
 alias vim="vim -p"
 alias ps='ps aux|grep -v ps|grep -v grep|more'
 alias psgrep='ps|grep'
+alias d="cd /home/lucapette/Desktop"
 alias cl='clear'
 alias x+='sudo chmod +x'
 alias x-='sudo chmod -x'
