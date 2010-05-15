@@ -55,7 +55,7 @@ alias lt='ls -ltr' # sort by date
 alias l.='ls -A'
 alias lm='ls -al |more' # pipe through 'more'
 alias diskspace="du -S|sort -n -r|more"
-alias fgrep="find . -type f -print0 | xargs -0 grep -l"
+alias fgrep="find . -type f -print0 | xargs -0 grep"
 
 #Setting PS1
 viola="\[\033[0;35m\]"
