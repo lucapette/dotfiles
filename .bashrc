@@ -31,7 +31,7 @@ alias vi="vim -p"
 alias vim="vim -p"
 alias ps='ps aux|grep -v ps|grep -v grep|more'
 alias psgrep='ps|grep'
-alias d="cd /home/lucapette/Desktop"
+alias d="$HOME/Dropbox"
 alias cl='clear'
 alias x+='sudo chmod +x'
 alias x-='sudo chmod -x'
@@ -39,10 +39,8 @@ alias w+='sudo chmod +w'
 alias w-='chmod -w'
 alias cls='cl;ls'
 alias old='cd $OLDPWD'
-alias src='cd /home/lucapette/Desktop/sources'
 alias h='history'
 alias hgrep='h|grep'
-alias nexit='nautilus .; exit'
 alias nautilus='nautilus .'
 alias la='ls -Al' # show hidden files
 alias ls='ls -hF --color' # add colors for filetype recognition
@@ -55,7 +53,7 @@ alias lt='ls -ltr' # sort by date
 alias l.='ls -A'
 alias lm='ls -al |more' # pipe through 'more'
 alias diskspace="du -S|sort -n -r|more"
-alias fgrep="find . -type f -print0 | xargs -0 grep"
+alias fgrep="find . -type f -print0 | xargs -0 grep -n"
 
 #Setting PS1
 viola="\[\033[0;35m\]"
@@ -66,5 +64,4 @@ verde="\[\033[0;32m\]"
 nero="\[\033[0;30m\]"
 PS1="$viola[$blu_chiaro\u$ciano@$blu_chiaro\h \W $viola]$rosso\$"
 
-PATH=.:/home/lucapette/Desktop/sources/scripts:/var/lib/gems/1.8/bin:$PATH
-PATH=.:$PATH:/home/lpette/apache-maven-2.2.1/bin
+PATH=.:/var/lib/gems/1.8/bin:$PATH
