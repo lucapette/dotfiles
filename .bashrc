@@ -3,6 +3,7 @@ if [ -f /etc/bashrc ]; then
 	source /etc/bashrc
 fi
 
+# good function to navigate parent directories
 up(){
   local d=""
   limit=$1
@@ -18,14 +19,12 @@ up(){
 }
 
 
-#git bach completation
+#git bash completion, really useful.
 if [ -f /etc/bash_completion.d/git ]; then
     source /etc/bash_completion.d/git
 fi
 
-export MOZ_DISABLE_PANGO=1
-
-# aliases
+# my personal aliases
 alias rm='rm -i'
 alias vi="vim -p"
 alias vim="vim -p"
@@ -50,18 +49,16 @@ alias lc='ls -lcr' # sort by change time
 alias lu='ls -lur' # sort by access time
 alias lr='ls -lR' # recursive ls
 alias lt='ls -ltr' # sort by date
-alias l.='ls -A'
-alias lm='ls -al |more' # pipe through 'more'
 alias diskspace="du -S|sort -n -r|more"
 alias fgrep="find . -type f -print0 | xargs -0 grep -n"
 
-#Setting PS1
-viola="\[\033[0;35m\]"
-rosso="\[\033[0;31m\]"
-ciano="\[\033[1;31m\]"
-blu_chiaro="\[\033[1;34m\]"
-verde="\[\033[0;32m\]"
-nero="\[\033[0;30m\]"
-PS1="$viola[$blu_chiaro\u$ciano@$blu_chiaro\h \W $viola]$rosso\$"
+#Setting PS1 Colours
+violet="\[\033[0;35m\]"
+red="\[\033[0;31m\]"
+cyan="\[\033[1;31m\]"
+blue="\[\033[1;34m\]"
+green="\[\033[0;32m\]"
+black="\[\033[0;30m\]"
+PS1="$violet[$blue\u$cyan@$blue\h \W $violet]$red\$"
 
 PATH=.:/var/lib/gems/1.8/bin:$PATH
