@@ -3,7 +3,7 @@ if [ -f /etc/bashrc ]; then
 	source /etc/bashrc
 fi
 
-# good function to navigate parent directories
+#function to navigate parent directories
 up(){
   local d=""
   limit=$1
@@ -18,13 +18,12 @@ up(){
   cd $d
 }
 
-
 #git bash completion, really useful.
 if [ -f /etc/bash_completion.d/git ]; then
     source /etc/bash_completion.d/git
 fi
 
-# my personal aliases
+#my personal aliases
 alias rm='rm -i'
 alias vi="vim -p"
 alias vim="vim -p"
