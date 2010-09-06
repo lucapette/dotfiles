@@ -58,6 +58,7 @@ cyan="\[\033[1;31m\]"
 blue="\[\033[1;34m\]"
 green="\[\033[0;32m\]"
 black="\[\033[0;30m\]"
-PS1="$violet[$blue\u$cyan@$blue\h \W $violet]$red\$"
+branch='$(__git_ps1 "(%s)")'
+PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$"
 
 PATH=.:/var/lib/gems/1.8/bin:$PATH
