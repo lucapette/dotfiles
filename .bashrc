@@ -3,6 +3,9 @@ if [ -f /etc/bashrc ]; then
 	source /etc/bashrc
 fi
 
+#Don't put duplicate lines in the history
+export HISTCONTROL=ignoredups
+
 #function to navigate parent directories
 up(){
   local d=""
