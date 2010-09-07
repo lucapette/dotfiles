@@ -8,7 +8,7 @@
     local = yellow
     remote = green
   [color "diff"]
-    meta = yellow bold
+    meta = black bold
     frag = magenta bold
     old = red bold
     new = green bold
