@@ -1,6 +1,14 @@
 [user]
 	name = lucapette
 	email = lucapette@gmail.com
+[apply]
+    whitespace = nowarn
+[core]
+    editor = vim
+[alias]
+    co = checkout
+    st = status
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [color]
     ui = auto
   [color "branch"]
