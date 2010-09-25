@@ -6,3 +6,5 @@ Including configurations for:
 * git
 * vim
 * bash
+
+I have a little script to sync my dotfiles. It is (very cleverly) called sync.
