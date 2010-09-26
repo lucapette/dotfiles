@@ -64,4 +64,4 @@ black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
 PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$"
 
-PATH=.:/var/lib/gems/1.8/bin:$PATH
+PATH=.:/var/lib/gems/1.8/bin:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
