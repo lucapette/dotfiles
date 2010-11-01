@@ -64,4 +64,7 @@ black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
 PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$"
 
-PATH=.:/var/lib/gems/1.8/bin:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
+export PATH=.:/var/lib/gems/1.8/bin:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
