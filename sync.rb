@@ -2,7 +2,7 @@
 
 require 'fileutils'
 
-dotfiles=%w{bashrc irbrc railsrc vimrc gitconfig}
+dotfiles=%w{bashrc irbrc railsrc vimrc gitconfig gemrc}
 
 #It seeems to be an ugly solution but the best i've found for now.
 home=`echo $HOME`
