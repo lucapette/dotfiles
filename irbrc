@@ -3,6 +3,4 @@ require 'wirble'
 Wirble.init
 Wirble.colorize
 
-if ENV['RAILS_ENV']
-    load File.dirname(__FILE__) + '/.railsrc'
-end
+load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)
