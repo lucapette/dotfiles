@@ -51,7 +51,7 @@ alias lc='ls -lcr' # sort by change time
 alias lu='ls -lur' # sort by access time
 alias lr='ls -lR' # recursive ls
 alias lt='ls -ltr' # sort by date
-alias diskspace="du -S|sort -n -r|more"
+alias diskspace="du -ks * | sort -nr"
 alias fgrep="find . -type f -print0 | xargs -0 grep -n"
 
 #Setting PS1 Colours
