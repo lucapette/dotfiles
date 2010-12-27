@@ -52,13 +52,11 @@ filetype plugin plugin on
 
 "Personal command  mapping
 map   <silent> <F2>    :write<CR>
-map   <silent> <F3>    :Vexplore<CR>
 map   <silent> <F6>    :copen<CR>
 map   <silent> <F7>    :cp<CR>
 map   <silent> <F8>    :cn<CR>
 
 imap  <silent> <F2>    <Esc>:write<CR>
-imap  <silent> <F3>    <Esc>:VExplore<CR>
 imap  <silent> <F6>    <Esc>:copen<CR>
 imap  <silent> <F7>    <Esc>:cp<CR>
 imap  <silent> <F8>    <Esc>:cn<CR>
