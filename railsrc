@@ -1,20 +1,17 @@
 require 'logger'
-def loud_logger
- set_logger_to Logger.new(STDOUT)
+
+def enable_logger
+ log_to(Logger.new(STDOUT))
 end
 
-def quiet_logger
- set_logger_to nil
+def disable_logger
+  log_to(nil)
 end
 
-def set_logger_to(logger)
+def log_to(logger)
  ActiveRecord::Base.logger = logger
  ActiveRecord::Base.clear_active_connections!
 end
-
-require 'rubygems'
-require 'hirb'
-Hirb.enable
 
 def Object.method_added(method)
   return super(method) unless method == :helper
@@ -33,4 +30,11 @@ def Object.method_added(method)
   end
 
   helper :application rescue nil
+
 end 
+
+require 'rubygems'
+require 'hirb'
+
+Hirb.enable
+enable_logger
