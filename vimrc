@@ -53,12 +53,8 @@ map   <silent> <F2>    :write<CR>
 map   <silent> <F6>    :copen<CR>
 map   <silent> <F7>    :cp<CR>
 map   <silent> <F8>    :cn<CR>
-map   <silent> <F3> :set invnumber<cr>
-
-imap  <silent> <F2>    <Esc>:write<CR>
-imap  <silent> <F6>    <Esc>:copen<CR>
-imap  <silent> <F7>    <Esc>:cp<CR>
-imap  <silent> <F8>    <Esc>:cn<CR>
+map   <silent> <F3> :set invnumber<CR>
+map   <silent> <F5> <Esc>gg=G<CR>
 
 "Supertab configuration
 let g:SuperTabMappingForward = '<c-space>' 
