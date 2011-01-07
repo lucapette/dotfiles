@@ -1,10 +1,10 @@
 My dotfiles
 
-Including configurations for:
+This repository includes configurations for:
 
 * irb
 * git
 * vim
 * bash
 
-I have a little script to sync my dotfiles. It is (very cleverly) called sync.
+There is also a Rakefile for syncing file.
