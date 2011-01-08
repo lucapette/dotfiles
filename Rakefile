@@ -7,7 +7,6 @@ IGNORE_FILES = [/^\.gitignore$/, /^Rakefile$/,/^README.textile$/]
 files = `git ls-files`.split("\n")
 files.reject! { |f| IGNORE_FILES.any? { |re| f.match(re) } }
 
-
 desc 'Installs dotfiles'
 task :install do
   targetdir=File.expand_path("~")
@@ -21,15 +20,15 @@ task :install do
 
 end
 
-desc 'Pulls from origin'
+desc 'Pulls from git repository'
 task :pull do
-  puts "Updating from git repo"
+  puts "Updating from git repository"
   system("cd " << Dir.new(File.dirname(__FILE__)).path << " && git pull")
 end
 
-desc 'Updates from git repo and then update files in dir'
+desc 'Updates from git repository and then updates files in dir'
 task :update => ['pull', 'install'] do
-  puts "Update of vim script complete."
+  puts "Update of dotfiles completed."
 end
 
-task :default => ['update']
+task :default => ['install']
