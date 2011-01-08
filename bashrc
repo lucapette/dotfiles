@@ -1,6 +1,10 @@
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	source /etc/bashrc
+    source /etc/bashrc
+fi
+
+if [ -f $HOME/Dropbox/bashrc ]; then
+    source $HOME/Dropbox/bashrc
 fi
 
 #Don't put duplicate lines in the history
@@ -8,17 +12,17 @@ export HISTCONTROL=ignoredups
 
 #function to navigate parent directories
 up(){
-  local d=""
-  limit=$1
-  for ((i=1 ; i <= limit ; i++))
+    local d=""
+    limit=$1
+    for ((i=1 ; i <= limit ; i++))
     do
-      d=$d/..
+        d=$d/..
     done
-  d=$(echo $d | sed 's/^\///')
-  if [ -z "$d" ]; then
-    d=..
-  fi
-  cd $d
+    d=$(echo $d | sed 's/^\///')
+    if [ -z "$d" ]; then
+        d=..
+    fi
+    cd $d
 }
 
 #git bash completion, really useful.
