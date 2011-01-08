@@ -56,3 +56,8 @@ map   <silent> <F5> gg=G<CR>
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
 imap  <silent> <F5> <Esc> gg=G<CR>
+
+"Supertab config
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
