@@ -59,5 +59,6 @@ imap  <silent> <F5> <Esc> gg=G<CR>
 
 "Supertab config
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabMappingForward = '<c-space>'
-let g:SuperTabMappingBackward = '<s-c-space>'
+"supertab to <c-space> but backward doesn't work for me
+let g:SuperTabMappingForward = '<nul>'
+let g:SuperTabMappingBackward = '<s-nul>'
