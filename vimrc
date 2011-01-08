@@ -49,12 +49,13 @@ filetype plugin indent on
 filetype plugin plugin on
 
 "Personal command  mapping
-map   <silent> <F2>    :write<CR>
-map   <silent> <F6>    :copen<CR>
-map   <silent> <F7>    :cp<CR>
-map   <silent> <F8>    :cn<CR>
+map   <silent> <F2> :write<CR>
 map   <silent> <F3> :set invnumber<CR>
-map   <silent> <F5> <Esc>gg=G<CR>
+map   <silent> <F5> gg=G<CR>
+
+imap  <silent> <F2> <Esc> :write<CR>
+imap  <silent> <F3> <Esc> :set invnumber<CR>
+imap  <silent> <F5> <Esc> gg=G<CR>
 
 "Supertab configuration
 let g:SuperTabMappingForward = '<c-space>' 
