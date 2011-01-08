@@ -30,18 +30,18 @@ fi
 alias rm='rm -i'
 alias vi="vim -p"
 alias vim="vim -p"
-alias ps='ps aux|grep -v ps|grep -v grep|more'
-alias psgrep='ps|grep'
+alias ps='ps aux | more'
+alias psgrep='ps | grep'
 alias d="cd $HOME/Dropbox"
 alias cl='clear'
+alias cls='cl ; ls'
 alias x+='sudo chmod +x'
 alias x-='sudo chmod -x'
 alias w+='sudo chmod +w'
-alias w-='chmod -w'
-alias cls='cl;ls'
+alias w-='sudo chmod -w'
 alias old='cd $OLDPWD'
 alias h='history'
-alias hgrep='h|grep'
+alias hgrep='h | grep'
 alias nautilus='nautilus .'
 alias la='ls -Al' # show hidden files
 alias ls='ls -hF --color' # add colors for filetype recognition
@@ -54,7 +54,7 @@ alias lt='ls -ltr' # sort by date
 alias diskspace="du -ks * | sort -nr"
 alias fgrep="find . -type f -print0 | xargs -0 grep -n"
 
-#Setting PS1 Colours
+#Setting PS1
 violet="\[\033[0;35m\]"
 red="\[\033[0;31m\]"
 cyan="\[\033[1;31m\]"
@@ -62,9 +62,15 @@ blue="\[\033[1;34m\]"
 green="\[\033[0;32m\]"
 black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
-PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$"
 
-export PATH=.:/var/lib/gems/1.8/bin:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
+PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$$black"
 
+#Grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
+export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
+
+#rvm FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
