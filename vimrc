@@ -27,7 +27,7 @@ autocmd BufReadPost *
     \   exe "normal g`\"" |
     \ endif
 
-"ruby settings
+"FileType settings
 autocmd FileType ruby map <silent> <F9> :rubyf %<CR>
 autocmd FileType ruby imap <silent> <F9> <Esc> :rubyf %<CR>
 autocmd FileType ruby noremap K : !ri <cword><CR>
@@ -39,7 +39,7 @@ autocmd BufRead,BufNewFile railsrc set filetype=ruby
 autocmd BufRead,BufNewFile *.html.erb set filetype=html.eruby
 autocmd FileType textile map <silent><F7> :TextileRenderTab<CR>
 autocmd FileType textile imap <silent><F7> <Esc> :TextileRenderTab<CR>
-
+autocmd FileType snippet set noexpandtab
 "git commit message configuration
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
