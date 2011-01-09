@@ -19,8 +19,8 @@ set directory=/tmp
 set showmatch
 set matchtime=4
 set autochdir
+set laststatus=2
 
-autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -29,15 +29,18 @@ autocmd BufReadPost *
 
 "ruby settings
 autocmd FileType ruby map <silent> <F9> :rubyf %<CR>
+autocmd FileType ruby imap <silent> <F9> <Esc> :rubyf %<CR>
 autocmd FileType ruby noremap K : !ri <cword><CR>
 autocmd BufRead,BufNewFile Rakefile set filetype=ruby
 autocmd BufRead,BufNewFile .irbrc set filetype=ruby
 autocmd BufRead,BufNewFile .railsrc set filetype=ruby
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd BufRead,BufNewFile irbrc set filetype=ruby
+autocmd BufRead,BufNewFile railsrc set filetype=ruby
 autocmd FileType textile map <silent><F7> :TextileRenderTab<CR>
+autocmd FileType textile imap <silent><F7> <Esc> :TextileRenderTab<CR>
+
+"git commit message configuration
+autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
 "my favourite color scheme
 colorscheme desert
@@ -56,6 +59,10 @@ map   <silent> <F5> gg=G<CR>
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
 imap  <silent> <F5> <Esc> gg=G<CR>
+
+"Do not lost block selection after indentation. Such a good thing!
+vmap > >gv
+vmap < <gv
 
 "Supertab config
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
