@@ -29,6 +29,7 @@ up(){
 if [ -f /etc/bash_completion.d/git ]; then
     source /etc/bash_completion.d/git
 fi
+complete -C ~/.bash/rake_completion -o default rake
 
 #my personal aliases
 alias rm='rm -i'
