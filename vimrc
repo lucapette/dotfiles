@@ -20,7 +20,7 @@ set showmatch
 set matchtime=4
 set autochdir
 set laststatus=2
-
+set completeopt=longest,menuone
 
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -65,8 +65,10 @@ imap  <silent> <F5> <Esc> gg=G<CR>
 vmap > >gv
 vmap < <gv
 
-"Supertab config
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-"supertab to <c-space> but backward doesn't work for me
-let g:SuperTabMappingForward = '<nul>'
-let g:SuperTabMappingBackward = '<s-nul>'
+"Code completion with ctrl-space
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
