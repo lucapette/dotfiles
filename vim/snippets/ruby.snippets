@@ -1,8 +1,8 @@
 # #!/usr/bin/ruby
 snippet #!
 	#!/usr/bin/ruby
-snippet req
-	require "${1}"${2}
+snippet require
+	require "${1}"
 snippet case
 	case ${1:object}
 	when ${2:condition}
@@ -97,94 +97,47 @@ snippet Dir Dir.global() { |file| .. }
 	Dir.glob(${1:"dir/glob/*"}) { |${2:file}| ${3} }
 snippet Dir Dir[".."]
 	Dir[${1:"glob/**/*.rb"}]${2}
-snippet dir
-	Filename.dirname(__FILE__)
-snippet deli
-	delete_if { |${1:e}| ${2} }
-snippet fil
-	fill(${1:range}) { |${2:i}| ${3} }
-# flatten_once()
-snippet flao
-	inject(Array.new) { |${1:arr}, ${2:a}| $1.push(*$2)}${3}
-snippet zip
-	zip(${1:enums}) { |${2:row}| ${3} }
-snippet dow
-	downto(${1:0}) { |${2:n}| ${3} }
-snippet ste
-	step(${1:2}) { |${2:n}| ${3} }
-snippet tim
-	times { |${1:n}| ${2} }
-snippet up
-	upto(${1:1.0/0.0}) { |${2:n}| ${3} }
-snippet loo
-	loop { ${1} }
-snippet ea
-	each { |${1:e}| ${2} }
-snippet eab
-	each_byte { |${1:byte}| ${2} }
-snippet eac- each_char { |chr| .. }
-	each_char { |${1:chr}| ${2} }
-snippet eac- each_cons(..) { |group| .. }
-	each_cons(${1:2}) { |${2:group}| ${3} }
-snippet eai
-	each_index { |${1:i}| ${2} }
-snippet eak
-	each_key { |${1:key}| ${2} }
-snippet eal
-	each_line { |${1:line}| ${2} }
-snippet eap
-	each_pair { |${1:name}, ${2:val}| ${3} }
-snippet eas-
-	each_slice(${1:2}) { |${2:group}| ${3} }
-snippet eav
-	each_value { |${1:val}| ${2} }
-snippet eawi
-	each_with_index { |${1:e}, ${2:i}| ${3} }
-snippet reve
-	reverse_each { |${1:e}| ${2} }
 snippet inj
 	inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
-snippet map
-	map { |${1:e}| ${2} }
-snippet sor
-	sort { |a, b| ${1} }
-snippet sorb
-	sort_by { |${1:e}| ${2} }
-snippet ran
-	sort_by { rand }
-snippet all
-	all? { |${1:e}| ${2} }
-snippet any
-	any? { |${1:e}| ${2} }
-snippet cl
-	classify { |${1:e}| ${2} }
-snippet col
-	collect { |${1:e}| ${2} }
-snippet det
-	detect { |${1:e}| ${2} }
-snippet fet
-	fetch(${1:name}) { |${2:key}| ${3} }
-snippet fin
-	find { |${1:e}| ${2} }
-snippet gre
-	grep(${1:/pattern/}) { |${2:match}| ${3} }
-snippet sub
-	${1:g}sub(${2:/pattern/}) { |${3:match}| ${4} }
-snippet sca
-	scan(${1:/pattern/}) { |${2:match}| ${3} }
-snippet max
-	max { |a, b|, ${1} }
-snippet min
-	min { |a, b|, ${1} }
-snippet par
-	partition { |${1:e}|, ${2} }
-snippet rej
-	reject { |${1:e}|, ${2} }
-snippet sel
-	select { |${1:e}|, ${2} }
-snippet lam
-	lambda { |${1:args}| ${2} }
 snippet do
 	do |${1:variable}|
 		${2}
 	end
+snippet params
+	params[:${1:id}]
+snippet redirect
+	redirect_to :action => "${1:show}", :id => ${2:@item}
+snippet redirect
+	redirect_to(${1:item}_path})
+snippet redirect
+	redirect_to :controller => "${1:controller}", :action => "${2:action}"
+snippet redirect
+	redirect_to :controller => "${1:items}"
+snippet redirect
+	redirect_to :action => "${1:index}"
+snippet render
+	render :action => "${1:action}", :layout => "${2:layoutname}"
+snippet render
+	render :nothing => ${1:true}
+snippet render
+	render :partial => "${1:item}"
+snippet accepts
+	accepts_nested_attributes_for :${1:association_name}
+snippet info
+	logger.info("${1}")
+snippet debug
+	logger.debug("${1:message}")
+snippet warn
+	logger.warn("${1:message}")
+snippet error
+	logger.error("${1:message}")
+snippet fatal
+	logger.fatal( "${1:message}")
+snippet session
+	session[:${1:var}]
+snippet flash
+	flash[:${1:notice}] = "${2:text}"
+snippet scope
+	scope :${1:name}, ${2:condition}
+snippet scope
+	scope :${1:name}, lambda { |${2:param}| ${3:function} }

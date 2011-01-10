@@ -1,6 +1,7 @@
-# snippets for eruby
 snippet =
 	<%= ${1}  %>
+snippet %
+	<% ${1}  %>
 snippet for
 	<% for ${1:item} in ${2:collection}  %>
 		<%= $1  %>
@@ -19,5 +20,54 @@ snippet admin?
 	<% if @$1.logged_in? && @${1:current_user}.admin?  %>
 		<% $1 %>
 	<% end %>
-snippet link
+snippet link_to
 	<%= link_to("${1}",${2}_path)  %>
+snippet link_to
+	<%= link_to ${1:model}.${2:name}, $1_path($1)  %>
+snippet link_to
+	<%= link_to "${1:text}", :action => "${2:index}  %>
+snippet link_to
+	<%= link_to "${1:text}", :controller => "${2:items}", :action => "${3:index}" %>
+snippet link_to
+	<%= link_to "${1:text}", :action => "${2:edit}", :id => ${3:@item} %>
+snippet link_to
+	<%= link_to "${1:link text...}", :controller => "${2:items}", :action=>"${3:edit}", :id => ${4:@item} %>
+snippet f.label
+	<%= f.label :${1:attribute} %>
+snippet f.checkbox
+	<%= f.check_box :${1:attribute}  %>
+snippet image_tag
+	<%= image_tag "$1${2:.png}" %>
+snippet f.text_field
+	<%= f.text_field :${1:attribute}  %>
+snippet f.file
+	<%= f.file_field :${1:attribute}  %>
+snippet form_for
+	<%= form_for @${1:model} do |f| %>
+		${2}
+		<%= f.submit %>
+	<% end %>
+snippet f.fields_for
+	<%= f.fields_for :${1:model} do |${2:item}|
+		$3
+	<% end %>
+snippet f.password
+	<%= f.password_field :${1:attribute}  %>
+snippet f.text_area
+	<%= f.text_area :${1:attribute}  %>
+snippet f.radio
+	<%= f.radio_button :${1:attribute}, :${2:tag_value}  %>
+snippet f.hidden
+	<%= f.hidden_field :${1:attribute}  %>
+snippet render
+	<%= render :partial => "${1:item}", :collection => @$1s  %>
+snippet submit
+	<%= submit_tag "${1:text}"  %>
+snippet style
+	<%= stylesheet_link_tag ${1::all} %>
+snippet javascript_include_tag
+	<%= javascript_include_tag ${1::all}  %>
+snippet content_for
+	<% content_for :${1:part} do -%>
+		$2
+	<% end -%>
