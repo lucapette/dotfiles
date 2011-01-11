@@ -21,6 +21,7 @@ set matchtime=4
 set autochdir
 set laststatus=2
 set completeopt=longest,menuone
+set nofoldenable
 
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
