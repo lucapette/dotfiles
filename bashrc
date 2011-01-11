@@ -1,14 +1,24 @@
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-    source /etc/bashrc
+if [ -f /etc/bash.bashrc ]; then
+    source /etc/bash.bashrc
 fi
 
+# private configs
 if [ -f $HOME/Dropbox/bashrc ]; then
     source $HOME/Dropbox/bashrc
 fi
 
+# tab completion
+for file in $HOME/.bash/completion/*; do
+    source $file
+done
+
 #Don't put duplicate lines in the history
 export HISTCONTROL=ignoredups
+
+#Grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
 
 #function to navigate parent directories
 up(){
@@ -25,41 +35,10 @@ up(){
     cd $d
 }
 
-#git bash completion, really useful.
-if [ -f /etc/bash_completion.d/git ]; then
-    source /etc/bash_completion.d/git
-fi
-complete -C ~/.bash/rake_completion -o default rake
+#My Personal aliases
+source $HOME/.bash/aliases
 
-#my personal aliases
-alias rm='rm -i'
-alias vi="vim -p"
-alias vim="vim -p"
-alias ps='ps aux | more'
-alias psgrep='ps | grep'
-alias d="cd $HOME/Dropbox"
-alias cl='clear'
-alias cls='cl ; ls'
-alias x+='sudo chmod +x'
-alias x-='sudo chmod -x'
-alias w+='sudo chmod +w'
-alias w-='sudo chmod -w'
-alias old='cd $OLDPWD'
-alias h='history'
-alias hgrep='h | grep'
-alias nautilus='nautilus .'
-alias la='ls -Al' # show hidden files
-alias ls='ls -hF --color' # add colors for filetype recognition
-alias lx='ls -lXB' # sort by extension
-alias lk='ls -lSr' # sort by size
-alias lc='ls -lcr' # sort by change time
-alias lu='ls -lur' # sort by access time
-alias lr='ls -lR' # recursive ls
-alias lt='ls -ltr' # sort by date
-alias diskspace="du -ks * | sort -nr"
-alias fgrep="find . -type f -print0 | xargs -0 grep -n"
-
-#Setting PS1
+# My super-personal PS1
 violet="\[\033[0;35m\]"
 red="\[\033[0;31m\]"
 cyan="\[\033[1;31m\]"
@@ -67,12 +46,7 @@ blue="\[\033[1;34m\]"
 green="\[\033[0;32m\]"
 black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
-
 PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$$black"
-
-#Grep
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
 
 export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
 

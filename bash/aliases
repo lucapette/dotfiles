@@ -1,0 +1,27 @@
+#my personal aliases
+alias rm='rm -i'
+alias vi="vim -p"
+alias vim="vim -p"
+alias ps='ps aux | more'
+alias psgrep='ps | grep'
+alias d="cd $HOME/Dropbox"
+alias cl='clear'
+alias cls='cl ; ls'
+alias x+='sudo chmod +x'
+alias x-='sudo chmod -x'
+alias w+='sudo chmod +w'
+alias w-='sudo chmod -w'
+alias old='cd $OLDPWD'
+alias h='history'
+alias hgrep='h | grep'
+alias nautilus='nautilus .'
+alias la='ls -Al' # show hidden files
+alias ls='ls -hF --color' # add colors for filetype recognition
+alias lx='ls -lXB' # sort by extension
+alias lk='ls -lSr' # sort by size
+alias lc='ls -lcr' # sort by change time
+alias lu='ls -lur' # sort by access time
+alias lr='ls -lR' # recursive ls
+alias lt='ls -ltr' # sort by date
+alias diskspace="du -ks * | sort -nr"
+alias fgrep="find . -type f -print0 | xargs -0 grep -n"
