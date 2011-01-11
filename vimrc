@@ -5,12 +5,12 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set textwidth=78
+set incsearch
 set hlsearch
 set number
-set history=50 " keep 50 lines of command line history
+set history=50
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
-set incsearch " do incremental searching
 set wildmenu
 set wildignore=*.bak,*.o,*.e,*~
 set backup
@@ -23,28 +23,6 @@ set laststatus=2
 set completeopt=longest,menuone
 set nofoldenable
 
-autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-"FileType settings
-autocmd FileType ruby map <silent> <F9> :rubyf %<CR>
-autocmd FileType ruby imap <silent> <F9> <Esc> :rubyf %<CR>
-autocmd FileType ruby noremap K : !ri <cword><CR>
-autocmd BufRead,BufNewFile Rakefile set filetype=ruby
-autocmd BufRead,BufNewFile .irbrc set filetype=ruby
-autocmd BufRead,BufNewFile .railsrc set filetype=ruby
-autocmd BufRead,BufNewFile irbrc set filetype=ruby
-autocmd BufRead,BufNewFile railsrc set filetype=ruby
-autocmd BufRead,BufNewFile *.html.erb set filetype=html.eruby
-autocmd FileType textile map <silent><F7> :TextileRenderTab<CR>
-autocmd FileType textile imap <silent><F7> <Esc> :TextileRenderTab<CR>
-autocmd FileType snippet set noexpandtab
-"git commit message configuration
-autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
-
-"my favourite color scheme
 colorscheme desert
 
 syntax on
@@ -52,6 +30,11 @@ syntax on
 filetype plugin indent on
 
 filetype plugin plugin on
+
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 
 "Personal command  mapping
 map   <silent> <F2> :write<CR>
