@@ -1,54 +1,16 @@
-_rake()
-{
-    local cur prev rakef i
+sh completion support for Rake, Ruby Make.
 
-    COMPREPLY=()
-    cur=${COMP_WORDS[COMP_CWORD]}
-    prev=${COMP_WORDS[COMP_CWORD-1]}
-    rakef="Rakefile"
+export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
 
-    if [[ "$prev" == "-f" ]]; then
-        _filedir
+_rakecomplete() {
+    if [ -f Rakefile ]; then
+        recent=`ls -t .rake_tasks~ Rakefile **/*.rake 2> /dev/null | head -n 1`
+        if [[ $recent != '.rake_tasks~' ]]; then
+            rake --silent --tasks | cut -d " " -f 2 > .rake_tasks~
+        fi
+        COMPREPLY=($(compgen -W "`cat .rake_tasks~`" --${COMP_WORDS[COMP_CWORD]}))
         return 0
     fi
-
-    if [[ "$cur" == *=* ]]; then
-        prev=${cur/=*/}
-        cur=${cur/*=/}
-        if [[ "$prev" == "--rakefile=" ]]; then
-            _filedir -o nospace
-            return 0
-        fi
-    fi
-
-    if [[ "$cur" == -* ]]; then
-        COMPREPLY=( $( compgen -W '-n -H -I -N -P -q -f\
-            -r -s -T -t -h -v -V\
-            --dry-run --help '--libdir=' --nosearch --prereqs --quiet\
-            '--rakefile=' '--require=' --silent --tasks --trace --usage\
-            --verbose --version'\
-            -- $cur ))
-    else
-
-        for (( i=0; i < ${#COMP_WORDS[@]}; i++)); do
-            case "${COMP_WORDS[i]}" in
-            -f)
-                eval rakef=${COMP_WORDS[i+1]}
-                break
-                ;;
-            --rakefile=*|--rakefile\=*)
-                eval rakef=${COMP_WORDS[i]/*=/}
-                break
-                ;;
-            esac
-        done
-
-        [ ! -f $rakef ] && return 0
-
-        COMPREPLY=( $( rake -s -f "$rakef" -T | \
-            awk -F ' ' '/^rake / { print $2 }' | \
-            command grep "^$cur" ))
-
-    fi
 }
-complete -F _rake $filenames rake
+
+complete -o default -o nospace -F _rakecomplete rake

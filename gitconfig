@@ -5,6 +5,7 @@
     whitespace = nowarn
 [core]
     editor = vim
+    excludesfile = ~/.gitignore
 [alias]
     ck = checkout
     df = diff
