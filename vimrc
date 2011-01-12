@@ -22,6 +22,7 @@ set autochdir
 set laststatus=2
 set completeopt=longest,menuone
 set nofoldenable
+set spelllang=en_gb
 
 colorscheme desert
 
@@ -40,10 +41,12 @@ autocmd BufReadPost *
 map   <silent> <F2> :write<CR>
 map   <silent> <F3> :set invnumber<CR>
 map   <silent> <F5> gg=G<CR>
+map   <silent> <F9> :set spell!<CR>
 
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
 imap  <silent> <F5> <Esc> gg=G<CR>
+imap  <silent> <F9> <Esc> :set spell!<CR>
 
 "Do not lost block selection after indentation. Such a good thing!
 vmap > >gv
