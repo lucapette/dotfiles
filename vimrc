@@ -59,3 +59,9 @@ imap <C-@> <C-Space>
 
 "NERDTree plugin config
 let g:NERDTreeHijackNetrw = 1
+
+nnoremap <silent> <F4> :NERDTreeToggle <cr>
+inoremap <silent> <F4> <Esc>:NERDTreeToggle <cr>
+
+autocmd User Rails  nnoremap <silent> <F4> :Rtree <cr>
+autocmd User Rails  inoremap <silent> <F4> <Esc>:Rtree <cr>
