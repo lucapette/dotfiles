@@ -1,3 +1,3 @@
-map <silent> <F9> :rubyf %<CR>
-imap <silent> <F9> <Esc> :rubyf %<CR>
+map <silent> <F8> :rubyf %<CR>
+imap <silent> <F8> <Esc> :rubyf %<CR>
 noremap K : !ri <cword><CR>
