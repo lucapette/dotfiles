@@ -48,7 +48,7 @@ black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
 PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$$black"
 
-export PATH=.:$HOME/code/scripts/inpath:$PATH
+export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
 
 #rvm FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

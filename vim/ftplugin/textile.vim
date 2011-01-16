@@ -49,5 +49,5 @@ function! TextileRenderBufferToTab()
   set syntax=html
 endfunction
 
-autocmd FileType textile map <silent><F7> :TextileRenderTab<CR>
-autocmd FileType textile imap <silent><F7> <Esc> :TextileRenderTab<CR>
+map <silent><F7> :TextileRenderTab<CR>
+imap <silent><F7> <Esc> :TextileRenderTab<CR>
