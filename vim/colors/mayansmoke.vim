@@ -1,11 +1,11 @@
--" Maintainer:  Jeet Sukumaran (GUI colors); Clayton Parker (cterm colors)
--" Little changes by me
--" =============================================================================
--
--"  Initialization and Setup {{{1
--" =============================================================================
+" Maintainer:  Jeet Sukumaran (GUI colors); Clayton Parker (cterm colors)
+" Little changes by me
+" =============================================================================
+"  Initialization and Setup {{{1
+" =============================================================================
 
- background=light
+set background=light
+
 highlight clear
 if exists("syntax_on")
   syntax reset
@@ -146,15 +146,15 @@ hi WildMenu     guifg=Black             guibg=SkyBlue           gui=NONE
 " =============================================================================
 hi Normal cterm=NONE ctermfg=17  ctermbg=255
 hi Comment      ctermfg=4
-hi Constant     ctermfg=214
+hi Constant     ctermfg=208
 hi String       ctermfg=30
 hi Boolean      ctermfg=88
-hi Identifier   ctermfg=28
+hi Identifier   ctermfg=160
 hi Function     ctermfg=136
 hi Statement    ctermfg=21
 hi Keyword      ctermfg=45
 hi PreProc      ctermfg=26
-hi Type         ctermfg=160
+hi Type         ctermfg=28
 hi Special      ctermfg=64
 hi Ignore       ctermfg=255
 hi Error        ctermfg=196             ctermbg=255     term=none
