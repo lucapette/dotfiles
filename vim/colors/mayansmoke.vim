@@ -1,24 +1,16 @@
-" =============================================================================
-"
-" File:        mayansmoke.vim
-" Description: Vim color scheme file
-" Maintainer:  Jeet Sukumaran (GUI colors); Clayton Parker (cterm colors)
-"
-" =============================================================================
+-" Maintainer:  Jeet Sukumaran (GUI colors); Clayton Parker (cterm colors)
+-" Little changes by me
+-" =============================================================================
+-
+-"  Initialization and Setup {{{1
+-" =============================================================================
 
-"  Initialization and Setup {{{1
-" =============================================================================
-set background=light
+ background=light
 highlight clear
 if exists("syntax_on")
   syntax reset
 endif
 let colors_name = "mayansmoke"
-" }}}
-
-"  Normal Color {{{1
-" =============================================================================
-hi Normal gui=NONE guifg=Black guibg=#F4F4E8
 " }}}
 
 "  Highlight Groups {{{1
@@ -152,17 +144,17 @@ hi WildMenu     guifg=Black             guibg=SkyBlue           gui=NONE
 
 " 256-Color Terminal Colors, by Clayton Parker {{{1
 " =============================================================================
-hi Normal cterm=NONE ctermfg=16  ctermbg=255
-hi Comment      ctermfg=110
+hi Normal cterm=NONE ctermfg=17  ctermbg=255
+hi Comment      ctermfg=4
 hi Constant     ctermfg=214
-    hi String   ctermfg=30
-    hi Boolean  ctermfg=88
-hi Identifier   ctermfg=160
-hi Function     ctermfg=132
+hi String       ctermfg=30
+hi Boolean      ctermfg=88
+hi Identifier   ctermfg=28
+hi Function     ctermfg=136
 hi Statement    ctermfg=21
 hi Keyword      ctermfg=45
-hi PreProc      ctermfg=27
-hi Type         ctermfg=147
+hi PreProc      ctermfg=26
+hi Type         ctermfg=160
 hi Special      ctermfg=64
 hi Ignore       ctermfg=255
 hi Error        ctermfg=196             ctermbg=255     term=none
@@ -249,8 +241,8 @@ hi WildMenu     ctermfg=16              ctermbg=117             cterm=NONE
 " hi Comment      guifg=#A2B5CD         guibg=NONE      gui=italic
 hi Comment      guifg=#96AAC2         guibg=NONE      gui=italic
 hi Constant     guifg=DarkOrange        guibg=NONE      gui=NONE
-    hi String   guifg=Aquamarine4       guibg=NONE      gui=NONE
-    hi Boolean  guifg=IndianRed4        guibg=NONE      gui=NONE
+hi String   guifg=Aquamarine4       guibg=NONE      gui=NONE
+hi Boolean  guifg=IndianRed4        guibg=NONE      gui=NONE
 hi Identifier   guifg=brown3            guibg=NONE      gui=NONE
 hi Function     guifg=VioletRed4        guibg=NONE      gui=NONE
 hi Statement    guifg=blue1             guibg=NONE      gui=NONE
@@ -305,39 +297,3 @@ hi diffAdded            guifg=#00AA00           guibg=NONE      gui=NONE
 hi diffLine             guifg=thistle4          guibg=NONE      gui=italic
 hi link diffSubname     diffLine
 hi link diffComment     Comment
-" 2}}}
-
-" PHP (contributed by Ryan Kulla) {{{2
-" -----------------------------------------------------------------------------
-" Ryan Kulla's addition for PHP syntax highlighting (for regular/terminal vim)
-hi phpConditional ctermfg=21 cterm=NONE guifg=black
-hi phpIdentifier ctermfg=0 cterm=NONE guifg=black
-hi phpOperator ctermfg=black cterm=NONE guifg=black
-hi phpRegion ctermfg=132 cterm=NONE guifg=VioletRed4
-hi phpComparison ctermfg=black cterm=NONE guifg=black
-hi phpType ctermfg=darkgreen cterm=NONE guifg=darkgreen
-hi phpParent ctermfg=black cterm=NONE guifg=black
-hi phpMethodsVar ctermfg=132 cterm=NONE guifg=VioletRed4
-hi phpStatement ctermfg=21 cterm=NONE guifg=blue
-hi phpStorageClass ctermfg=21 cterm=NONE guifg=blue
-hi phpStringSingle ctermfg=30 cterm=NONE guifg=Aquamarine4
-hi phpStringDouble ctermfg=30 cterm=NONE guifg=Aquamarine4
-hi phpFunctions ctermfg=21 cterm=NONE guifg=blue
-hi phpSpecialFunction ctermfg=21 cterm=NONE guifg=blue
-hi phpRepeat ctermfg=21 cterm=NONE guifg=blue
-hi phpNumber ctermfg=214 cterm=bold guifg=brown
-hi phpTodo ctermfg=red cterm=bold guifg=red gui=bold
-hi phpDefine ctermfg=21 cterm=NONE guifg=blue
-hi phpConstant ctermfg=21 cterm=NONE guifg=black
-hi phpCoreConstant ctermfg=21 cterm=NONE guifg=black
-hi phpMemberSelector ctermfg=black cterm=NONE guifg=black
-hi phpLabel ctermfg=21 cterm=NONE guifg=blue
-hi phpStructure ctermfg=black cterm=NONE guifg=black
-hi phpRelation ctermfg=black cterm=NONE guifg=black
-hi phpEnvVar ctermfg=black cterm=NONE guifg=black
-hi phpIntVar ctermfg=0 cterm=bold guifg=black gui=bold
-hi phpBoolean ctermfg=58 cterm=NONE guifg=brown
-" 2}}}
-
-" 1}}}
-
