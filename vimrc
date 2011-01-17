@@ -23,8 +23,8 @@ set laststatus=2
 set completeopt=longest,menuone
 set nofoldenable
 set spelllang=en_gb
-
-colorscheme desert
+set term=gnome-256color
+colorscheme mayansmoke
 
 syntax on
 
