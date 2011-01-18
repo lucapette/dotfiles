@@ -15,10 +15,6 @@ snippet def
 	def ${1:method_name}
 		${2}
 	end
-snippet def
-	def self.${1:class_method_name}
-		${2}
-	end
 snippet if
 	if ${1:condition}
 		${2}
@@ -41,11 +37,11 @@ snippet until
 	until ${1:condition}
 		${2}
 	end
-snippet cla class .. end
+snippet class
 	class ${1:`substitute(Filename(), '^.', '\u&', '')`}
 		${2}
 	end
-snippet cla class .. initialize .. end
+snippet class
 	class ${1:`substitute(Filename(), '^.', '\u&', '')`}
 
 		def initialize(${2:args})
@@ -53,7 +49,7 @@ snippet cla class .. initialize .. end
 		end
 
 	end
-snippet cla class .. < ParentClass .. initialize .. end
+snippet class
 	class ${1:`substitute(Filename(), '^.', '\u&', '')`} < ${2:ParentClass}
 
 		def initialize(${3:args})
@@ -61,11 +57,11 @@ snippet cla class .. < ParentClass .. initialize .. end
 		end
 
 	end
-snippet cla class << self .. end
+snippet class 
 	class << ${1:self}
 		${2}
 	end
-snippet mod module .. end
+snippet module
 	module ${1:`substitute(Filename(), '^.', '\u&', '')`}
 		${2}
 	end

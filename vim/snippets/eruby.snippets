@@ -20,18 +20,18 @@ snippet admin?
 	<% if @$1.logged_in? && @${1:current_user}.admin?  %>
 		<% $1 %>
 	<% end %>
-snippet link_to
+snippet link_to link_to path
 	<%= link_to("${1}",${2}_path)  %>
-snippet link_to
-	<%= link_to ${1:model}.${2:name}, $1_path($1)  %>
-snippet link_to
+snippet link_to link_to model
+	<%= link_to ${1:model}.${2:attribute}, $1  %>
+snippet link_to link_to action
 	<%= link_to "${1:text}", :action => "${2:index}  %>
-snippet link_to
+snippet link_to link_to controller action
 	<%= link_to "${1:text}", :controller => "${2:items}", :action => "${3:index}" %>
-snippet link_to
+snippet link_to link_to action id
 	<%= link_to "${1:text}", :action => "${2:edit}", :id => ${3:@item} %>
-snippet link_to
-	<%= link_to "${1:link text...}", :controller => "${2:items}", :action=>"${3:edit}", :id => ${4:@item} %>
+snippet link_to link_to controller action id
+	<%= link_to "${1:text}", :controller => "${2:items}", :action=>"${3:edit}", :id => ${4:@item} %>
 snippet f.label
 	<%= f.label :${1:attribute} %>
 snippet f.checkbox
@@ -59,8 +59,10 @@ snippet f.radio
 	<%= f.radio_button :${1:attribute}, :${2:tag_value}  %>
 snippet f.hidden
 	<%= f.hidden_field :${1:attribute}  %>
-snippet render
-	<%= render :partial => "${1:item}", :collection => @$1s  %>
+snippet render render
+	<%= render "${1:item}"  %>
+snippet render render partial
+	<%= render :partial => "${1:item}"  %>
 snippet submit
 	<%= submit_tag "${1:text}"  %>
 snippet style

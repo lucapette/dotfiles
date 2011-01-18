@@ -238,6 +238,8 @@ fun! ShowAvailableSnips()
 		endfor
 	endfor
 
+	call sort(matches)
+
 	" This is to avoid a bug with Vim when using complete(col - matchlen, matches)
 	" (Issue#46 on the Google Code snipMate issue tracker).
 	call setline(line('.'), substitute(line, repeat('.', matchlen).'\%'.col.'c', '', ''))
