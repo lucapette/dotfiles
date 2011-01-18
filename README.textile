@@ -3,8 +3,9 @@ My dotfiles
 This repository includes configurations for:
 
 * irb
+* gem
 * git
 * vim
 * bash
 
-There is also a Rakefile for syncing file.
+There is also a _Rakefile_ for syncing file.

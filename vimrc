@@ -42,11 +42,13 @@ map   <silent> <F2> :write<CR>
 map   <silent> <F3> :set invnumber<CR>
 map   <silent> <F5> gg=G<CR>
 map   <silent> <F9> :set spell!<CR>
+map   <silent> <C-R> :FuzzyFinderTextMate<CR>
 
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
 imap  <silent> <F5> <Esc> gg=G<CR>
 imap  <silent> <F9> <Esc> :set spell!<CR>
+imap  <silent> <C-R> <Esc> :FuzzyFinderTextMate<CR>
 
 "Do not lost block selection after indentation. Such a good thing!
 vmap > >gv
@@ -68,3 +70,5 @@ inoremap <silent> <F4> <Esc>:NERDTreeToggle <cr>
 
 autocmd User Rails  nnoremap <silent> <F4> :Rtree <cr>
 autocmd User Rails  inoremap <silent> <F4> <Esc>:Rtree <cr>
+autocmd User Rails let  g:fuzzy_roots = [RailsRoot()] 
+let g:fuzzy_path_display = 'highlighted_path'
