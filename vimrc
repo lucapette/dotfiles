@@ -24,7 +24,7 @@ set completeopt=longest,menuone
 set nofoldenable
 set spelllang=en_gb
 set term=gnome-256color
-colorscheme mayansmoke
+colorscheme lucapette
 
 syntax on
 
