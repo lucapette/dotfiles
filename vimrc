@@ -8,6 +8,7 @@ set textwidth=78
 set incsearch
 set hlsearch
 set number
+set numberwidth=1
 set history=50
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands

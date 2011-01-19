@@ -1,1 +1,1 @@
-noremap K :exec "help ".expand("<cword>")<CR>
+noremap K :exec "help ".expand("<cWORD>")<CR>
