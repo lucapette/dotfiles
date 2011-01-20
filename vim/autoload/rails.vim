@@ -920,7 +920,7 @@ function! s:BufCommands()
         \ else | call s:Doc(<bang>0,<q-args>) | endif
   command! -buffer -bar -nargs=0 -bang Rrefresh :if <bang>0|unlet! g:autoloaded_rails|source `=s:file`|endif|call s:Refresh(<bang>0)
   if exists(":NERDTree")
-    command! -buffer -bar -nargs=? -complete=customlist,s:Complete_cd Rtree :NERDTree `=rails#app().path(<f-args>)`
+    command! -buffer -bar -nargs=? -complete=customlist,s:Complete_cd Rtree :NERDTreeToggle `=rails#app().path(<f-args>)`
   elseif exists(":Project")
     command! -buffer -bar -nargs=? Rtree :call s:Project(<bang>0,<q-args>)
   endif

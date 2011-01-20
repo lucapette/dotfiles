@@ -1,30 +1,35 @@
-set nocompatible
+set autochdir
+set autoindent
 set autowrite
 set backspace=indent,eol,start
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set textwidth=78
-set incsearch
-set hlsearch
-set number
-set numberwidth=1
-set history=50
-set ruler " show the cursor position all the time
-set showcmd " display incomplete commands
-set wildmenu
-set wildignore=*.bak,*.o,*.e,*~
 set backup
 set backupdir=/tmp
-set directory=/tmp
-set showmatch
-set matchtime=4
-set autochdir
-set laststatus=2
 set completeopt=longest,menuone
+set dictionary=/usr/share/dict/words
+set directory=/tmp
+set expandtab
+set history=50
+set hlsearch
+set incsearch
+set laststatus=2
+set matchtime=4
+set nocompatible
 set nofoldenable
+set number
+set numberwidth=1
+set pastetoggle=<F12>
+set ruler
+set shiftwidth=4
+set showcmd
+set showmatch
+set smartcase
 set spelllang=en_gb
+set tabstop=4
 set term=gnome-256color
+set textwidth=78
+set wildignore=*.bak,*.o,*.e,*~
+set wildmenu
+
 colorscheme lucapette
 
 syntax on
