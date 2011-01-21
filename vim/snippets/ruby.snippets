@@ -97,21 +97,23 @@ snippet do
 	end
 snippet params
 	params[:${1:id}]
-snippet redirect
+snippet redirect redirect action id
 	redirect_to :action => "${1:show}", :id => ${2:@item}
-snippet redirect
+snippet redirect redirect _path
 	redirect_to(${1:item}_path})
-snippet redirect
+snippet redirect redirect controller action
 	redirect_to :controller => "${1:controller}", :action => "${2:action}"
-snippet redirect
+snippet redirect redirect controller 
 	redirect_to :controller => "${1:items}"
-snippet redirect
+snippet redirect redirect action
 	redirect_to :action => "${1:index}"
-snippet render
+snippet render render action
+	render :action => "${1:action}"
+snippet render render action layout
 	render :action => "${1:action}", :layout => "${2:layoutname}"
-snippet render
+snippet render nothing
 	render :nothing => ${1:true}
-snippet render
+snippet render partial
 	render :partial => "${1:item}"
 snippet accepts
 	accepts_nested_attributes_for :${1:association_name}
@@ -129,7 +131,7 @@ snippet session
 	session[:${1:var}]
 snippet flash
 	flash[:${1:notice}] = "${2:text}"
-snippet scope
+snippet scope scope name condition
 	scope :${1:name}, ${2:condition}
-snippet scope
+snippet scope scope name lambda
 	scope :${1:name}, lambda { |${2:param}| ${3:function} }

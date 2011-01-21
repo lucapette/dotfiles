@@ -8,7 +8,7 @@ if [ -f $HOME/Dropbox/bashrc ]; then
     source $HOME/Dropbox/bashrc
 fi
 
-# tab completion
+# loading completion
 for file in $HOME/.bash/completion/*; do
     source $file
 done
@@ -16,7 +16,7 @@ done
 #Don't put duplicate lines in the history
 export HISTCONTROL=ignoredups
 
-#Grep
+#grep options
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
@@ -40,8 +40,6 @@ source $HOME/.bash/aliases
 
 export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
 
-
-
 #rvm loading FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
@@ -63,6 +61,5 @@ blue="\[\033[1;34m\]"
 green="\[\033[0;32m\]"
 black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
-rvm="$(__rvm_version)"
 
-PS1="$black[$blue\u$cyan@$blue\h \W$green $rvm $branch$black]$red\$$black"
+PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$$black"

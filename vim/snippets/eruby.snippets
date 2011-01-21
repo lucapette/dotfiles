@@ -20,6 +20,8 @@ snippet admin?
 	<% if @$1.logged_in? && @${1:current_user}.admin?  %>
 		<% $1 %>
 	<% end %>
+snippet mail_to
+	<%= mail_to("${1:address}",${2:text})  %>
 snippet link_to link_to path
 	<%= link_to("${1}",${2}_path)  %>
 snippet link_to link_to model
