@@ -38,6 +38,23 @@ up(){
 #My Personal aliases
 source $HOME/.bash/aliases
 
+export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
+
+
+
+#rvm loading FTW
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+#rvm prompt function
+function __rvm_version {
+  local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
+  [ "$gemset" != "" ] && gemset="@$gemset"
+  local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
+  local full="$version$gemset"
+  [ "$full" != "" ] && echo "($full)"
+}
+
 # My super-personal PS1
 violet="\[\033[0;35m\]"
 red="\[\033[0;31m\]"
@@ -46,10 +63,6 @@ blue="\[\033[1;34m\]"
 green="\[\033[0;32m\]"
 black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
-PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$$black"
+rvm="$(__rvm_version)"
 
-export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
-
-#rvm FTW
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+PS1="$black[$blue\u$cyan@$blue\h \W$green $rvm $branch$black]$red\$$black"
