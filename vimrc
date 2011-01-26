@@ -78,6 +78,5 @@ autocmd User Rails  nnoremap <silent> <F4> :Rtree <cr>
 autocmd User Rails  inoremap <silent> <F4> <Esc>:Rtree <cr>
 
 "FuzzyFinderTextMate Config
-autocmd User Rails let  g:fuzzy_roots = [RailsRoot()] 
 autocmd User Rails let g:fuzzy_ignore = 'tmp/**/*,*.png,*.jpg'
 let g:fuzzy_path_display = 'highlighted_path'
