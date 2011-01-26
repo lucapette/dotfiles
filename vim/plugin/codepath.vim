@@ -33,7 +33,7 @@ def codepath(code_dir)
     current_dir = VIM.evaluate("getcwd()")
     if current_dir.include?(code_dir)
         current_dir[/#{code_dir}/]=""
-        "#{code_dir}/#{current_dir.match(/^\/(\w+)/)[1]}"
+        "#{code_dir}/#{current_dir.match(/^\/([^\/]+)/)[1]}"
     else
         current_dir
     end
