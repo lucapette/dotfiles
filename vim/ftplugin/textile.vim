@@ -51,3 +51,4 @@ endfunction
 
 map <silent><F7> :TextileRenderTab<CR>
 imap <silent><F7> <Esc> :TextileRenderTab<CR>
+set textwidth=0
