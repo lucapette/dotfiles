@@ -1,7 +1,8 @@
 " ============================================================================
 " File:        codepath.vim
-" Description: this plugin provides a little function to get your root project. 
-"              I use it for setting fuzzy_finder roots.
+" Description: This plugin provides a little function to get a root project
+"              directory based on a given directory.
+"              I use it for setting fuzzy_finder roots and NERDTreeToggle.
 "
 " Maintainer:  Luca Pette <lucapette@gmail.com>
 " Last Change: 26 January, 2011
