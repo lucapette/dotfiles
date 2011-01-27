@@ -113,6 +113,9 @@ hi Visual       ctermfg=255             ctermbg=153             cterm=NONE
 hi WildMenu     ctermfg=16              ctermbg=117             cterm=NONE
 
 "HTML
-hi htmlEndTag ctermfg=136
 hi htmlTag ctermfg=136
+hi htmlEndTag ctermfg=136
 hi htmlItalic cterm=NONE
+"XML
+hi xmlTag ctermfg=136
+hi xmlEndTag ctermfg=136
