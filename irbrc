@@ -14,24 +14,26 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 # How many lines to save
 IRB.conf[:SAVE_HISTORY] = 1000
 
-#Wirble config
+# wirble configuration, using only colours
 require 'wirble'
 Wirble.init(:skip_prompt => true, :skip_history => true,:init_colors=>true)
 
-# getting the default colors and adding mine 
+# adding my colours of choice to defaults 
 colors = Wirble::Colorize.colors.merge({
-    # set the comma color to blue
+    # set the comma colour to blue
     :symbol => :light_green,
     :symbol_prefix => :light_green
 })  
 
 Wirble::Colorize.colors = colors
 
-# Return only the methods not present on basic objects
+# method the return the methods not present on basic objects, good for
+# investigations
 class Object
     def interesting_methods
         (self.methods - Object.new.methods).sort
     end
 end
 
+# loading rails configuration if it is running as a rails console
 load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)

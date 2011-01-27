@@ -1,11 +1,37 @@
 My dotfiles
 
-This repository includes configurations for:
+This repository includes my configuration files, it also contains a _Rakefile_ for syncing file.
 
-* irb
-* gem
-* git
-* vim
-* bash
+In the following a brief description of the files:
 
-There is also a _Rakefile_ for syncing file.
+h2. bash
+
+My bash config loads completion files for git, ri and rake, it also contains some personal aliases. Furthermore, It loads *rvm* and sets a very personal prompt.
+
+h2. gem
+
+I find very annoying that gem tries to download docs for each gem I try to install so I wrote this little file to speed up gem installations.
+
+h2. git
+
+My git config contains usual configs, some aliases and personal colours. It also contains a setting to load a global *.gitignore* file.
+
+h2. irb 
+
+My irb configuration is quite simple. It uses *wirble* for colourize itself and *irb history* extensions in order to remember previous session commands.
+Furthermore it adds a method to Object to investigate interesting methods of a given object.
+Finally, it loads a *.rails* file if irb is called as a _rails console_ script. This rails file contains two methods to enable or disable ActiveRecord logger and also requires the *hirb* gem.
+
+h2. vim 
+
+I use the following plugins:
+
+* FuzzyFinder
+* FuzzyFinderTextmate
+* NERDTree
+* codepath
+* rails
+* snipMate
+* textile
+
+I also use personal settings for these plugins and for vim itself.

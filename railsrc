@@ -1,20 +1,24 @@
+# activerecord logging methods
+# very useful for digging into
+# queries
 require 'logger'
 
 def enable_logger
- log_to(Logger.new(STDOUT))
+    log_to(Logger.new(STDOUT))
 end
 
 def disable_logger
-  log_to(nil)
+    log_to(nil)
 end
 
 def log_to(logger)
- ActiveRecord::Base.logger = logger
- ActiveRecord::Base.clear_active_connections!
+    ActiveRecord::Base.logger = logger
+    ActiveRecord::Base.clear_active_connections!
 end
 
-require 'rubygems'
-require 'hirb'
-
-Hirb.enable
+# logging into console by default
 enable_logger
+
+# hirb enabled by default
+require 'hirb'
+Hirb.enable

@@ -1,26 +1,28 @@
-# Source global definitions
+# source global definitions
 if [ -f /etc/bash.bashrc ]; then
     source /etc/bash.bashrc
 fi
-
 # private configs
 if [ -f $HOME/Dropbox/bashrc ]; then
     source $HOME/Dropbox/bashrc
 fi
-
-# loading completion
+# sourcing completion files
 for file in $HOME/.bash/completion/*; do
     source $file
 done
+# sourcing personal aliases
+source $HOME/.bash/aliases
 
-#Don't put duplicate lines in the history
+# don't put duplicate lines in the history
 export HISTCONTROL=ignoredups
 
-#grep options
+# grep options
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-#function to navigate parent directories
+# function to go to a parent directory of the current
+# directory. It takes the number of directory to ascend as
+# argument.
 up(){
     local d=""
     limit=$1
@@ -35,16 +37,13 @@ up(){
     cd $d
 }
 
-#My Personal aliases
-source $HOME/.bash/aliases
-
 export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
 
-#rvm loading FTW
+# loading rvm and its completion FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
-#rvm prompt function
+# rvm prompt function, currently not used.
 function __rvm_version {
   local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
   [ "$gemset" != "" ] && gemset="@$gemset"
@@ -53,7 +52,7 @@ function __rvm_version {
   [ "$full" != "" ] && echo "($full)"
 }
 
-# My super-personal PS1
+# my personal prompt, with git branch
 violet="\[\033[0;35m\]"
 red="\[\033[0;31m\]"
 cyan="\[\033[1;31m\]"
