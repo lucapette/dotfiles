@@ -116,6 +116,10 @@ hi WildMenu     ctermfg=16              ctermbg=117             cterm=NONE
 hi htmlTag ctermfg=136
 hi htmlEndTag ctermfg=136
 hi htmlItalic cterm=NONE
+hi link htmlLink NONE
+hi link htmlItalic NONE
+hi htmlLink ctermfg=208
+
 "XML
 hi xmlTag ctermfg=136
 hi xmlEndTag ctermfg=136
