@@ -20,5 +20,5 @@ end
 enable_logger
 
 # hirb enabled by default
-require 'hirb'
+require_without_bundler 'hirb'
 Hirb.enable

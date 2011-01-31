@@ -1,5 +1,25 @@
 require 'rubygems'
 
+# inspired by https://gist.github.com/794915
+# I've changed it a bit, it works fine for me now
+# but i'm still searching for a better solution
+def require_without_bundler(*gems)
+    unless defined?(::Bundler)
+        gems.each { |g| require g }
+        return
+    end
+    Dir.glob("#{Gem.path.first}/gems/*").map { |gem_path| 
+        gem_name=File.basename(gem_path).gsub(/-(\d\.?)+$/,'')
+        if gems.include?(gem_name)
+            $LOAD_PATH << "#{gem_path}/lib"
+            require gem_name
+        end
+    }
+
+end
+
+require_without_bundler 'map_by_method'
+
 # Irb completion 
 require 'irb/completion'
 # Save irb sessions to history file
@@ -15,7 +35,7 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 IRB.conf[:SAVE_HISTORY] = 1000
 
 # wirble configuration, using only colours
-require 'wirble'
+require_without_bundler 'wirble'
 Wirble.init(:skip_prompt => true, :skip_history => true,:init_colors=>true)
 
 # adding my colours of choice to defaults 
