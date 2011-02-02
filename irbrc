@@ -15,12 +15,10 @@ def require_without_bundler(*gems)
             require gem_name
         end
     }
-
 end
 
 require_without_bundler 'map_by_method'
 
-# Irb completion 
 require 'irb/completion'
 # Save irb sessions to history file
 require 'irb/ext/save-history'
@@ -36,6 +34,7 @@ IRB.conf[:SAVE_HISTORY] = 1000
 
 # wirble configuration, using only colours
 require_without_bundler 'wirble'
+
 Wirble.init(:skip_prompt => true, :skip_history => true,:init_colors=>true)
 
 # adding my colours of choice to defaults 
@@ -51,8 +50,22 @@ Wirble::Colorize.colors = colors
 # investigations
 class Object
     def interesting_methods
-        (self.methods - Object.new.methods).sort
+        (self.methods - Object.instance_methods).sort
     end
+end
+
+# toy array
+def a(n=10,&block)
+    if block_given?
+        Array.new(n,&block)
+    else
+        Array.new(n) {|i| i+1} 
+    end
+end
+
+# toy hash
+def h(n=10)
+    Hash[a(n).zip(a(n){|c| (96+(c+1)).chr})]
 end
 
 # loading rails configuration if it is running as a rails console
