@@ -55,7 +55,7 @@ class Object
 end
 
 # toy array
-def a(n=10,&block)
+def toy_a(n=10,&block)
     if block_given?
         Array.new(n,&block)
     else
@@ -64,7 +64,7 @@ def a(n=10,&block)
 end
 
 # toy hash
-def h(n=10)
+def toy_h(n=10)
     Hash[a(n).zip(a(n){|c| (96+(c+1)).chr})]
 end
 
