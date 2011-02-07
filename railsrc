@@ -2,6 +2,7 @@
 # very useful for digging into
 # queries
 require 'logger'
+require 'activerecord' if rails?(2)
 
 def enable_logger
     log_to(Logger.new(STDOUT))

@@ -68,5 +68,19 @@ def toy_h(n=10)
     Hash[a(n).zip(a(n){|c| (96+(c+1)).chr})]
 end
 
+def rails?(*args)
+    version=args.first
+    v2 = ($0 == 'irb' && ENV['RAILS_ENV']) 
+    v3 =  ($0 == 'script/rails' && Rails.env) 
+    case version
+    when 2
+        return v2
+    when 3
+        return v3
+    else
+        return v2 || v3
+    end
+end
+
 # loading rails configuration if it is running as a rails console
-load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)
+load File.dirname(__FILE__) + '/.railsrc' if rails?
