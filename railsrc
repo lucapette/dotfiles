@@ -20,6 +20,12 @@ end
 # logging into console by default
 enable_logger
 
+# prints nice informations
+# about a Model
+def show(model)
+    y model.column_names.sort
+end
+
 # hirb enabled by default
 require_without_bundler 'hirb'
 Hirb.enable
