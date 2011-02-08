@@ -17,24 +17,21 @@ def require_without_bundler(*gems)
     }
 end
 
-require_without_bundler 'map_by_method'
+%w{wirble map_by_method}.each {|gem| require_without_bundler gem }
 
 require 'irb/completion'
-# Save irb sessions to history file
 require 'irb/ext/save-history'
 
-# Adds readline functionality
+# adds readline functionality
 IRB.conf[:USE_READLINE] = true
-# Auto indents suites
+# auto indents suites
 IRB.conf[:AUTO_INDENT] = true
-# Where history is saved
+# where history is saved
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
-# How many lines to save
+# how many lines to save
 IRB.conf[:SAVE_HISTORY] = 1000
 
 # wirble configuration, using only colours
-require_without_bundler 'wirble'
-
 Wirble.init(:skip_prompt => true, :skip_history => true,:init_colors=>true)
 
 # adding my colours of choice to defaults 
@@ -56,11 +53,7 @@ end
 
 # toy array
 def toy_a(n=10,&block)
-    if block_given?
-        Array.new(n,&block)
-    else
-        Array.new(n) {|i| i+1} 
-    end
+    block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
 end
 
 # toy hash
@@ -71,7 +64,7 @@ end
 def rails?(*args)
     version=args.first
     v2 = ($0 == 'irb' && ENV['RAILS_ENV']) 
-    v3 =  ($0 == 'script/rails' && Rails.env) 
+    v3 = ($0 == 'script/rails' && Rails.env) 
     case version
     when 2
         return v2
