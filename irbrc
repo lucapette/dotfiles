@@ -58,7 +58,7 @@ end
 
 # toy hash
 def toy_h(n=10)
-    Hash[a(n).zip(a(n){|c| (96+(c+1)).chr})]
+    Hash[toy_a(n).zip(toy_a(n){|c| (96+(c+1)).chr})]
 end
 
 # detects a rails console, cares about version
