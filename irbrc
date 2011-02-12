@@ -17,7 +17,10 @@ def require_without_bundler(*gems)
     }
 end
 
-%w{wirble map_by_method}.each {|gem| require_without_bundler gem }
+%w{wirble map_by_method sketches}.each {|gem| require_without_bundler gem }
+
+# edit irb lines from vim
+Sketches.config :editor => 'vim'
 
 require 'irb/completion'
 require 'irb/ext/save-history'
