@@ -8,6 +8,8 @@ set completeopt=longest,menuone
 set dictionary=/usr/share/dict/words
 set directory=/tmp
 set expandtab
+set gdefault
+set grepprg=ack
 set history=50
 set hlsearch
 set incsearch
