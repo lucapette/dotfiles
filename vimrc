@@ -58,6 +58,11 @@ imap  <silent> <F5> <Esc> gg=G<CR>
 imap  <silent> <F9> <Esc> :set spell!<CR>
 imap  <silent> <C-t> <Esc> :FuzzyFinderTextMate<CR>
 
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
+
 "Do not lost block selection after indentation. Such a good thing!
 vmap > >gv
 vmap < <gv
