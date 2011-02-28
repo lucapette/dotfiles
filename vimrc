@@ -50,13 +50,13 @@ map   <silent> <F2> :write<CR>
 map   <silent> <F3> :set invnumber<CR>
 map   <silent> <F5> gg=G<CR>
 map   <silent> <F9> :set spell!<CR>
-map   <silent> <C-R> :FuzzyFinderTextMate<CR>
+map   <silent> <C-t> :FuzzyFinderTextMate<CR>
 
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
 imap  <silent> <F5> <Esc> gg=G<CR>
 imap  <silent> <F9> <Esc> :set spell!<CR>
-imap  <silent> <C-R> <Esc> :FuzzyFinderTextMate<CR>
+imap  <silent> <C-t> <Esc> :FuzzyFinderTextMate<CR>
 
 "Do not lost block selection after indentation. Such a good thing!
 vmap > >gv
