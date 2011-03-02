@@ -54,14 +54,18 @@ class Object
     end
 end
 
-# toy array
-def toy_a(n=10,&block)
+# toys methods to play with.
+# Stealed from https://gist.github.com/807492
+class Array
+  def self.toy(n=10,&block)
     block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
-end
+  end
+end   
 
-# toy hash
-def toy_h(n=10)
-    Hash[toy_a(n).zip(toy_a(n){|c| (96+(c+1)).chr})]
+class Hash
+  def self.toy(n=10)
+    Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
+  end
 end
 
 # detects a rails console, cares about version
