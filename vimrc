@@ -32,6 +32,8 @@ set textwidth=78
 set wildignore=*.bak,*.o,*.e,*~
 set wildmenu
 
+" I don't remember where I stole the initial colour scheme.
+" Furthermore I don't like the name.
 colorscheme lucapette
 
 syntax on
@@ -50,18 +52,18 @@ map   <silent> <F2> :write<CR>
 map   <silent> <F3> :set invnumber<CR>
 map   <silent> <F5> gg=G<CR>
 map   <silent> <F9> :set spell!<CR>
-map   <silent> <C-t> :FuzzyFinderTextMate<CR>
+map   <silent> <C-T> :FuzzyFinderTextMate<CR>
 
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
 imap  <silent> <F5> <Esc> gg=G<CR>
 imap  <silent> <F9> <Esc> :set spell!<CR>
-imap  <silent> <C-t> <Esc> :FuzzyFinderTextMate<CR>
+imap  <silent> <C-T> <Esc> :FuzzyFinderTextMate<CR>
 
-nmap <C-J> <C-W><C-J>
-nmap <C-K> <C-W><C-K>
-nmap <C-H> <C-W><C-H>
-nmap <C-L> <C-W><C-L>
+" select all plus yank all plus cut all
+nmap <C-A> ggVG
+nmap <C-Y> <c-a>y
+nmap <C-X> <c-a>x
 
 "Do not lost block selection after indentation. Such a good thing!
 vmap > >gv
