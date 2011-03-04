@@ -61,16 +61,12 @@ snippet module
 	module ${1:`substitute(Filename(), '^.', '\u&', '')`}
 		${2}
 	end
-# attr_reader
 snippet r
 	attr_reader :${1:attr_names}
-# attr_writer
 snippet w
 	attr_writer :${1:attr_names}
-# attr_accessor
 snippet rw
 	attr_accessor :${1:attr_names}
-# def method_missing
 snippet mm
 	def method_missing(meth, *args, &blk)
 		${1}
@@ -95,29 +91,13 @@ snippet do
 	do |${1:variable}|
 		${2}
 	end
-snippet params
-	params[:${1:id}]
-snippet redirect redirect action id
-	redirect_to :action => "${1:show}", :id => ${2:@item}
-snippet redirect redirect _path
-	redirect_to(${1:item}_path})
-snippet redirect redirect controller action
-	redirect_to :controller => "${1:controller}", :action => "${2:action}"
-snippet redirect redirect controller 
-	redirect_to :controller => "${1:items}"
-snippet redirect redirect action
-	redirect_to :action => "${1:index}"
-snippet render render action
-	render :action => "${1:action}"
-snippet render render action layout
-	render :action => "${1:action}", :layout => "${2:layoutname}"
-snippet render nothing
-	render :nothing => ${1:true}
-snippet render partial
-	render :partial => "${1:item}"
+snippet redirect path 
+	redirect_to ${1:path}
+snippet redirect message
+	redirect_to ${1:path}, :${2:notice} => "${3:message}"
 snippet accepts
 	accepts_nested_attributes_for :${1:association_name}
-snippet info
+snippet log
 	logger.info("${1}")
 snippet debug
 	logger.debug("${1:message}")
@@ -135,3 +115,7 @@ snippet scope scope name condition
 	scope :${1:name}, ${2:condition}
 snippet scope scope name lambda
 	scope :${1:name}, lambda { |${2:param}| ${3:function} }
+snippet find
+	@${1:item} = ${2:Model}.find(params[:${3:id}])
+snippet utf
+	# coding: UTF-8

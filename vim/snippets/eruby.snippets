@@ -24,18 +24,8 @@ snippet admin?
 	<% end %>
 snippet mail_to
 	<%= mail_to("${1:address}",${2:text})  %>
-snippet link_to link_to path
-	<%= link_to("${1}",${2}_path)  %>
-snippet link_to link_to model
-	<%= link_to ${1:model}.${2:attribute}, $1  %>
-snippet link_to link_to action
-	<%= link_to "${1:text}", :action => "${2:index}  %>
-snippet link_to link_to controller action
-	<%= link_to "${1:text}", :controller => "${2:items}", :action => "${3:index}" %>
-snippet link_to link_to action id
-	<%= link_to "${1:text}", :action => "${2:edit}", :id => ${3:@item} %>
-snippet link_to link_to controller action id
-	<%= link_to "${1:text}", :controller => "${2:items}", :action=>"${3:edit}", :id => ${4:@item} %>
+snippet link_to link_to
+	<%= link_to("${1}",${2})  %>
 snippet f.label
 	<%= f.label :${1:attribute} %>
 snippet f.checkbox
