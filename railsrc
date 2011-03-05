@@ -22,8 +22,12 @@ enable_logger
 
 # prints nice informations
 # about a Model
-def show(model)
-    y model.column_names.sort
+def show(object)
+    y object.class == Class ? object.column_names.sort : object.class.column_names.sort
+end
+
+def tables
+    y ActiveRecord::Base.connection.tables
 end
 
 # hirb enabled by default
