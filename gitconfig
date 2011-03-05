@@ -9,6 +9,7 @@
 [alias]
     ck = checkout
     df = diff
+    latest = diff @{1}
     st = status
     graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [color]
