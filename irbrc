@@ -1,5 +1,21 @@
 require 'rubygems'
 
+# inspired by
+# http://tagaholic.me/2005/10/08/irb-history-itches-eliminated.html
+def history_a(n=Readline::HISTORY.size - 1)
+    size=Readline::HISTORY.size - 1 # excluding current command
+    Readline::HISTORY.to_a[(size - n + 1)..size-1]
+end
+
+def h(n=10)
+    size=Readline::HISTORY.size - 1
+    puts ((size - n+1)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
+end
+
+def h!(start)
+    eval "#{history_a[start-1]}"
+end
+
 # inspired by https://gist.github.com/794915
 # I've changed it a bit, it works fine for me now
 # but i'm still searching for a better solution
