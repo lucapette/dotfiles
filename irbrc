@@ -50,6 +50,9 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 # how many lines to save
 IRB.conf[:SAVE_HISTORY] = 1000
 
+# don't save duplicates
+# IRB.conf[:AT_EXIT].unshift Proc.new {puts "bye-bye"}
+
 # wirble configuration, using only colours
 Wirble.init(:skip_prompt => true, :skip_history => true,:init_colors=>true)
 
@@ -94,3 +97,6 @@ end
 
 # loading rails configuration if it is running as a rails console
 load File.dirname(__FILE__) + '/.railsrc' if rails?
+
+# my irb is polite
+IRB.conf[:AT_EXIT] << Proc.new {puts "bye-bye"}
