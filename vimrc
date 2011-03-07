@@ -54,12 +54,17 @@ map   <silent> <F3> :set invnumber<CR>
 map   <silent> <F5> gg=G<CR>
 map   <silent> <F9> :set spell!<CR>
 map   <silent> <C-T> :FuzzyFinderTextMate<CR>
+map  <C-N> :cn<CR>
+map  <C-P> :cp<CR>
 
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
 imap  <silent> <F5> <Esc> gg=G<CR>
 imap  <silent> <F9> <Esc> :set spell!<CR>
 imap  <silent> <C-T> <Esc> :FuzzyFinderTextMate<CR>
+
+nnoremap <silent> <F4> :NERDTreeToggle `=CodePath()`<cr>
+inoremap <silent> <F4> <Esc>:NERDTreeToggle `=CodePath()` <cr>
 
 " select all plus yank all plus cut all
 nmap <C-A> ggVG
@@ -80,9 +85,6 @@ imap <C-@> <C-Space>
 
 "NERDTree plugin config
 let g:NERDTreeHijackNetrw = 1
-
-nnoremap <silent> <F4> :NERDTreeToggle `=CodePath()`<cr>
-inoremap <silent> <F4> <Esc>:NERDTreeToggle `=CodePath()` <cr>
 
 "FuzzyFinderTextMate Config
 autocmd User Rails let g:fuzzy_ignore = 'tmp/**/*,*.png,*.jpg'
