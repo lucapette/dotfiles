@@ -21,6 +21,7 @@ set number
 set numberwidth=1
 set pastetoggle=<F12>
 set ruler
+set shell=/bin/bash\ -i
 set shiftwidth=4
 set showcmd
 set showmatch
