@@ -1,21 +1,5 @@
 require 'rubygems'
 
-# inspired by
-# http://tagaholic.me/2005/10/08/irb-history-itches-eliminated.html
-def history_a(n=Readline::HISTORY.size - 1)
-    size=Readline::HISTORY.size - 1 # excluding current command
-    Readline::HISTORY.to_a[(size - n + 1)..size-1]
-end
-
-def h(n=10)
-    size=Readline::HISTORY.size - 1
-    puts ((size - n+1)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
-end
-
-def h!(start)
-    eval "#{history_a[start-1]}"
-end
-
 # inspired by https://gist.github.com/794915
 # I've changed it a bit, it works fine for me now
 # but i'm still searching for a better solution
@@ -51,7 +35,35 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 IRB.conf[:SAVE_HISTORY] = 1000
 
 # don't save duplicates
-# IRB.conf[:AT_EXIT].unshift Proc.new {puts "bye-bye"}
+IRB.conf[:AT_EXIT].unshift Proc.new {
+    no_dups = []
+    Readline::HISTORY.each_with_index { |e,i|
+        begin
+            no_dups << e if Readline::HISTORY[i] != Readline::HISTORY[i+1]
+        rescue IndexError
+        end
+    }
+    Readline::HISTORY.clear
+    no_dups.each { |e|
+        Readline::HISTORY.push e
+    }
+}
+
+# inspired by
+# http://tagaholic.me/2005/10/08/irb-history-itches-eliminated.html
+def history_a(n=Readline::HISTORY.size - 1)
+    size=Readline::HISTORY.size - 1 # excluding current command
+    Readline::HISTORY.to_a[(size - n + 1)..size-1]
+end
+
+def h(n=10)
+    size=Readline::HISTORY.size - 1
+    puts ((size - n+1)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
+end
+
+def h!(start)
+    eval "#{history_a[start-1]}"
+end
 
 # wirble configuration, using only colours
 Wirble.init(:skip_prompt => true, :skip_history => true,:init_colors=>true)
@@ -76,15 +88,15 @@ end
 # toys methods to play with.
 # Stealed from https://gist.github.com/807492
 class Array
-  def self.toy(n=10,&block)
-    block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
-  end
+    def self.toy(n=10,&block)
+        block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
+    end
 end   
 
 class Hash
-  def self.toy(n=10)
-    Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
-  end
+    def self.toy(n=10)
+        Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
+    end
 end
 
 # detects a rails console, cares about version
