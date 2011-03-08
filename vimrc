@@ -27,6 +27,7 @@ set showcmd
 set showmatch
 set smartcase
 set spelllang=en_gb
+set splitright
 set tabstop=4
 set term=gnome-256color
 set textwidth=78
