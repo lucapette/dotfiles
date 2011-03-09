@@ -57,6 +57,7 @@ map   <silent> <F9> :set spell!<CR>
 map   <silent> <C-T> :FuzzyFinderTextMate<CR>
 map  <C-N> :cn<CR>
 map  <C-P> :cp<CR>
+map " ci"
 
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>

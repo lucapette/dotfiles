@@ -63,6 +63,8 @@ snippet style
 	<%= stylesheet_link_tag ${1::all} %>
 snippet javascript_include_tag
 	<%= javascript_include_tag ${1::all}  %>
+snippet paginate 
+	<%= paginate(@${1:items}) %>
 snippet content_for
 	<% content_for :${1:part} do -%>
 		$2
