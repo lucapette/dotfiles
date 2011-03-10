@@ -18,47 +18,43 @@ snippet unless
 	<% end %>
 snippet title
 	<% title "${1:title}"  %>
-snippet admin?
-	<% if @$1.logged_in? && @${1:current_user}.admin?  %>
-		<% $1 %>
-	<% end %>
 snippet mail_to
 	<%= mail_to("${1:address}",${2:text})  %>
-snippet link_to link_to
+snippet link_to
 	<%= link_to("${1}",${2})  %>
-snippet f.label
+snippet label
 	<%= f.label :${1:attribute} %>
-snippet f.checkbox
+snippet checkbox
 	<%= f.check_box :${1:attribute}  %>
-snippet image_tag
-	<%= image_tag "$1${2:.png}" %>
-snippet f.text_field
-	<%= f.text_field :${1:attribute}  %>
-snippet f.file
+snippet text_field
+	<%= text_field :${1:attribute}  %>
+snippet file
 	<%= f.file_field :${1:attribute}  %>
+snippet fields_for
+	<%= f.fields_for :${1:model} do |${2:item}|
+		$3
+	<% end %>
+snippet password
+	<%= f.password_field :${1:attribute}  %>
+snippet text_area
+	<%= f.text_area :${1:attribute}  %>
+snippet radio
+	<%= f.radio_button :${1:attribute}, :${2:tag_value}  %>
+snippet hidden
+	<%= f.hidden_field :${1:attribute}  %>
+snippet submit
+	<%= f.submit %>
 snippet form_for
 	<%= form_for @${1:model} do |f| %>
 		${2}
 		<%= f.submit %>
 	<% end %>
-snippet f.fields_for
-	<%= f.fields_for :${1:model} do |${2:item}|
-		$3
-	<% end %>
-snippet f.password
-	<%= f.password_field :${1:attribute}  %>
-snippet f.text_area
-	<%= f.text_area :${1:attribute}  %>
-snippet f.radio
-	<%= f.radio_button :${1:attribute}, :${2:tag_value}  %>
-snippet f.hidden
-	<%= f.hidden_field :${1:attribute}  %>
 snippet render render
 	<%= render "${1:item}"  %>
 snippet render render partial
 	<%= render :partial => "${1:item}"  %>
-snippet submit
-	<%= submit_tag "${1:text}"  %>
+snippet image_tag
+	<%= image_tag "$1${2:.png}" %>
 snippet style
 	<%= stylesheet_link_tag ${1::all} %>
 snippet javascript_include_tag
