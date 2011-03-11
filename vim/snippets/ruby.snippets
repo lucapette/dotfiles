@@ -63,6 +63,16 @@ snippet map
 	map {|${1:e}| ${2} $1 }
 snippet select
 	select {|${1:e}| ${2} $1 }
+snippet each
+	each { |${1:e}| ${2} $1 }
+snippet sort
+	sort { |${1:a}, ${2:b}| $1 <=> $2 }
+snippet sort_by
+	sort_by { |${1:e}| $1.${2:method} }
+snippet all
+	all? { |${1:e}| $1.${2:method}?  }
+snippet any
+	any? { |${1:e}| $1.${2:method}?  }
 snippet find
 	@${1:item} = ${2:Model}.find(params[:${3:id}])
 snippet scope scope name condition
