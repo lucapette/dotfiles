@@ -22,26 +22,31 @@ snippet mail_to
 	<%= mail_to("${1:address}",${2:text})  %>
 snippet link_to
 	<%= link_to("${1}",${2})  %>
-snippet label
-	<%= f.label :${1:attribute} %>
 snippet checkbox
-	<%= f.check_box :${1:attribute}  %>
+	<%= f.label :${1:attribute} %>
+	<%= f.check_box :$1  %>
 snippet text_field
-	<%= text_field :${1:attribute}  %>
-snippet file
-	<%= f.file_field :${1:attribute}  %>
+	<%= f.label :${1:attribute} %>
+	<%= f.text_field :$1 %>
+snippet file_field
+	<%= f.label :${1:attribute} %>
+	<%= f.file_field :$1  %>
+snippet password_field
+	<%= f.label :${1:attribute} %>
+	<%= f.password_field :$1  %>
+snippet text_area
+	<%= f.label :${1:attribute} %>
+	<%= f.text_area :$1 %>
+snippet radio_button
+	<%= f.label :${1:attribute} %>
+	<%= f.radio_button :$1, :${2:tag_value}  %>
+snippet hidden_field
+	<%= f.label :${1:attribute} %>
+	<%= f.hidden_field :${1:attribute}  %>
 snippet fields_for
 	<%= f.fields_for :${1:model} do |${2:item}|
 		$3
 	<% end %>
-snippet password
-	<%= f.password_field :${1:attribute}  %>
-snippet text_area
-	<%= f.text_area :${1:attribute}  %>
-snippet radio
-	<%= f.radio_button :${1:attribute}, :${2:tag_value}  %>
-snippet hidden
-	<%= f.hidden_field :${1:attribute}  %>
 snippet submit
 	<%= f.submit %>
 snippet form_for
