@@ -34,6 +34,8 @@ set textwidth=78
 set wildignore=*.bak,*.o,*.e,*~
 set wildmenu
 
+set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]%=\ [%p%%]\ [%L]
+
 " I don't remember where I stole the initial colour scheme.
 " Furthermore I don't like the name.
 colorscheme lucapette
