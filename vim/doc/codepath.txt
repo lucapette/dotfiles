@@ -1,0 +1,49 @@
+*codepath.txt*   codepath plugin documentation
+
+|codepath-introduction|       Introduction
+|codepath-configuration|      Configuration
+|codepath-planned-features|   Planned Features
+|codepath-copyright|          Copyright
+
+
+Introduction *codepath-introduction*
+
+codepath.vim is a plugin that provides a simple function to obtain your code
+path directory if you have one. The concept is simple: I have a dir located
+in $HOME/code where i store all my projects and I want to set current project
+directory as root directory for plug-in like NERDTree and FuzzyFinderTextMate.
+To explain what I mean, please consider the following examples:
+
+    File Opened                                    CodePath() Result
+1. <codepath>/awesome-project/foo.rb         ->    <codepath>/awesome-project
+2. <codepath>/code/super-project/foo/bar.rb  ->    <codepath>/super-project
+3. /any/path/but/not/code/foo.rb             ->    /any/path/but/not/code
+
+So, the CodePath Function returns the "project" root if you open a file in any 
+subdirectory of your codepath and the directory itself if you open a file in
+any other location.
+
+Configuration *codepath-configuration* *g:codepath*
+
+The only configuration available now is the codepath directory location. You
+can set it in the following way:
+
+let g:codepath = "/your/dir"
+
+If you don't set g:codepath the codepath.vim will consider $HOME/code as your
+codepath directory.
+
+Planned Features *codepath-planned-features*
+
+At the moment, I haven't planned new features. I will add the
+multi-codepath features if I'll receive feedback about it. 
+It could be developed a windows-compatible version too but, about that, 
+I am absolutely sure I won't do it.
+
+Copyright *codepath-copyright*
+
+This program is free software. It comes without any warranty,
+to the extent permitted by applicable law. You can redistribute
+it and/or modify it under the terms of the Do What The Fuck You
+Want To Public License, Version 2, as published by Sam Hocevar.
+See http://sam.zoy.org/wtfpl/COPYING for more details.

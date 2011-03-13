@@ -88,6 +88,10 @@ imap <C-@> <C-Space>
 "NERDTree plugin config
 let g:NERDTreeHijackNetrw = 1
 
+"codepath.vim config
+let g:codepath_add_to_tags = 1
+let g:codepath_add_to_path = 1
+
 "FuzzyFinderTextMate Config
 autocmd User Rails let g:fuzzy_ignore = 'tmp/**/*,*.png,*.jpg'
 let g:fuzzy_path_display = 'highlighted_path'
