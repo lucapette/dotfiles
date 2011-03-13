@@ -61,8 +61,9 @@ def h(n=10)
     puts ((size - n+1)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
 end
 
-def h!(start)
-    eval "#{history_a[start-1]}"
+def h!(start, stop=nil)
+    stop=start unless stop
+    eval "#{history_a[start-1..stop-1].join("\n")}"
 end
 
 # wirble configuration, using only colours
