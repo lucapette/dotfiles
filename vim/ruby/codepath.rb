@@ -1,6 +1,6 @@
 class CodePath
 
-    VERSION='0.0.2'
+    VERSION='0.0.3'
 
     def initialize(code_dir)
         @code_dir = code_dir
@@ -16,7 +16,7 @@ class CodePath
     end
 
     def subdirs(path)
-        Dir.glob(File.join(path,"**/*")).select { |f| File.directory?(f) }
+        Dir.glob(File.join(path,"**/*")).select { |f| File.directory?(f) }.join(",")
     end  
 
     def codedir?(current_dir)

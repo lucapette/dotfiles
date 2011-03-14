@@ -34,30 +34,6 @@ endif
 
 let loadedcode_path = 1
 
-" stolen from rails.vim
-function! s:pathjoin(...) abort
-  let i = 0
-  let path = ""
-  while i < a:0
-    if type(a:000[i]) == type([])
-      let list = a:000[i]
-      let j = 0
-      while j < len(list)
-        let escaped = substitute(list[j],'[\\, ]','\\&','g')
-        if exists("+shellslash") && !&shellslash
-          let escaped = substitute(escaped,'^\(\w:\\\)\\','\1','')
-        endif
-        let path .= ',' . escaped
-        let j += 1
-      endwhile
-    else
-      let path .= "," . a:000[i]
-    endif
-    let i += 1
-  endwhile
-  return substitute(path,'^,','','')
-endfunction
-
 ruby << RUBY
 require "#{ENV['HOME']}/.vim/ruby/codepath"
 def codepath
@@ -75,16 +51,13 @@ RUBY
 endfunction
 
 if exists("g:codepath_add_to_path")
-    let path_dirs = []
     ruby << RUBY
     current_dir = VIM.evaluate("getcwd()")
     if codepath.codedir?(current_dir)
-        for dir in codepath.subdirs(VIM.evaluate("CodePath()"))
-           VIM.evaluate("add(path_dirs,\"#{dir}\")")
-        end
+        subdirs_path=codepath.subdirs(VIM.evaluate("CodePath()"))
+        VIM.set_option("path+=#{subdirs_path}")
     end
 RUBY
-    let &path = &path . s:pathjoin(path_dirs)
 endif
 
 if exists("g:codepath_add_to_tags")
