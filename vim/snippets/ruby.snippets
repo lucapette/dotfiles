@@ -21,6 +21,10 @@ snippet unless
 	unless ${1:condition}
 		${2}
 	end
+snippet for
+	for ${1:element} in ${2:collection}
+		${3} $1
+	end
 snippet class
 	class ${1:`substitute(Filename(), '^.', '\u&', '')`}
 		${2}

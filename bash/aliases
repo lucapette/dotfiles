@@ -1,6 +1,7 @@
 alias 8="rvm 1.8.7"
 alias 9="rvm 1.9.2"
 alias ack="ack-grep"
+alias c="cd $HOME/code"
 alias cl='clear'
 alias cls='cl ; ls'
 alias cr2jpg="ufraw-batch *.CR2 --wb=auto --exposure=1.0 --out-type=jpeg --compression=100"
@@ -19,6 +20,7 @@ alias nautilus='nautilus .'
 alias old='cd $OLDPWD'
 alias ps='ps aux | more'
 alias psgrep='ps | grep'
+alias rgrep="rake routes | grep"
 alias rm='rm -i'
 alias vi="vim -p"
 alias vim="vim -p"
@@ -26,4 +28,3 @@ alias w+='sudo chmod +w'
 alias w-='sudo chmod -w'
 alias x+='sudo chmod +x'
 alias x-='sudo chmod -x'
-alias rgrep="rake routes | grep"
