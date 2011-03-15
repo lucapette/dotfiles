@@ -51,14 +51,26 @@ IRB.conf[:AT_EXIT].unshift Proc.new {
 
 # inspired by
 # http://tagaholic.me/2005/10/08/irb-history-itches-eliminated.html
-def history_a(n=Readline::HISTORY.size - 1)
-    size=Readline::HISTORY.size - 1 # excluding current command
-    Readline::HISTORY.to_a[(size - n + 1)..size-1]
+def history_a(n=Readline::HISTORY.size)
+    size=Readline::HISTORY.size - 1  # excluding current command
+    Readline::HISTORY.to_a[(size - n)..size-1]
+end
+
+def decorate_h(n)
+    size=Readline::HISTORY.size - 1
+    ((size - n)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
 end
 
 def h(n=10)
-    size=Readline::HISTORY.size - 1
-    puts ((size - n+1)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
+    entries = decorate_h(n)
+    puts entries
+    entries.size
+end
+
+def hgrep(word)
+   matched=decorate_h(Readline::HISTORY.size - 1).select {|h| h.match(word)}
+   puts matched
+   matched.size
 end
 
 def h!(start, stop=nil)
