@@ -12,6 +12,7 @@ set gdefault
 set grepprg=ack
 set history=50
 set hlsearch
+set ignorecase
 set incsearch
 set laststatus=2
 set matchtime=4
@@ -70,6 +71,13 @@ imap  <silent> <C-T> <Esc> :FuzzyFinderTextMate<CR>
 nnoremap <silent> <F4> :NERDTreeToggle `=CodePath()`<cr>
 inoremap <silent> <F4> <Esc>:NERDTreeToggle `=CodePath()` <cr>
 
+" sane regex
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
 " select all plus yank all plus cut all
 nmap <C-A> ggVG
 nmap <C-Y> <c-a>y
@@ -78,6 +86,20 @@ nmap <C-X> <c-a>x
 "Do not lost block selection after indentation. Such a good thing!
 vmap > >gv
 vmap < <gv
+
+" Zen time
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+autocmd FocusLost * :wa
 
 "Code completion with ctrl-space
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
