@@ -52,12 +52,12 @@ IRB.conf[:AT_EXIT].unshift Proc.new {
 # inspired by
 # http://tagaholic.me/2005/10/08/irb-history-itches-eliminated.html
 def history_a(n=Readline::HISTORY.size)
-    size=Readline::HISTORY.size - 1  # excluding current command
+    size=Readline::HISTORY.size
     Readline::HISTORY.to_a[(size - n)..size-1]
 end
 
 def decorate_h(n)
-    size=Readline::HISTORY.size - 1
+    size=Readline::HISTORY.size
     ((size - n)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
 end
 
@@ -68,14 +68,22 @@ def h(n=10)
 end
 
 def hgrep(word)
-   matched=decorate_h(Readline::HISTORY.size - 1).select {|h| h.match(word)}
-   puts matched
-   matched.size
+    matched=decorate_h(Readline::HISTORY.size - 1).select {|h| h.match(word)}
+    puts matched
+    matched.size
 end
 
 def h!(start, stop=nil)
     stop=start unless stop
-    eval "#{history_a[start-1..stop-1].join("\n")}"
+    code = history_a[start..stop]
+    code.each_with_index { |e,i|
+        irb_context.evaluate(e,i)
+    }
+    Readline::HISTORY.pop
+    code.each { |l|
+        Readline::HISTORY.push l
+    }
+    puts code
 end
 
 # wirble configuration, using only colours
