@@ -54,7 +54,7 @@ autocmd BufReadPost *
 "Personal command  mapping
 map   <silent> <F2> :write<CR>
 map   <silent> <F3> :set invnumber<CR>
-map   <silent> <F5> gg=G<CR>
+map   <silent> <F5> gg=G<CR><C-O><C-O>i
 map   <silent> <F9> :set spell!<CR>
 map   <silent> <C-T> :FuzzyFinderTextMate<CR>
 map  <C-N> :cn<CR>
@@ -63,7 +63,7 @@ map " ci"
 
 imap  <silent> <F2> <Esc> :write<CR>
 imap  <silent> <F3> <Esc> :set invnumber<CR>
-imap  <silent> <F5> <Esc> gg=G<CR>
+imap  <silent> <F5> <Esc> gg=G<CR><C-O><C-O>
 imap  <silent> <F9> <Esc> :set spell!<CR>
 imap  <silent> <C-T> <Esc> :FuzzyFinderTextMate<CR>
 
