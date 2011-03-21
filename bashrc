@@ -13,6 +13,11 @@ done
 # sourcing personal aliases
 source $HOME/.bash/aliases
 
+# aliases for my projects
+$HOME/.bash/code_dirs.rb > $HOME/.bash/codedirs
+
+source $HOME/.bash/codedirs
+
 # don't put duplicate lines in the history
 export HISTCONTROL=erasedups
 # nice formatting
