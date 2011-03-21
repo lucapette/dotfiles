@@ -13,11 +13,6 @@ done
 # sourcing personal aliases
 source $HOME/.bash/aliases
 
-# aliases for my projects
-$HOME/.bash/code_dirs.rb > $HOME/.bash/codedirs
-
-source $HOME/.bash/codedirs
-
 # don't put duplicate lines in the history
 export HISTCONTROL=erasedups
 # nice formatting
@@ -52,15 +47,6 @@ export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
-# rvm prompt function, currently not used.
-function __rvm_version {
-  local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
-  [ "$gemset" != "" ] && gemset="@$gemset"
-  local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
-  local full="$version$gemset"
-  [ "$full" != "" ] && echo "($full)"
-}
-
 # my personal prompt, with git branch
 violet="\[\033[0;35m\]"
 red="\[\033[0;31m\]"
@@ -71,3 +57,8 @@ black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
 
 PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$$black"
+
+# aliases for my projects
+$HOME/.bash/code_dirs.rb > $HOME/.bash/codedirs
+
+source $HOME/.bash/codedirs
