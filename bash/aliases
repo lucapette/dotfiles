@@ -1,6 +1,5 @@
 alias 8="rvm 1.8.7"
 alias 9="rvm 1.9.2"
-alias ack="ack-grep"
 alias c="rails c"
 alias cl='clear'
 alias cls='cl ; ls'
