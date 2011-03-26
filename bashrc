@@ -48,15 +48,13 @@ export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
 # my personal prompt, with git branch
-violet="\[\033[0;35m\]"
+white="\[\033[0;37m\]"
 red="\[\033[0;31m\]"
-cyan="\[\033[1;31m\]"
 blue="\[\033[1;34m\]"
 green="\[\033[0;32m\]"
-black="\[\033[0;30m\]"
 branch='$(__git_ps1 "(%s)")'
 
-PS1="$black[$blue\u$cyan@$blue\h \W$green $branch$black]$red\$$black"
+PS1="$red[$blue\u$red@$blue\h \W$green $branch$red]$green\$$white"
 
 # aliases for my projects
 $HOME/.bash/code_dirs.rb > $HOME/.bash/codedirs
