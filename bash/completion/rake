@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
 
 _rakecomplete() {
