@@ -1,0 +1,12 @@
+export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
+
+_generatorcomplete() {
+    recent=`ls -t .generators~ Gemfile Gemfile.lock 2> /dev/null | head -n 1`
+    if [[ $recent != '.generators~' ]]; then
+        rails runner 'require "rails/generators";Rails::Generators.lookup!;  puts Rails::Generators.subclasses.map{ |k| k.namespace }.sort' > .generators~
+    fi
+    COMPREPLY=($(compgen -W "`cat .generators~`" -- ${COMP_WORDS[COMP_CWORD]}))
+    return 0
+}
+
+complete -o default -o nospace -F _generatorcomplete rails g
