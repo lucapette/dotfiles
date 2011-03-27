@@ -11,8 +11,9 @@
     df = diff
     latest = diff @{1}
     ls = ls-files 
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     st = status
-    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    wc = whatchanged
 [color]
     ui = auto
   [color "branch"]
