@@ -47,14 +47,16 @@ export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
-# my personal prompt, with git branch
-white="\[\033[0;37m\]"
-red="\[\033[0;31m\]"
-blue="\[\033[1;34m\]"
-green="\[\033[0;32m\]"
-branch='$(__git_ps1 "(%s)")'
-
-PS1="$red[$blue\u$red@$blue\h \W$green $branch$red]$green\$$white"
+# my personal prompt, with colours, git current branch and ruby version
+function ps_function() {
+    white="\[\033[0;37m\]"
+    red="\[\033[0;31m\]"
+    blue="\[\033[1;34m\]"
+    green="\[\033[0;32m\]"
+    branch='$(__git_ps1 "(%s)")'
+    PS1="$red[$green ($(~/.rvm/bin/rvm-prompt v g)) $blue\u$red@$blue\h \W$green $branch$red]$green\$$white"
+}
+export PROMPT_COMMAND=ps_function
 
 # aliases for my projects
 $HOME/.bash/code_dirs.rb > $HOME/.bash/codedirs
