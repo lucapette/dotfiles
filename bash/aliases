@@ -7,6 +7,7 @@ alias cr2jpg="ufraw-batch *.CR2 --wb=auto --exposure=1.0 --out-type=jpeg --compr
 alias d="cd $HOME/Dropbox"
 alias h='history'
 alias hgrep='h | grep'
+alias jekyll="jekyll --server --pygments"
 alias la='ls -Al' # show hidden files
 alias lk='ls -lSr' # sort by size
 alias lr='ls -lR' # recursive ls
