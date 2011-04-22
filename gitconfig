@@ -4,7 +4,7 @@
 [apply]
     whitespace = nowarn
 [core]
-    editor = vim
+    editor = gvim --nofork
     excludesfile = ~/.gitignore
 [alias]
     ck = checkout
