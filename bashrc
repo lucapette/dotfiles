@@ -62,7 +62,3 @@ export PROMPT_COMMAND=ps_function
 $HOME/.bash/code_dirs.rb > $HOME/.bash/codedirs
 
 source $HOME/.bash/codedirs
-
-if [ "$PS1" ]; then
-    xmodmap ~/.Xmodmap
-fi
