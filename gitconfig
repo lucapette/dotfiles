@@ -7,11 +7,14 @@
     editor = gvim --nofork
     excludesfile = ~/.gitignore
 [alias]
+    co = commit
     ck = checkout
     df = diff
     latest = diff @{1}
-    ls = ls-files 
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ls = ls-files 
+    pl = pull origin master
+    ps = push origin master
     st = status
     wc = whatchanged
 [color]
