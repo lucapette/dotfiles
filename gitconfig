@@ -16,7 +16,7 @@
     pl = pull origin master
     ps = push origin master
     st = status
-    wc = whatchanged
+    wc = whatchanged --oneline
 [color]
     ui = auto
   [color "branch"]
