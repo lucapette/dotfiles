@@ -17,6 +17,7 @@
     ps = push origin master
     st = status
     wc = whatchanged --oneline
+    unpushed = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
 [color]
     ui = auto
   [color "branch"]
