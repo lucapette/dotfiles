@@ -13,7 +13,7 @@
     latest = diff @{1}
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ls = ls-files 
-    pl = pull origin master
+    pl = !git fetch && git merge FETCH_HEAD
     ps = push origin master
     st = status
     wc = whatchanged --oneline
