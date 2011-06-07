@@ -29,3 +29,4 @@ alias w+='sudo chmod +w'
 alias w-='sudo chmod -w'
 alias x+='sudo chmod +x'
 alias x-='sudo chmod -x'
+alias irb="irb -I."
