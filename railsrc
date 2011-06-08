@@ -5,16 +5,16 @@ require 'logger'
 require 'activerecord' if rails?(2)
 
 def enable_logger
-    log_to(Logger.new(STDOUT))
+  log_to(Logger.new(STDOUT))
 end
 
 def disable_logger
-    log_to(nil)
+  log_to(nil)
 end
 
 def log_to(logger)
-    ActiveRecord::Base.logger = logger
-    ActiveRecord::Base.clear_active_connections!
+  ActiveRecord::Base.logger = logger
+  ActiveRecord::Base.clear_active_connections!
 end
 
 # logging into console by default
@@ -23,11 +23,18 @@ enable_logger
 # prints nice informations
 # about a Model
 def show(object)
-    y object.class == Class ? object.column_names.sort : object.class.column_names.sort
+  y object.class == Class ? object.column_names.sort : object.class.column_names.sort
 end
 
 def tables
-    y ActiveRecord::Base.connection.tables
+  y ActiveRecord::Base.connection.tables
+end
+
+# I use this one to dig into Rails core_ext
+class Class
+  def core_ext
+    self.instance_methods.map {|m| [m, self.instance_method(m).source_location] }.select {|m| m[1] && m[1][0] =~/activesupport/}.map {|m| m[0]}.sort
+  end
 end
 
 # hirb enabled by default
