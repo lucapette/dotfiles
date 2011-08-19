@@ -41,7 +41,7 @@ up(){
     cd $d
 }
 
-export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$PATH
+export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
 # loading rvm and its completion FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
