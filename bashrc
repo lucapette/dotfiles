@@ -1,15 +1,20 @@
 # source global definitions
 if [ -f /etc/bash.bashrc ]; then
-    source /etc/bash.bashrc
+  source /etc/bash.bashrc
 fi
+
+if [ -f /etc/bash_completion ]; then
+ . /etc/bash_completion
+fi
+
 # private configs
 if [ -f $HOME/Dropbox/bashrc ]; then
-    source $HOME/Dropbox/bashrc
+  source $HOME/Dropbox/bashrc
 fi
+
 # sourcing completion files
-for file in $HOME/.bash/completion/*; do
-    source $file
-done
+for f in $(find $HOME/.bash/completion -name '*.bash'); do source $f; done
+
 # sourcing personal aliases
 source $HOME/.bash/aliases
 
@@ -24,21 +29,20 @@ export HISTSIZE=100000
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-# function to go to a parent directory of the current
-# directory. It takes the number of directory to ascend as
-# argument.
+# function to go to a parent directory of the current directory. 
+# It takes the number of directory to ascend as argument.
 up(){
-    local d=""
-    limit=$1
-    for ((i=1 ; i <= limit ; i++))
-    do
-        d=$d/..
-    done
-    d=$(echo $d | sed 's/^\///')
-    if [ -z "$d" ]; then
-        d=..
-    fi
-    cd $d
+  local d=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++))
+  do
+    d=$d/..
+  done
+  d=$(echo $d | sed 's/^\///')
+  if [ -z "$d" ]; then
+    d=..
+  fi
+  cd $d
 }
 
 export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
