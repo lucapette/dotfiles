@@ -7,17 +7,18 @@
     editor = gvim --nofork
     excludesfile = ~/.gitignore
 [alias]
-    co = commit
     ck = checkout
+    co = commit
     df = diff
     latest = diff @{1}
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    ls = ls-files 
+    ls = ls-files
     pl = !git fetch && git merge FETCH_HEAD
     ps = push origin master
     st = status
-    wc = whatchanged --oneline
+    sw = show
     unpushed = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
+    wc = whatchanged --oneline
 [color]
     ui = auto
   [color "branch"]
