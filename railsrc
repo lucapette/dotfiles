@@ -38,5 +38,5 @@ class Class
 end
 
 # hirb enabled by default
-require_without_bundler 'hirb'
+require 'hirb'
 Hirb.enable

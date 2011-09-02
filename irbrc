@@ -1,23 +1,18 @@
 require 'rubygems'
 
-# inspired by https://gist.github.com/794915
-# I've changed it a bit, it works fine for me now
-# but i'm still searching for a better solution
-def require_without_bundler(*gems)
-    unless defined?(::Bundler)
-        gems.each { |g| require g }
-        return
+# https://github.com/carlhuda/bundler/issues/183#issuecomment-1149953
+if defined?(::Bundler)
+  global_gemset = ENV['GEM_PATH'].split(':').grep(/ruby.*@global/).first
+  if global_gemset
+    all_global_gem_paths = Dir.glob("#{global_gemset}/gems/*")
+    all_global_gem_paths.each do |p|
+      gem_path = "#{p}/lib"
+      $LOAD_PATH << gem_path
     end
-    Dir.glob("#{Gem.path.first}/gems/*").map { |gem_path| 
-        gem_name=File.basename(gem_path).gsub(/-(\d\.?)+$/,'')
-        if gems.include?(gem_name)
-            $LOAD_PATH << "#{gem_path}/lib"
-            require gem_name
-        end
-    }
+  end
 end
 
-%w{yaih wirble map_by_method sketches}.each {|gem| require_without_bundler gem }
+%w{yaih wirble map_by_method sketches}.each {|gem| require gem }
 
 # edit irb lines from vim
 Sketches.config :editor => 'vim'
@@ -52,12 +47,12 @@ IRB.conf[:AT_EXIT].unshift Proc.new {
 # wirble configuration, using only colours
 Wirble.init(:skip_prompt => true, :skip_history => true,:init_colors=>true)
 
-# adding my colours of choice to defaults 
+# adding my colours of choice to defaults
 colors = Wirble::Colorize.colors.merge({
     # set the comma colour to blue
     :symbol => :light_green,
     :symbol_prefix => :light_green
-})  
+})
 
 Wirble::Colorize.colors = colors
 
@@ -75,7 +70,7 @@ class Array
     def self.toy(n=10,&block)
         block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
     end
-end   
+end
 
 class Hash
     def self.toy(n=10)
@@ -86,8 +81,8 @@ end
 # detects a rails console, cares about version
 def rails?(*args)
     version=args.first
-    v2 = ($0 == 'irb' && ENV['RAILS_ENV']) 
-    v3 = ($0 == 'script/rails' && Rails.env) 
+    v2 = ($0 == 'irb' && ENV['RAILS_ENV'])
+    v3 = ($0 == 'script/rails' && Rails.env)
     version == 2 ? v2 : version == 3 ? v3 : v2 || v3
 end
 
