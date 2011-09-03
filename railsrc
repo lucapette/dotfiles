@@ -19,6 +19,13 @@ end
 # logging into console by default
 enable_logger
 
+# devise login
+def login(options={})
+  options.reverse_merge! :url => '/users/sign_in', :user => {"login"=>"login", "password"=>"password"}
+  ApplicationController.allow_forgery_protection = false
+  app.post(options[:url] , "user" => options[:user])
+end
+
 # prints nice informations
 # about a Model.
 def show(object)
