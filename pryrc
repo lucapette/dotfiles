@@ -23,5 +23,17 @@ class Hash
   end
 end
 
+cs=Pry::CommandSet.new do
+  import Pry::Commands
+  command "lm","Alias for ls -m" do |args|
+   run "ls", "-m #{args}"
+  end
+  command "lM", "Alias for ls -M" do |args|
+   run "ls", "-M #{args}"
+  end
+end
+
+Pry.config.commands = cs
+
 # loading rails configuration if it is running as a rails console
 load File.dirname(__FILE__) + '/.railsrc' if defined?(Rails) && Rails.env
