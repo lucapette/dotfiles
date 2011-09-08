@@ -13,8 +13,8 @@ Furthermore, It loads *rvm* and sets a very personal prompt.
 I find very annoying that gem tries to download docs for each gem I try to install so I wrote this little file to speed up gem installations.
 * git
 My git config contains usual configs, some aliases and personal colours. It also contains a setting to load a global *.gitignore* file.
-* irb
-It uses *wirble* for colourize itself and *irb history* extension in order to remember previous commands. Furthermore it adds a method to Object to investigate interesting methods of a given object. Finally, it loads a *.rails* file if irb is called as a _rails console_ script. This rails file contains two methods to enable or disable ActiveRecord logger and also requires the *hirb* gem.
+* Pry
+Config coming soon
 * ackrc
 My preferences for "ack":http://betterthangrep.com
 * Xmodmap
