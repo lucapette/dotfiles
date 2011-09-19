@@ -5,7 +5,7 @@ Pry.config.editor = "gvim --nofork"
 Pry.hooks = { :after_session => proc { puts "bye-bye" if Pry.active_sessions == 1} }
 
 # Prompt with ruby version
-Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
+Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
 %w{map_by_method hirb}.each { |gem| require gem }
 
