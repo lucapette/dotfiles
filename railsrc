@@ -19,6 +19,9 @@ end
 # logging into console by default
 enable_logger
 
+# map_by_method
+ActiveRecord::Relation.send :include, MapByMethod
+
 # devise login
 def login(options={})
   options.reverse_merge! :url => '/users/sign_in', :user => {"login"=>"login", "password"=>"password"}
