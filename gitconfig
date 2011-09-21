@@ -10,12 +10,12 @@
     ck = checkout
     co = commit
     df = diff
+    gl = log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     latest = diff @{1}
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ls = ls-files
     pl = pull origin master
     ps = push origin master
-    rl = log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     st = status
     sw = show
     unpushed = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
