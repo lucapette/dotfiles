@@ -20,10 +20,8 @@ source $HOME/.bash/aliases
 
 # don't put duplicate lines in the history
 export HISTCONTROL=erasedups
-# nice formatting
-export HISTTIMEFORMAT='%F %T '
 # long list
-export HISTSIZE=100000
+export HISTSIZE=10000
 
 # grep options
 export GREP_OPTIONS='--color=auto'
