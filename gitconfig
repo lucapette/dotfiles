@@ -9,6 +9,7 @@
 [alias]
     ck = checkout
     co = commit
+    ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
     df = diff
     gl = log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     latest = diff @{1}
@@ -35,3 +36,5 @@
     added = yellow
     changed = green
     untracked = cyan
+[init]
+	templatedir = ~/.git_template
