@@ -20,6 +20,7 @@
     st = status -s
     sw = show
     unpushed = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
+    vi = !gvim `git st --porcelain | ruby -n -e'puts $_[3..-1]'`
     wc = whatchanged --oneline
 [color]
     ui = auto
