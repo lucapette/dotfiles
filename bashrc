@@ -16,7 +16,7 @@ fi
 for f in $(find $HOME/.bash/completion -name '*.bash'); do source $f; done
 
 # sourcing personal aliases
-source $HOME/.bash/aliases
+source $HOME/.bash/aliases.sh
 
 # don't put duplicate lines in the history
 export HISTCONTROL=erasedups
