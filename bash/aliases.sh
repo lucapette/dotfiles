@@ -1,5 +1,3 @@
-alias 8="rvm 1.8.7"
-alias 9="rvm 1.9.2@3.x"
 alias b="bundle exec"
 alias c="rails c"
 alias core_ext='cd $HOME/code/rails/activesupport/lib/active_support/core_ext'
@@ -8,7 +6,6 @@ alias d="cd $HOME/Dropbox"
 alias git="hub"
 alias h='history'
 alias hgrep='h | grep'
-alias irb="irb -I."
 alias jekyll="jekyll --server --pygments"
 alias la='ls -Al' # show hidden files
 alias lk='ls -lSr' # sort by size
