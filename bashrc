@@ -27,7 +27,7 @@ export HISTSIZE=10000
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-# function to go to a parent directory of the current directory. 
+# function to go to a parent directory of the current directory.
 # It takes the number of directory to ascend as argument.
 up(){
   local d=""
@@ -46,7 +46,7 @@ up(){
 # Disable flow-control
 stty -ixon
 
-export PATH=.:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
+export PATH=.:$HOME/bin:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
 # loading rvm and its completion FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
