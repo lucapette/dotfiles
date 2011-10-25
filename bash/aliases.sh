@@ -11,7 +11,6 @@ alias la='ls -Al' # show hidden files
 alias lk='ls -lSr' # sort by size
 alias lr='ls -lR' # recursive ls
 alias ls='ls -hF --color' # add colors for filetype recognition
-alias lx='ls -lXB' # sort by extension
 alias mkdir='mkdir -p'
 alias nautilus='nautilus .'
 alias old='cd $OLDPWD'
