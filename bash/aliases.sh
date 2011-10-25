@@ -1,12 +1,12 @@
-alias b="bundle exec"
-alias c="rails c"
+alias b='bundle exec'
+alias c='rails c'
 alias core_ext='cd $HOME/code/rails/activesupport/lib/active_support/core_ext'
-alias cr2jpg="ufraw-batch *.CR2 --wb=auto --exposure=1.0 --out-type=jpeg --compression=100"
-alias d="cd $HOME/Dropbox"
-alias git="hub"
+alias cr2jpg='ufraw-batch *.CR2 --wb=auto --exposure=1.0 --out-type=jpeg --compression=100'
+alias d='cd $HOME/Dropbox'
+alias git='hub'
 alias h='history'
 alias hgrep='h | grep'
-alias jekyll="jekyll --server --pygments"
+alias jekyll='jekyll --server --pygments'
 alias la='ls -Al' # show hidden files
 alias lk='ls -lSr' # sort by size
 alias lr='ls -lR' # recursive ls
@@ -16,12 +16,12 @@ alias nautilus='nautilus .'
 alias old='cd $OLDPWD'
 alias ps='ps aux | more'
 alias psgrep='ps | grep'
-alias rgrep="rake routes | grep"
+alias rgrep='rake routes | grep'
 alias rm='rm -i'
-alias rvmrc="rvm use 1.9.2@${PWD##*/} --create --rvmrc"
-alias s="rails s"
-alias vi="gvim -O"
-alias vim="gvim -O"
+alias rvmrc='rvm use 1.9.2@${PWD##*/} --create --rvmrc'
+alias s='rails s'
+alias vi='gvim -O'
+alias vim='gvim -O'
 alias w+='sudo chmod +w'
 alias w-='sudo chmod -w'
 alias x+='sudo chmod +x'
