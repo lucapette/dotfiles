@@ -19,6 +19,7 @@ alias ps='ps aux | more'
 alias psgrep='ps | grep'
 alias rgrep="rake routes | grep"
 alias rm='rm -i'
+alias rvmrc="rvm use 1.9.2@${PWD##*/} --create --rvmrc"
 alias s="rails s"
 alias vi="gvim -O"
 alias vim="gvim -O"
