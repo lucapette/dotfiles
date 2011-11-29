@@ -40,3 +40,5 @@
     untracked = cyan
 [init]
 	templatedir = ~/.git_template
+[web]
+	browser = google-chrome
