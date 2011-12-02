@@ -1,4 +1,4 @@
-#!/usr/bin/ruby 
+#!/usr/bin/env ruby 
 
 Dir["#{File.expand_path("~/code")}/*"].each { |file|
     if File.directory?(file)
