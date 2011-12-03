@@ -2,16 +2,16 @@ require 'rake'
 require 'find'
 require 'pathname'
 
-IGNORE_FILES = [/^\.gitignore$/, /^Rakefile$/,/^README.textile$/,/bash\/completion\/rails$/]
+IGNORE_FILES = [/^\.gitignore$/, /^Rakefile$/,/^README.markdown$/,/bash\/completion\/rails$/]
 
 files = `git ls-files`.split("\n")
 files.reject! { |f| IGNORE_FILES.any? { |re| f.match(re) } }
 
-files << "bash/completion/rails/rails.bash"
+files << 'bash/completion/rails/rails.bash'
 
 desc 'installs dotfiles in home dir'
 task :install do
-  targetdir=File.expand_path("~")
+  targetdir=File.expand_path('~')
   files.each do |file|
     if File.exists?(file)
       target_file = File.join(targetdir, ".#{file}")
@@ -24,17 +24,6 @@ task :install do
     end
   end
 
-end
-
-desc 'pulls from git repository'
-task :pull do
-  puts "Updating from git repository"
-  system("cd " << Dir.new(File.dirname(__FILE__)).path << " && git pull")
-end
-
-desc 'updates from git repository and then updates files in dir'
-task :update => ['pull', 'install'] do
-  puts "Update of dotfiles completed."
 end
 
 task :default => ['install']
