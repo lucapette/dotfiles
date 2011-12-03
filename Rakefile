@@ -1,20 +1,20 @@
-require 'rake'
-require 'find'
 require 'pathname'
 
-IGNORE_FILES = [/^\.gitignore$/, /^Rakefile$/,/^README.markdown$/,/bash\/completion\/rails$/]
+IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.markdown$/,/bash\/completion\/rails$/]
 
 files = `git ls-files`.split("\n")
+
 files.reject! { |f| IGNORE_FILES.any? { |re| f.match(re) } }
 
 files << 'bash/completion/rails/rails.bash'
 
+target_dir=File.expand_path('~')
+
 desc 'installs dotfiles in home dir'
 task :install do
-  targetdir=File.expand_path('~')
   files.each do |file|
     if File.exists?(file)
-      target_file = File.join(targetdir, ".#{file}")
+      target_file = File.join(target_dir, ".#{file}")
       FileUtils.mkdir_p File.dirname(target_file)
       FileUtils.cp file, target_file
 
@@ -22,6 +22,12 @@ task :install do
     else
       puts "#{file} removed?"
     end
+  end
+
+  Dir['bin/*'].each do |file|
+    target_file = File.join(target_dir, 'bin', Pathname.new(file).basename)
+    FileUtils.cp file, target_file, :preserve => true
+    puts "Installed #{file} to #{target_file}"
   end
 
 end
