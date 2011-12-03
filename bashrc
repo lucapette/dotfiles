@@ -46,7 +46,7 @@ up(){
 # Disable flow-control
 stty -ixon
 
-export PATH=.:$HOME/bin:$HOME/code/scripts/bash:$HOME/code/scripts/ruby:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
+export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
 # loading rvm and its completion FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
