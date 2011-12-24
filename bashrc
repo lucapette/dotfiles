@@ -48,6 +48,8 @@ stty -ixon
 
 export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
+export CDPATH=~/code:.
+
 # loading rvm and its completion FTW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
@@ -62,8 +64,3 @@ branch='$(__git_ps1 "(%s)")'
 PS1="$red[$green ($(~/.rvm/bin/rvm-prompt v g)) $blue\u$red@$blue\h \W$green $branch$red]$green\$$white"
 }
 export PROMPT_COMMAND=ps_function
-
-# aliases for my projects
-$HOME/.bash/code_dirs.rb > $HOME/.bash/codedirs
-
-source $HOME/.bash/codedirs
