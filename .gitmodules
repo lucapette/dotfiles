@@ -1,3 +1,0 @@
-[submodule "bash/completion/rails"]
-	path = bash/completion/rails
-	url = https://github.com/jweslley/rails_completion

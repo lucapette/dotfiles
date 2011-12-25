@@ -1,12 +1,10 @@
 require 'pathname'
 
-IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.markdown$/,/bash\/completion\/rails$/]
+IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.markdown$/]
 
 files = `git ls-files`.split("\n")
 
 files.reject! { |f| IGNORE_FILES.any? { |re| f.match(re) } }
-
-files << 'bash/completion/rails/rails.bash'
 
 target_dir=File.expand_path('~')
 
