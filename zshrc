@@ -4,7 +4,7 @@ ZSH_THEME="robbyrussell"
 
 CASE_SENSITIVE="true"
 
-plugins=(git rvm gem command-not-found)
+plugins=(bundler cake command-not-found rvm)
 
 source $ZSH/oh-my-zsh.sh
 
