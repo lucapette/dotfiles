@@ -9,7 +9,7 @@
 [alias]
     ck = checkout
     co = commit
-    ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
+    ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
     df = diff
     dw = diff --word-diff=color
     gl = log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -20,9 +20,8 @@
     ps = push origin master
     st = status -s
     sw = show
-    unpushed = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
+    un = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
     vi = !gvim -O `git st --porcelain | ruby -n -e'puts $_[3..-1]'`
-    migration = !gvim `find  db/migrate/* | tail -1`
     wc = whatchanged --oneline
 [color]
     ui = auto
