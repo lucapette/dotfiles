@@ -64,6 +64,8 @@ stty -ixon
 
 export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
+export CDPATH=:/home/lucapette/code
+
 function rvm_prompt() {
 echo "($(~/.rvm/bin/rvm-prompt v g))"
 }
