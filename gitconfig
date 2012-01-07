@@ -8,7 +8,7 @@
     excludesfile = ~/.gitignore
 [alias]
     ck = checkout
-    co = commit -a
+    co = commit
     ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
     df = diff
     dw = diff --word-diff=color
