@@ -17,7 +17,7 @@ alias c='rails c'
 alias core_ext='cd $HOME/code/rails/activesupport/lib/active_support/core_ext'
 alias cr2jpg='ufraw-batch *.CR2 --wb=auto --exposure=1.0 --out-type=jpeg --compression=100'
 alias d='cd $HOME/Dropbox'
-alias git='nocorrect git'
+alias git='nocorrect hub'
 alias h='history'
 alias jekyll='jekyll --server --pygments'
 alias lr='ls -lR' # recursive ls
@@ -34,6 +34,7 @@ alias s='rails s'
 alias vi='gvim -O'
 alias vim='gvim -O'
 
+compdef hub=git
 
 # don't put duplicate lines in the history
 export HISTCONTROL=erasedups
