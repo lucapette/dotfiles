@@ -69,10 +69,10 @@ export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools
 export CDPATH=:/home/lucapette/code
 
 function rvm_prompt() {
-echo "($(~/.rvm/bin/rvm-prompt v g))"
+echo "%{$fg_bold[green]%}$(~/.rvm/bin/rvm-prompt v g)"
 }
 
-PROMPT="%{$fg[green]%}\$(rvm_prompt) %{$fg_bold[blue]%}%c %{$reset_color%}\$(git_prompt_info) %{$fg_bold[red]%}$ %{$reset_color%}"
+PROMPT="\$(rvm_prompt) %{$fg_bold[cyan]%}%c %{$reset_color%}\$(git_prompt_info)%{$fg_bold[red]%} ➜%{$reset_color%} "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
