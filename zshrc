@@ -1,7 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
-
 CASE_SENSITIVE="true"
 
 plugins=(bundler cake command-not-found rvm)
@@ -36,15 +34,6 @@ alias vim='gvim -O'
 
 compdef hub=git
 
-# don't put duplicate lines in the history
-export HISTCONTROL=erasedups
-# long list
-export HISTSIZE=10000
-
-# grep options
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
-
 # function to go to a parent directory of the current directory.
 # It takes the number of directory to ascend as argument.
 up(){
@@ -60,9 +49,6 @@ up(){
   fi
   cd $d
 }
-
-# Disable flow-control
-stty -ixon
 
 export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
