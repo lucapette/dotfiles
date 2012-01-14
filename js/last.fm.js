@@ -1,0 +1,1 @@
+$('.LastAd').remove();
