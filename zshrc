@@ -52,7 +52,7 @@ up(){
 
 export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
-export CDPATH=:/home/lucapette/code
+export CDPATH=:$HOME/code
 
 function rvm_prompt() {
 echo "%{$fg_bold[green]%}$(~/.rvm/bin/rvm-prompt v g)"
