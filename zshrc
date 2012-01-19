@@ -4,6 +4,8 @@ CASE_SENSITIVE="true"
 
 plugins=(bundler cake command-not-found rvm)
 
+ZSH_CUSTOM=$HOME/.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # private configs
@@ -11,59 +13,11 @@ if [ -f $HOME/Dropbox/zshrc ]; then
   source $HOME/Dropbox/zshrc
 fi
 
-alias c='rails c'
-alias core_ext='cd $HOME/code/rails/activesupport/lib/active_support/core_ext'
-alias cr2jpg='ufraw-batch *.CR2 --wb=auto --exposure=1.0 --out-type=jpeg --compression=100'
-alias d='cd $HOME/Dropbox'
-alias git='nocorrect hub'
-alias h='history'
-alias jekyll='jekyll --server --pygments'
-alias lr='ls -lR' # recursive ls
-alias ls='ls -hF --color' # add colors for filetype recognition
-alias mi='gvim `find  db/migrate/* | tail -1`'
-alias mkdir='mkdir -p'
-alias nautilus='nautilus .'
-alias old='cd -'
-alias ps='ps aux | more'
-alias psgrep='ps | grep'
-alias rm='rm -i'
-alias rvmrc='rvm use 1.9.3@${PWD##*/} --create --rvmrc'
-alias s='rails s'
-alias vi='gvim -O'
-alias vim='gvim -O'
-
 compdef hub=git
-
-# function to go to a parent directory of the current directory.
-# It takes the number of directory to ascend as argument.
-up(){
-  local d=""
-  limit=$1
-  for ((i=1 ; i <= limit ; i++))
-  do
-    d=$d/..
-  done
-  d=$(echo $d | sed 's/^\///')
-  if [ -z "$d" ]; then
-    d=..
-  fi
-  cd $d
-}
 
 export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
 export CDPATH=:$HOME/code
-
-function rvm_prompt() {
-echo "%{$fg_bold[green]%}$(~/.rvm/bin/rvm-prompt v g)"
-}
-
-PROMPT="\$(rvm_prompt) %{$fg_bold[cyan]%}%c %{$reset_color%}\$(git_prompt_info)%{$fg_bold[red]%} ➜%{$reset_color%} "
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[green]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
 # loading rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
