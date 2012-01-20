@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 
 CASE_SENSITIVE="true"
 
-plugins=(bundler cake command-not-found rvm)
+plugins=(bundler cake command-not-found rake rvm)
 
 ZSH_CUSTOM=$HOME/.zsh
 
