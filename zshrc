@@ -19,5 +19,7 @@ export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools
 
 export CDPATH=:$HOME/code
 
+export EDITOR=vim
+
 # loading rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
