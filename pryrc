@@ -1,5 +1,5 @@
 # vim FTW
-Pry.config.editor = "gvim --nofork"
+Pry.config.editor = 'vim'
 
 # My pry is polite
 Pry.config.hooks.add_hook :after_session, :say_bye do
@@ -23,5 +23,24 @@ class Hash
   end
 end
 
-# loading rails configuration if it is running as a rails console
-load File.dirname(__FILE__) + '/.rails-rc' if defined?(Rails) && Rails.env
+if defined?(Rails) && Rails.env
+  require 'logger'
+
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  ActiveRecord::Base.clear_active_connections!
+
+  class Class
+    def core_ext
+      self.instance_methods.map {|m| [m, self.instance_method(m).source_location] }.select {|m| m[1] && m[1][0] =~/activesupport/}.map {|m| m[0]}.sort
+    end
+  end
+
+  require 'hirb'
+
+  # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
+  Pry.config.print = proc do |output, value|
+    Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
+  end
+
+  Hirb.enable
+end
