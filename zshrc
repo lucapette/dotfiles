@@ -2,6 +2,8 @@ ZSH=$HOME/.oh-my-zsh
 
 CASE_SENSITIVE="true"
 
+DISABLE_AUTO_TITLE="true"
+
 plugins=(bundler cake command-not-found rake rvm)
 
 ZSH_CUSTOM=$HOME/.zsh
