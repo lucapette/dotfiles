@@ -17,7 +17,7 @@ fi
 
 compdef hub=git
 
-export PATH=.:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
+export PATH=.:./bin:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
 
 export CDPATH=:$HOME/code
 
