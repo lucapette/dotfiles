@@ -15,11 +15,11 @@ fi
 
 compdef hub=git
 
-export PATH=.:./bin:$HOME/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools/:$PATH
-
 export CDPATH=:$HOME/code
 
 export EDITOR=vim
 
 # loading rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export PATH=.:./bin:$HOME/bin:$PATH
