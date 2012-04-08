@@ -2,6 +2,8 @@ ZSH=$HOME/.oh-my-zsh
 
 CASE_SENSITIVE="true"
 
+DISABLE_AUTO_TITLE="true"
+
 plugins=(command-not-found rake rbenv)
 
 ZSH_CUSTOM=$HOME/.zsh
