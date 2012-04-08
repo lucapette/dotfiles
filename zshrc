@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 
 CASE_SENSITIVE="true"
 
-plugins=(command-not-found rake rvm)
+plugins=(command-not-found rake rbenv)
 
 ZSH_CUSTOM=$HOME/.zsh
 
@@ -19,7 +19,4 @@ export CDPATH=:$HOME/code
 
 export EDITOR=vim
 
-# loading rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-export PATH=.:./bin:$HOME/bin:$PATH
+export PATH=.:$HOME/bin:$PATH

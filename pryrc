@@ -1,13 +1,11 @@
-# vim FTW
-Pry.config.editor = 'vim'
-
-# My pry is polite
-Pry.config.hooks.add_hook :after_session, :say_bye do
-  puts "bye-bye" if Pry.active_sessions == 1
+def require_without_bundler gem
+  gem_path = Dir.glob("#{Gem.path.first}/gems/#{gem}*/lib").first
+  $LOAD_PATH << gem_path
+  require gem
 end
 
-# Prompt with ruby version
-Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
+# vim FTW
+Pry.config.editor = 'vim'
 
 # Toys methods
 # See https://gist.github.com/807492
@@ -35,7 +33,7 @@ if defined?(Rails) && Rails.env
     end
   end
 
-  require 'hirb'
+  require_without_bundler 'hirb'
 
   # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
   Pry.config.print = proc do |output, value|
