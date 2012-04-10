@@ -40,5 +40,8 @@ if defined?(Rails) && Rails.env
     Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
   end
 
+  # https://github.com/pry/pry/wiki/Setting-up-Rails-or-Heroku-to-use-Pry#wiki-rails32up
+  extend Rails::ConsoleMethods
+
   Hirb.enable
 end
