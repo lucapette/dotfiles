@@ -21,4 +21,4 @@ export CDPATH=:$HOME/code
 
 export EDITOR=vim
 
-export PATH=.:$HOME/bin:$PATH
+export PATH=.:./bin:$HOME/bin:$PATH
