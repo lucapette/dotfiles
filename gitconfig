@@ -7,6 +7,7 @@
     editor = vim
     excludesfile = ~/.gitignore
 [alias]
+    ca = !git add . & git co
     ck = checkout
     co = commit
     ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
