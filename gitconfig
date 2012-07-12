@@ -18,11 +18,11 @@
     ls = ls-files
     pl = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git pull origin $GIT_CURRENT_BRANCH
     ps = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git push origin $GIT_CURRENT_BRANCH
-    rb = !git rebase -i HEAD~$(git un | ruby -n -e'END {puts $.}')
+    rb = !git rebase -i HEAD~$(git un | awk '{print $2}')
     st = status -s
     sw = show
     un = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
-    vi = !vim -O `git st --porcelain | ruby -n -e'puts $_[3..-1]'`
+    vi = !vim -O `git st --porcelain | awk '{ print $2 }'`
     wc = whatchanged --oneline
 [color]
     ui = auto
@@ -43,3 +43,5 @@
 	templatedir = ~/.git_template
 [web]
 	browser = google-chrome
+[credential]
+	helper = cache --timeout=3600
