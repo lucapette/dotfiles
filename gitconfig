@@ -11,6 +11,7 @@
     ck = checkout
     co = commit
     ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
+    dc = diff --cached
     df = diff
     dw = diff --word-diff=color
     latest = diff @{1}
