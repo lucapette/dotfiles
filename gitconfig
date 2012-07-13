@@ -44,3 +44,5 @@
 	browser = google-chrome
 [credential]
 	helper = cache --timeout=3600
+[merge]
+    tool = vimdiff
