@@ -8,7 +8,7 @@
     excludesfile = ~/.gitignore
 [alias]
     amend = commit --amend
-    ca = commit -a
+    ca = !git add -A && git commit
     ck = checkout
     co = commit
     ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
