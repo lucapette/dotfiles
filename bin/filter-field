@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+field="\$$1"
+
+awk "{ print $field }"
