@@ -17,5 +17,5 @@ bindkey "^[[4~" beep
 bindkey "^[OF" beep
 
 # Use ctrl_n and ctrl_p for history navigation
-bindkey '^n' up-line-or-search
-bindkey '^p' down-line-or-search
+bindkey '^n' down-line-or-search
+bindkey '^p' up-line-or-search
