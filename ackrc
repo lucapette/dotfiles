@@ -1,3 +1,13 @@
 --smart-case
---type-add
-js=.coffee,.eco
+--type-add=html=.html.erb,.html.haml
+--type-add=js=.coffee,.eco
+--type-set=cucumber=.feature
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=doc
+--ignore-dir=coverage
+--sort-files
+--color
+--follow
+--group
