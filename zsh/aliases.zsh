@@ -1,4 +1,3 @@
-alias c='rails c'
 alias cr2jpg='ufraw-batch *.CR2 --wb=auto --exposure=1.0 --out-type=jpeg --compression=100'
 alias git='hub'
 alias g='git'
