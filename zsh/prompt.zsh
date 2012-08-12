@@ -25,19 +25,3 @@ function git_status() {
 }
 
 PROMPT='$(ruby_version) %B%F{cyan}%c$RESET_COLOR$(git_branch_name)$(git_status)%F{red} ➜ $RESET_COLOR'
-
-# Right prompt for vi mode
-function zle-line-init zle-keymap-select {
-  zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-MODE_INDICATOR="%B%F{green}<<$RESET_COLOR"
-
-function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
-}
-
-RPS1='$(vi_mode_prompt_info)'
