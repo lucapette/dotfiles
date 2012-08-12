@@ -27,21 +27,12 @@ if defined?(Rails) && Rails.env
   ActiveRecord::Base.logger = Logger.new(STDOUT)
   ActiveRecord::Base.clear_active_connections!
 
-  class Class
-    def core_ext
-      self.instance_methods.map {|m| [m, self.instance_method(m).source_location] }.select {|m| m[1] && m[1][0] =~/activesupport/}.map {|m| m[0]}.sort
-    end
-  end
-
   require_without_bundler 'hirb'
 
   # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
   Pry.config.print = proc do |output, value|
     Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
   end
-
-  # https://github.com/pry/pry/wiki/Setting-up-Rails-or-Heroku-to-use-Pry#wiki-rails32up
-  extend Rails::ConsoleMethods
 
   Hirb.enable
 end
