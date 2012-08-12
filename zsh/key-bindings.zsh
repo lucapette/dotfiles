@@ -1,10 +1,5 @@
-# Vi is my home
-bindkey -v
-
-bindkey "^r" history-incremental-search-backward
-
-# Let backslash behaves sanely
-bindkey "^[[3~" delete-char
+# Yeah, it works great here
+bindkey -e
 
 # Force myself to not leave the home row
 bindkey '^[[A' beep
@@ -15,7 +10,3 @@ bindkey "^[OH" beep
 bindkey "^[[F"  beep
 bindkey "^[[4~" beep
 bindkey "^[OF" beep
-
-# Use ctrl_n and ctrl_p for history navigation
-bindkey '^n' down-line-or-search
-bindkey '^p' up-line-or-search
