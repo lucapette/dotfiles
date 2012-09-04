@@ -23,7 +23,7 @@
     st = status -s
     sw = show
     un = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
-    vi = !vim -O `git st --porcelain | grep -v 'D' | filter-field 2`
+    vi = !vim -O `git st --porcelain | grep -v 'D' | ff 2`
     wc = whatchanged --oneline
 [color]
     ui = auto
