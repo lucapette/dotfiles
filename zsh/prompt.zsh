@@ -3,7 +3,7 @@ setopt prompt_subst
 
 RESET_COLOR="%f%b"
 
-function ruby_version() { echo "%B%F{green}$(rbenv version-name)" }
+function ruby_version() { echo "%B%F{green}$(~/.rvm/bin/rvm-prompt)" }
 
 # get the name of the branch we are on
 function git_branch_name() {

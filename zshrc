@@ -1,7 +1,3 @@
-# rbenv for rubies
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
-
 # Load all my files
 for config_file ($HOME/.zsh/*.zsh) source $config_file
 
