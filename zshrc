@@ -33,6 +33,8 @@ export PATH=.:./bin:$HOME/bin:$PATH
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
+fpath=(~/.rvm/scripts/zsh/Completion $fpath)
+
 # Load the completion system
 autoload -U compinit
 compinit
