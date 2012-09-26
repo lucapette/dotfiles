@@ -1,7 +1,11 @@
 def require_without_bundler gem
-  gem_path = Dir.glob("#{Gem.path.first}/gems/#{gem}*/lib").first
-  $LOAD_PATH << gem_path
-  require gem
+  _gem_path = Dir.glob("#{Gem.path.grep(/global$/).first}/gems/#{gem}*/lib").first
+  if _gem_path
+    $LOAD_PATH << _gem_path
+    require gem
+  else
+    puts "Please put #{gem} in your global"
+  end
 end
 
 # vim FTW
