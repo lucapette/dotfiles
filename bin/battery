@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+# encoding: UTF-8
+
+info = `ioreg -rc "AppleSmartBattery"`
+
+battery = %w(ExternalConnected CurrentCapacity MaxCapacity IsCharging).inject({}) do |hash, property|
+  hash[property.to_sym] = info[/"#{property}" = (.*)$/, 1]; hash
+end
+
+percentage  = (battery[:CurrentCapacity].to_f / battery[:MaxCapacity].to_f * 100).to_i
+is_charging  = battery[:IsCharging] == "Yes"
+is_plugged_in = battery[:ExternalConnected] == "Yes"
+
+green  = "#[fg=green]"
+yellow = "#[fg=yellow]"
+red    = "#[fg=red]"
+reset  = "#[fg=reset]"
+
+if percentage > 60
+  color = green
+elsif percentage > 20
+  color = yellow
+else
+  color = red
+end
+
+output = color + (" " * ((percentage / 20) + 1))
+
+output = "#{output} #{ "⚡" if is_charging || is_plugged_in}"
+
+puts output += reset
