@@ -27,8 +27,7 @@ export CDPATH=:$HOME/code
 # Of course
 export EDITOR=vim
 
-# Add personal bin dir and bundle binstubs dir to PATH
-export PATH=.:./bin:$HOME/bin:$PATH
+export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
