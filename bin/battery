@@ -24,7 +24,7 @@ else
   color = red
 end
 
-output = color + (" " * ((percentage / 20) + 1))
+output = color + (" " * (percentage / 20))
 
 output = "#{output} #{ "⚡" if is_charging || is_plugged_in}"
 
