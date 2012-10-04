@@ -24,6 +24,10 @@ fi
 
 export CDPATH=:$HOME/code
 
+# LS colors
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 # Of course
 export EDITOR=vim
 
