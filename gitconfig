@@ -15,6 +15,7 @@
     dc = diff --cached
     df = diff
     dw = diff --word-diff=color
+    h  = help
     latest = diff @{1}
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     pl = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git pull origin $GIT_CURRENT_BRANCH
