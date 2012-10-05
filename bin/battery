@@ -24,7 +24,11 @@ else
   color = red
 end
 
-output = color + (" " * (percentage / 20))
+if is_charging
+  color = yellow
+end
+
+output = color + " (#{percentage}%)"
 
 output = "#{output} #{ "⚡" if is_charging || is_plugged_in}"
 
