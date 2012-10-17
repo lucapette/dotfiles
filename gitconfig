@@ -10,6 +10,7 @@
     amend = commit --amend
     ca = !git add -A && git commit
     ck = checkout
+    clean-branches = "!git branch --merged | grep -v '^*' | xargs git branch -d"
     co = commit
     ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
     dc = diff --cached
