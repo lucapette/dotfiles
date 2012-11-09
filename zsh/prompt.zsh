@@ -5,10 +5,15 @@ RESET_COLOR="%f%b"
 
 function ruby_version() { echo "%B%F{green}$(~/.rvm/bin/rvm-prompt)" }
 
-# get the name of the branch we are on
 function git_branch_name() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo " %B%F{green}${ref#refs/heads/}$RESET_COLOR"
+  ref=$(git symbolic-ref --short HEAD 2> /dev/null)
+  if [ -z "$ref" ]; then
+    ref=$(git reflog 2> /dev/null | grep checkout | head -n1 | awk '{print $NF}')
+  fi
+  if [ -z "$ref" ]; then
+    return
+  fi
+  echo " %B%F{green}$ref$RESET_COLOR"
 }
 
 # Get the status of the working tree
