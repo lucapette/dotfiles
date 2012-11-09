@@ -18,8 +18,8 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 # private configs
-if [ -f $HOME/Dropbox/zshrc ]; then
-  source $HOME/Dropbox/zshrc
+if [ -f $HOME/.zshrc_private ]; then
+  source $HOME/.zshrc_private
 fi
 
 export CDPATH=:$HOME/code
