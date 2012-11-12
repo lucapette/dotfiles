@@ -38,8 +38,6 @@
     untracked = cyan
 [init]
 	templatedir = ~/.git_template
-[web]
-	browser = google-chrome
 [credential]
 	helper = cache --timeout=3600
 [merge]
