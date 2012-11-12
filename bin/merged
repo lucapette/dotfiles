@@ -10,10 +10,11 @@ die() {
 usage() {
   cat << EOF
   usage: $0 options
-  -r show remote merged branches. Active by default.
-  -i ignored branches. Default: 'master|ci' with -r. '' with -i.
-  -l show local merged. Current branch and master are ignored.
-  -h show this message
+  -r [remote] Show remote merged branches. Active by default. remote defaults
+  to origin if not specified.
+  -i Ignored branches regex for remotes.
+  -l Show local merged. Current branch and master are ignored.
+  -h Show this message.
 EOF
 }
 
