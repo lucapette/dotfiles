@@ -8,8 +8,8 @@ die() {
 }
 
 usage() {
-  cat << EOF
-  usage: $0 options
+cat << EOF
+  usage: $0 options [delete]
   -r [remote] Show remote merged branches. Active by default. remote defaults
   to origin if not specified.
   -i Ignored branches regex for remotes.
@@ -19,7 +19,6 @@ EOF
 }
 
 git rev-parse 2> /dev/null || die "It looks like you're not in a git repo."
-
 
 branch_type='remote'
 
@@ -47,11 +46,23 @@ do
   esac
 done
 
-: ${remote_name:='origin'}
-: ${exclude_pattern:='master|ci'}
+: ${remote_name:="origin"}
+: ${exclude_pattern:="master|ci"}
 
-if [ $branch_type == 'local' ]; then
-  git branch --merged | grep -Ev '^\*|master'
+shift $((OPTIND-1))
+
+delete=$1
+
+if [ $branch_type == "local" ]; then
+  branches=$(git branch --merged | grep -Ev "^\*|master")
+  echo $branches
+  if [ "$delete" == "delete" ]; then
+    echo $branches | xargs git branch -d
+  fi
 else
-  git branch -r --merged | grep $remote_name | grep -Ev $exclude_pattern | cut -d '/' -f2
+  branches=$(git branch -r --merged | grep $remote_name | grep -Ev $exclude_pattern | cut -d '/' -f2)
+  echo $branches
+  if [ "$delete" == "delete" ]; then
+    echo $branches | xargs git push $remote_name --delete
+  fi
 fi
