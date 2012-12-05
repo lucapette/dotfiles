@@ -1,8 +1,9 @@
-alias git='hub'
 alias g='git'
+alias git='hub'
 alias h='history'
 alias jekyll='jekyll --server --pygments'
 alias ls='ls -hFG' # add colors for filetype recognition
+alias map="xargs -n1"
 alias mi='vi `find  db/migrate/* | tail -1`'
 alias mkdir='mkdir -p'
 alias o='open .'
