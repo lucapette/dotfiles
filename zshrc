@@ -33,6 +33,8 @@ export EDITOR=vim
 
 export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
+export NODE_PATH='/usr/local/share/npm/lib/node_modules/'
+
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
