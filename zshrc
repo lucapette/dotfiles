@@ -32,6 +32,9 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export EDITOR=vim
 
 export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
+
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export NODE_PATH='/usr/local/share/npm/lib/node_modules/'
 
