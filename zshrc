@@ -41,7 +41,7 @@ export NODE_PATH='/usr/local/share/npm/lib/node_modules/'
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh/completions /usr/local/share/zsh-completions $fpath)
 
 # Load the completion system
 autoload -U compinit

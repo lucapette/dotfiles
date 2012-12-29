@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+if [ -z "$1" ];
+then
+  tmux ls 2>/dev/null
+  exit
+fi
+
+project=$1
+
+cd $1
+
+if ! tmux has-session -t $project 2>/dev/null; then
+  tmux new-session -s $project -d
+  tmux set -t $project default-path "$PWD"
+fi
+
+tmux a -t $project
