@@ -5,6 +5,7 @@ alias h='history'
 alias jekyll='jekyll --server --pygments'
 alias ls='ls --color=auto' # add colors for filetype recognition
 alias mi='vi `find  db/migrate/* | tail -1`'
+alias map='xargs -n1'
 alias mkdir='mkdir -p'
 alias o='open .'
 alias ps='ps aux | more'
