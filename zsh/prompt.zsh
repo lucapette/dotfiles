@@ -3,7 +3,7 @@ setopt prompt_subst
 
 RESET_COLOR="%f%b"
 
-function ruby_version() { echo "%B%F{green}$(~/.rvm/bin/rvm-prompt v p)" }
+function ruby_version() { echo "%B%F{green}$(~/.rvm/bin/rvm-prompt v p g)" }
 
 function git_branch_name() {
   ref=$(git symbolic-ref --short HEAD 2> /dev/null)
