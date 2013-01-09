@@ -8,6 +8,7 @@
     excludesfile = ~/.gitignore
 [alias]
     amend = commit --amend
+    br = branch
     ca = !git add -A && git commit
     ck = checkout
     co = commit
