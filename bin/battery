@@ -28,8 +28,8 @@ if is_charging
   color = yellow
 end
 
-output = color + " (#{percentage}%)"
+output = color + "(#{percentage}%)"
 
-output = "#{output} #{ "⚡" if is_charging || is_plugged_in}"
+output = "#{output} #{ "" if is_charging || is_plugged_in}"
 
 puts output += reset
