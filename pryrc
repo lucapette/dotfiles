@@ -34,15 +34,17 @@ if defined?(Rails) && Rails.env
   end
 
   if defined?(DataMapper)
-   DataMapper::Logger.new($stdout, :debug)
+    DataMapper::Logger.new($stdout, :debug)
   end
 
   require_without_bundler 'hirb'
 
-  # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
-  Pry.config.print = proc do |output, value|
-    Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
-  end
+  if defined?(Hirb)
+    # https://github.com/cldwalker/hirb/issues/46#issuecomment-1870823
+    Pry.config.print = proc do |output, value|
+      Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
+    end
 
-  Hirb.enable
+    Hirb.enable
+  end
 end
