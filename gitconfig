@@ -7,9 +7,10 @@
     editor = vim
     excludesfile = ~/.gitignore
 [alias]
-    am = commit --amend
+    amend = commit --amend
     br = branch
     ck = checkout
+    ca = !git add -A . && git commit
     co = commit
     ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
     df = diff
