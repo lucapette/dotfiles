@@ -9,7 +9,6 @@
 [alias]
     amend = commit --amend
     br = branch
-    ca = !git add -A && git commit
     ck = checkout
     co = commit
     ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
@@ -18,7 +17,6 @@
     latest = diff @{1}
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ls = ls-files
-    ps = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git push origin $GIT_CURRENT_BRANCH
     rb = !git rebase -i HEAD~$(git un | awk 'END { print NR }')
     st = status -s
     sw = show
