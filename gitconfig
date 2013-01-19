@@ -7,7 +7,7 @@
     editor = vim
     excludesfile = ~/.gitignore
 [alias]
-    amend = commit --amend
+    am = commit --amend
     br = branch
     ck = checkout
     co = commit
