@@ -29,4 +29,4 @@ function git_status() {
   echo $STATUS
 }
 
-PROMPT='%F{red}%m $(ruby_version) %B%F{cyan}%c$RESET_COLOR$(git_branch_name)$(git_status)%F{red} ➜ $RESET_COLOR'
+PROMPT='$(ruby_version) %B%F{cyan}%c$RESET_COLOR$(git_branch_name)$(git_status)%F{red} ➜ $RESET_COLOR'
