@@ -1,5 +1,4 @@
 alias be='bundle exec'
-alias g='git'
 alias git='hub'
 alias h='history'
 alias jekyll='jekyll --server --pygments'

@@ -47,4 +47,5 @@ fpath=(~/.zsh/completions /usr/local/share/zsh-completions $fpath)
 autoload -U compinit
 compinit
 
+compdef g=git
 compdef hub=git
