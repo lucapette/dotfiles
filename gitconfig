@@ -18,7 +18,7 @@
     latest = diff @{1}
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ls = ls-files
-    rb = !git rebase -i HEAD~$(git un | awk 'END { print NR }')
+    rb = rebase -i @{u}
     st = status -s
     sw = show
     un = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
