@@ -20,7 +20,7 @@
     ls = ls-files
     rb = rebase -i @{u}
     sw = show
-    un = !git lg @{u}..HEAD
+    un = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
     vi = !vim -O `git status --porcelain | grep -v '^D' | ff 2`
     wc = whatchanged --oneline
 [color]
