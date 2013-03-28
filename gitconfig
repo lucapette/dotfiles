@@ -19,10 +19,9 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ls = ls-files
     rb = rebase -i @{u}
-    st = status -s
     sw = show
     un = !git lg @{u}..HEAD
-    vi = !vim -O `git st --porcelain | grep -v '^D' | ff 2`
+    vi = !vim -O `git status --porcelain | grep -v '^D' | ff 2`
     wc = whatchanged --oneline
 [color]
     ui = auto

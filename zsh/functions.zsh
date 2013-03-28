@@ -18,6 +18,6 @@ function g {
   if [[ $# > 0 ]]; then
     git $@
   else
-    git st
+    git status -s
   fi
 }
