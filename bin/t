@@ -8,13 +8,18 @@ then
   exit
 fi
 
-project=$1
-
-cd $1
-
-if ! tmux has-session -t $project 2>/dev/null; then
-  tmux new-session -s $project -d
-  tmux set -t $project default-path "$PWD"
+if [ -z "$TMUX" ]
+then
+  for project in $(find $HOME/code -type d -maxdepth 1 -mindepth 1)
+  do
+    project_name=`basename $project`
+    if ! tmux has-session -t $project_name 2>/dev/null; then
+      tmux new-session -s $project_name -d
+      tmux set -t $project_name default-path "$project"
+      tmux send-keys "cd $project" 'C-m' 'C-l'
+    fi
+  done
+  tmux a -t $1
+else
+  tmux switch -t $1
 fi
-
-tmux a -t $project
