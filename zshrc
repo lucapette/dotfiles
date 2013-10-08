@@ -40,6 +40,8 @@ export GOPATH=$HOME/gocode
 
 export PATH=$PATH:$GOPATH/bin
 
+export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
