@@ -22,7 +22,7 @@ if [ -f $HOME/.zshrc_private ]; then
   source $HOME/.zshrc_private
 fi
 
-export CDPATH=:$HOME/code
+export CDPATH=:$HOME/code:$HOME/gocode/src/github.com/lucapette
 
 # LS colors
 export CLICOLOR=1
@@ -35,6 +35,10 @@ export PATH=.:./bin:$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+export GOPATH=$HOME/gocode
+
+export PATH=$PATH:$GOPATH/bin
 
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
