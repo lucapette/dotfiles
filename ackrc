@@ -1,7 +1,6 @@
 --smart-case
+--type-set=golang=.go
 --type-add=html=.html.erb,.html.haml
---type-add=js=.coffee,.eco
---type-set=cucumber=.feature
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=doc
