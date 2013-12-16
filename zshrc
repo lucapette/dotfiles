@@ -53,3 +53,8 @@ compinit
 
 compdef g=git
 compdef hub=git
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+precmd_functions+=("chruby_auto") # correctly show the ruby version in the prompt
