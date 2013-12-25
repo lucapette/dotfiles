@@ -37,8 +37,9 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export GOPATH=$HOME/gocode
+export GOROOT=`go env GOROOT`
 
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
 
