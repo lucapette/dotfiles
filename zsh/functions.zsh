@@ -14,6 +14,10 @@ up(){
   cd $d
 }
 
+function projects {
+  ls -d ~/code/*/ ~/gocode/src/github.com/lucapette/*/
+}
+
 function g {
   if [[ $# > 0 ]]; then
     git $@

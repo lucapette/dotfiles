@@ -1,5 +1,5 @@
 #compdef t
 
-lines=("${(@f)$(ls -d ~/code/*/ | xargs -n1 basename)}")
+lines=("${(@f)$(projects | xargs -n1 basename)}")
 
 _arguments "1: :($lines)"

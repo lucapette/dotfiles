@@ -2,6 +2,8 @@
 
 set -e
 
+source ~/.zsh/functions.zsh
+
 if [ -z "$1" ];
 then
   tmux ls 2>/dev/null
@@ -10,12 +12,12 @@ fi
 
 if [ -z "$TMUX" ]
 then
-  for project in $(find $HOME/code -type d -maxdepth 1 -mindepth 1)
+  for project in $(projects)
   do
-    project_name=`basename $project`
-    if ! tmux has-session -t $project_name 2>/dev/null; then
-      tmux new-session -s $project_name -d
-      tmux set -t $project_name default-path "$project"
+    name=`basename $project`
+    if ! tmux has-session -t $name 2>/dev/null; then
+      tmux new-session -s $name -d
+      tmux set -t $name default-path "$project"
       tmux send-keys "cd $project" 'C-m' 'C-l'
     fi
   done
