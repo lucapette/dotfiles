@@ -8,7 +8,7 @@ alias mkdir='mkdir -p'
 alias rm='rm -i'
 alias tmux='tmux -2'
 alias vi='vim'
-alias vim='vim -O'
+alias vim='vim -w ~/.vimlog "$@" -O'
 
 # Aliases for directory navigation
 alias d='dirs -v | head -10'
