@@ -1,6 +1,6 @@
 # function to go to a parent directory of the current directory.
 # It takes the number of directory to ascend as argument.
-up(){
+up() {
   local d=""
   limit=$1
   for ((i=1 ; i <= limit ; i++))
@@ -14,11 +14,13 @@ up(){
   cd $d
 }
 
-function projects {
+# List all my code dirs
+projects() {
   ls -d ~/code/*/ ~/gocode/src/github.com/lucapette/*/
 }
 
-function g {
+# Show git status with no args, delegate to git otherwise
+g() {
   if [[ $# > 0 ]]; then
     git $@
   else
