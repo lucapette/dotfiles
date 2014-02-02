@@ -27,3 +27,7 @@ g() {
     git status -s
   fi
 }
+
+loop() {
+  while true; do $@; done
+}
