@@ -29,5 +29,5 @@ g() {
 }
 
 loop() {
-  while true; do $@; done
+  while true; do $@ || break; done
 }
