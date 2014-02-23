@@ -43,3 +43,5 @@
 	helper = cache --timeout=3600
 [merge]
     tool = vimdiff
+[push]
+	default = simple
