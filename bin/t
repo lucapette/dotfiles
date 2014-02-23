@@ -16,8 +16,7 @@ then
   do
     name=`basename $project`
     if ! tmux has-session -t $name 2>/dev/null; then
-      tmux new-session -s $name -d
-      tmux set -t $name default-path "$project"
+      tmux new-session -s $name -c $project -d
       tmux send-keys "cd $project" 'C-m' 'C-l'
     fi
   done
