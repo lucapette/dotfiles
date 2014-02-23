@@ -43,6 +43,8 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
 
+export DOCKER_HOST=tcp://
+
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
