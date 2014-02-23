@@ -2,7 +2,7 @@ require 'pathname'
 
 IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.markdown$/]
 
-files = `git ls-files`.split("\n")
+files = `git ls-files -co`.split("\n")
 
 files.reject! { |f| IGNORE_FILES.any? { |re| f.match(re) } }
 
@@ -24,10 +24,9 @@ task :install do
 
   Dir['bin/*'].each do |file|
     target_file = File.join(target_dir, 'bin', Pathname.new(file).basename)
-    FileUtils.cp file, target_file, :preserve => true
+    FileUtils.cp file, target_file, preserve: true
     puts "Installed #{file} to #{target_file}"
   end
-
 end
 
-task :default => ['install']
+task default: ['install']
