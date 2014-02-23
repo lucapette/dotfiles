@@ -7,8 +7,10 @@ alias map='xargs -n1'
 alias mkdir='mkdir -p'
 alias rm='rm -i'
 alias tmux='tmux -2'
+alias v='g vi'
 alias vi='vim'
 alias vim='vim -w ~/.vimlog "$@" -O'
+alias w='tw'
 
 # Aliases for directory navigation
 alias d='dirs -v | head -10'

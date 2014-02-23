@@ -31,3 +31,7 @@ g() {
 loop() {
   while true; do $@ || break; done
 }
+
+tw() {
+  tmux split-window -dh "$*"
+}
