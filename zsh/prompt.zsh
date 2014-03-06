@@ -2,10 +2,6 @@ setopt prompt_subst
 
 RESET_COLOR="%f%b"
 
-__where() {
-        echo "%B%F{yellow}%n%B%F{white}@%F{blue}%m$RESET_COLOR"
-}
-
 __ruby() { echo "%B%F{yellow}$(chruby | grep '*' | tr -d '* ' | sed 's/ruby-//')" }
 
 __branch() {
@@ -32,4 +28,3 @@ __status() {
 }
 
 PROMPT='$(__ruby) %B%F{cyan}%c$RESET_COLOR$(__branch)$(__status)%F{red} ➜ $RESET_COLOR'
-RPROMPT='$(__where)'
