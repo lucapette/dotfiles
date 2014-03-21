@@ -28,6 +28,9 @@ export CDPATH=:$HOME/code:$HOME/gocode/src/github.com/lucapette
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+export GREP_COLOR='1;32'
+export GREP_OPTIONS=--color=auto
+
 # Of course
 export EDITOR=vim
 
