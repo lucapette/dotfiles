@@ -1,7 +1,6 @@
 alias be='bundle exec'
 alias git='hub'
 alias h='history'
-alias jekyll='jekyll --server --pygments'
 alias ls='ls --color=auto' # add colors for filetype recognition
 alias map='xargs -n1'
 alias mkdir='mkdir -p'
