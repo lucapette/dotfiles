@@ -16,7 +16,7 @@ up() {
 
 # List all my code dirs
 projects() {
-  ls -d ~/code/*/ ~/gocode/src/github.com/*/*/
+  ls -d ~/code/*/ ~/gocode/src/github.com/lucapette/*/
 }
 
 # Show git status with no args, delegate to git otherwise
