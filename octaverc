@@ -1,2 +1,0 @@
-setenv GNUTERM x11
-PS1('>> ')
