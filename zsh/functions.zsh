@@ -35,3 +35,13 @@ loop() {
 tw() {
   tmux split-window -dh "$*"
 }
+
+docker() {
+  if command -v "docker-$1" > /dev/null 2>&1; then
+    subcommand=$1
+    shift
+    docker-$subcommand $@
+  else
+    /usr/local/bin/docker $@
+  fi
+}
