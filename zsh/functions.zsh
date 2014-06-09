@@ -32,8 +32,14 @@ loop() {
   while true; do $@ || break; done
 }
 
-tw() {
-  tmux split-window -dh "$*"
+w() {
+  tmux new-window
+  tmux send "$*" C-m
+}
+
+p() {
+  tmux split
+  tmux send "$*" C-m
 }
 
 docker() {
