@@ -41,6 +41,7 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export GOPATH=$HOME/gocode
 export GOROOT=`go env GOROOT`
+export GOBIN=$HOME/bin
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
