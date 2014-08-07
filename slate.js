@@ -1,4 +1,4 @@
-var fullscreen = slate.operation("move", {
+var fullScreen = slate.operation("move", {
     "x" : "screenOriginX",
     "y" : "screenOriginY",
     "width" : "screenSizeX",
@@ -33,32 +33,15 @@ var halfDown = slate.operation("move", {
     "height" : "screenSizeY/2"
 });
 
-slate.bind("m:ctrl;alt;cmd", function(win) {
-    win.doOperation(fullscreen);
+slate.bindAll({
+  "j:ctrl;alt;cmd": slate.operation("focus", {"app": 'Google Chrome'}),
+  "k:ctrl;alt;cmd": slate.operation("focus", {"app": 'Slack'}),
+  "i:ctrl;alt;cmd": slate.operation("focus", {"app": 'iTerm'}),
+  "l:ctrl;alt;cmd": slate.operation("focus", {"app": 'LimeChat'}),
+
+  "down:ctrl;alt;cmd": halfDown,
+  "left:ctrl;alt;cmd": halfLeft,
+  "right:ctrl;alt;cmd": halfRight,
+  "up:ctrl;alt;cmd": halfUp,
+  "m:ctrl;alt;cmd": fullScreen,
 });
-
-slate.bind("left:ctrl;alt;cmd", function(win) {
-    win.doOperation(halfLeft);
-});
-
-slate.bind("right:ctrl;alt;cmd", function(win) {
-    win.doOperation(halfRight);
-});
-
-slate.bind("up:ctrl;alt;cmd", function(win) {
-    win.doOperation(halfUp);
-});
-
-slate.bind("down:ctrl;alt;cmd", function(win) {
-    win.doOperation(halfDown);
-});
-
-var adium  = slate.operation("focus", {"app" : 'Adium'});
-var chrome = slate.operation("focus", {"app" : 'Google Chrome'});
-var slack  = slate.operation("focus", {"app" : 'Slack'});
-var iterm  = slate.operation("focus", {"app" : 'iTerm'});
-
-slate.bind("j:ctrl;alt;cmd", chrome);
-slate.bind("l:ctrl;alt;cmd", adium);
-slate.bind("k:ctrl;alt;cmd", slack);
-slate.bind("i:ctrl;alt;cmd", iterm);
