@@ -1,6 +1,6 @@
 require 'pathname'
 
-IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.markdown$/]
+IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.markdown$/, /\.DS_Store$/]
 
 files = `git ls-files -co`.split("\n")
 
