@@ -1,0 +1,12 @@
+#!/bin/bash
+
+osascript <<EOD
+  tell application "iTerm"
+      activate
+  end tell
+  tell application "System Events"
+      key down {command}
+      keystroke return
+      key up {command}
+  end tell
+EOD

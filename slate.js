@@ -1,32 +1,32 @@
-var fullScreen = slate.operation("move", {
+var fullScreen = S.op("move", {
     "x" : "screenOriginX",
     "y" : "screenOriginY",
     "width" : "screenSizeX",
     "height" : "screenSizeY"
 });
 
-var halfLeft = slate.operation("move", {
+var halfLeft = S.op("move", {
     "x" : "screenOriginX",
     "y" : "screenOriginY",
     "width" : "screenSizeX/2",
     "height" : "screenSizeY"
 });
 
-var halfRight = slate.operation("move", {
+var halfRight = S.op("move", {
     "x" : "screenOriginX+screenSizeX/2",
     "y" : "screenOriginY",
     "width" : "screenSizeX/2",
     "height" : "screenSizeY"
 });
 
-var halfUp = slate.operation("move", {
+var halfUp = S.op("move", {
     "x" : "screenOriginX",
     "y" : "screenOriginY",
     "width" : "screenSizeX",
     "height" : "screenSizeY/2"
 });
 
-var halfDown = slate.operation("move", {
+var halfDown = S.op("move", {
     "x" : "screenOriginX",
     "y" : "screenOriginY+screenSizeY/2",
     "width" : "screenSizeX",
@@ -34,14 +34,26 @@ var halfDown = slate.operation("move", {
 });
 
 slate.bindAll({
-  "j:ctrl;alt;cmd": slate.operation("focus", {"app": 'Google Chrome'}),
-  "k:ctrl;alt;cmd": slate.operation("focus", {"app": 'Slack'}),
-  "i:ctrl;alt;cmd": slate.operation("focus", {"app": 'iTerm'}),
-  "l:ctrl;alt;cmd": slate.operation("focus", {"app": 'LimeChat'}),
+  "i:ctrl;alt;cmd": S.op("focus", {"app": 'iTerm'}),
+  "j:ctrl;alt;cmd": S.op("focus", {"app": 'Firefox'}),
+  "k:ctrl;alt;cmd": S.op("focus", {"app": 'Slack'}),
+  "l:ctrl;alt;cmd": S.op("focus", {"app": 'LimeChat'}),
+  "m:ctrl;alt;cmd": fullScreen,
 
   "down:ctrl;alt;cmd": halfDown,
   "left:ctrl;alt;cmd": halfLeft,
   "right:ctrl;alt;cmd": halfRight,
   "up:ctrl;alt;cmd": halfUp,
-  "m:ctrl;alt;cmd": fullScreen,
+
+  "right:ctrl": S.op("resize", { "width" : "+10%", "height" : "+0" }),
+  "left:ctrl":  S.op("resize", { "width" : "-10%", "height" : "+0" }),
+  "up:ctrl":    S.op("resize", { "width" : "+0", "height" : "-10%" }),
+  "down:ctrl":  S.op("resize", { "width" : "+0", "height" : "+10%" }),
+
+  "right:ctrl;alt": S.op("nudge", { "x" : "+10%", "y" : "+0" }),
+  "left:ctrl;alt":  S.op("nudge", { "x" : "-10%", "y" : "+0" }),
+  "up:ctrl;alt":    S.op("nudge", { "x" : "+0", "y" : "-10%" }),
+  "down:ctrl;alt":  S.op("nudge", { "x" : "+0", "y" : "+10%" }),
+
+  "esc:cmd" : S.op("hint"),
 });
