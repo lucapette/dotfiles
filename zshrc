@@ -22,7 +22,7 @@ if [ -f $HOME/.zshrc_private ]; then
   source $HOME/.zshrc_private
 fi
 
-export CDPATH=:$HOME/code:$HOME/gocode/src/github.com/lucapette
+export CDPATH=:$HOME/code:$HOME/code/src/github.com/lucapette
 
 # LS colors
 export CLICOLOR=1
@@ -39,7 +39,7 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export GOPATH=$HOME/gocode
+export GOPATH=$HOME/code
 export GOROOT=`go env GOROOT`
 export GOBIN=$HOME/bin
 
