@@ -1,11 +1,11 @@
 alias be='bundle exec'
 alias git='hub'
 alias h='history'
-alias ls='ls --color=auto' # add colors for filetype recognition
-alias map='xargs -n1'
+alias ls='ls --color=auto'
 alias mkdir='mkdir -p'
 alias rm='rm -i'
 alias tmux='tmux -2'
+alias j='vim ~/Journal/`date +%Y-%m-%d`.jrnl'
 alias v='g vi'
 alias vi='vim'
 alias vim='vim -O'
