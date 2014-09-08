@@ -60,7 +60,7 @@ if [ $branch_type == "local" ]; then
     echo $branches | xargs git branch -d
   fi
 else
-  branches=$(git branch -r --merged | grep $remote_name | grep -Ev $exclude_pattern | cut -d '/' -f2)
+  branches=$(git branch -r --merged | grep $remote_name | grep -Ev $exclude_pattern | sed "s/$remote_name\///")
   echo $branches
   if [ "$delete" == "delete" ]; then
     echo $branches | xargs git push $remote_name --delete
