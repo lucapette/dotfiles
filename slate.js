@@ -45,10 +45,10 @@ slate.bindAll({
   "right:ctrl;alt;cmd": halfRight,
   "up:ctrl;alt;cmd": halfUp,
 
-  "right:ctrl": S.op("resize", { "width" : "+10%", "height" : "+0" }),
-  "left:ctrl":  S.op("resize", { "width" : "-10%", "height" : "+0" }),
-  "up:ctrl":    S.op("resize", { "width" : "+0", "height" : "-10%" }),
-  "down:ctrl":  S.op("resize", { "width" : "+0", "height" : "+10%" }),
+  "right:ctrl;alt;shift": S.op("resize", { "width" : "+10%", "height" : "+0" }),
+  "left:ctrl;alt;shift":  S.op("resize", { "width" : "-10%", "height" : "+0" }),
+  "up:ctrl;alt;shift":    S.op("resize", { "width" : "+0", "height" : "-10%" }),
+  "down:ctrl;alt;shift":  S.op("resize", { "width" : "+0", "height" : "+10%" }),
 
   "right:ctrl;alt": S.op("nudge", { "x" : "+10%", "y" : "+0" }),
   "left:ctrl;alt":  S.op("nudge", { "x" : "-10%", "y" : "+0" }),
