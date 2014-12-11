@@ -45,10 +45,6 @@ export GOBIN=$HOME/bin
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
-
-export DOCKER_HOST=tcp://localhost:4243
-
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
@@ -69,5 +65,3 @@ precmd_functions+=("chruby_auto") # correctly show the ruby version in the promp
 # complete versions, thanks to @sickill
 # https://github.com/postmodern/chruby/issues/27
 compctl -g '~/.rubies/*(:t)' chruby
-
-source ~/.zsh-history-substring-search/zsh-history-substring-search.zsh
