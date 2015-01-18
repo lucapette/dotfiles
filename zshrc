@@ -23,6 +23,7 @@ if [ -f $HOME/.zshrc_private ]; then
 fi
 
 export CDPATH=:$HOME/code:$HOME/code/src/github.com/lucapette
+export CDPATH=$CDPATH:$HOME/code/src/github.com/marleyspoon
 
 # LS colors
 export CLICOLOR=1
