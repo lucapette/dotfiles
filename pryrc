@@ -23,8 +23,7 @@ if defined?(Rails) && Rails.env
     ActiveRecord::Base.clear_active_connections!
   end
 
-  if defined?(DataMapper)
-    DataMapper::Logger.new($stdout, :debug)
+  if defined?(Sequel)
+    Sequel::Model.loggers << Logger.new(STDOUT)
   end
-
 end
