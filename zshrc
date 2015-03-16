@@ -33,7 +33,7 @@ export GREP_COLOR='1;32'
 export GREP_OPTIONS=--color=auto
 
 # Of course
-export EDITOR=vim
+export EDITOR=nvim
 
 export PATH=.:./bin:$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH

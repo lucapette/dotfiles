@@ -1,5 +1,5 @@
 # vim FTW
-Pry.config.editor = 'vim'
+Pry.config.editor = 'nvim'
 
 # Toys methods
 # See https://gist.github.com/807492
