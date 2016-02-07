@@ -37,6 +37,7 @@ export EDITOR=vim
 
 export PATH=.:./bin:$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin/
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
