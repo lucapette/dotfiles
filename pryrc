@@ -19,7 +19,5 @@ if defined?(Rails) && Rails.env
     ActiveRecord::Base.clear_active_connections!
   end
 
-  if defined?(Sequel)
-    Sequel::Model.loggers << Logger.new(STDOUT)
-  end
+  Sequel::Model.db.loggers << Logger.new(STDOUT) if defined?(Sequel)
 end
