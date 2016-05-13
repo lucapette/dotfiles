@@ -35,7 +35,7 @@ export GREP_OPTIONS=--color=auto
 # Of course
 export EDITOR=vim
 
-export PATH=.:./bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin/
 
