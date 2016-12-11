@@ -34,9 +34,6 @@ var halfDown = S.op("move", {
 });
 
 slate.bindAll({
-  "i:ctrl;alt;cmd": S.op("focus", {"app": 'iTerm'}),
-  "j:ctrl;alt;cmd": S.op("focus", {"app": 'Google Chrome'}),
-  "k:ctrl;alt;cmd": S.op("focus", {"app": 'Slack'}),
   "m:ctrl;alt;cmd": fullScreen,
 
   "down:ctrl;alt;cmd": halfDown,
