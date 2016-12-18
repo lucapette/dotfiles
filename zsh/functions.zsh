@@ -16,7 +16,7 @@ up() {
 
 # List all my code dirs
 projects() {
-  ls -d ~/code/*/ ~/code/src/github.com/{lucapette,marleyspoon}/*/
+  ls -d ~/src/*/ ~/src/github.com/lucapette/*/
 }
 
 # Show git status with no args, delegate to git otherwise
@@ -42,6 +42,9 @@ p() {
   tmux send "$*" C-m
 }
 
+# Small trick that makes local scripts look like
+# "native" docker commands. See
+# http://lucapette.me/a-couple-of-useful-aliases-for-docker
 docker() {
   if command -v "docker-$1" > /dev/null 2>&1; then
     subcommand=$1

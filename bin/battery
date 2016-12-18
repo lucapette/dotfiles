@@ -7,27 +7,21 @@ battery = %w(ExternalConnected CurrentCapacity MaxCapacity IsCharging).inject({}
   hash[property.to_sym] = info[/"#{property}" = (.*)$/, 1]; hash
 end
 
-percentage    = (battery[:CurrentCapacity].to_f / battery[:MaxCapacity].to_f * 100).to_i
-is_charging   = battery[:IsCharging] == "Yes"
+percentage = (battery[:CurrentCapacity].to_f / battery[:MaxCapacity].to_f * 100).to_i
+is_charging = battery[:IsCharging] == "Yes"
 is_plugged_in = battery[:ExternalConnected] == "Yes"
 
-green  = "#[fg=green]"
-yellow = "#[fg=yellow]"
-red    = "#[fg=red]"
-reset  = "#[fg=reset]"
 
-if percentage > 60
-  color = green
-elsif percentage > 20
-  color = yellow
-else
-  color = red
-end
-
-if is_charging
-  color = yellow
-end
+color = if is_charging
+         "#[fg=yellow]"
+        elsif percentage > 60
+          "#[fg=green]"
+        elsif percentage > 20
+         "#[fg=yellow]"
+        else
+          "#[fg=red]"
+        end
 
 output = color + "#{percentage}%"
 
-puts output += reset
+puts output += "#[fg=reset]"
