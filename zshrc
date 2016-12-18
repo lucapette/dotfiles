@@ -22,8 +22,7 @@ if [ -f $HOME/.zshrc_private ]; then
   source $HOME/.zshrc_private
 fi
 
-export CDPATH=:$HOME/code:$HOME/code/src/github.com/lucapette
-export CDPATH=$CDPATH:$HOME/code/src/github.com/marleyspoon
+export CDPATH=:$HOME/src:$HOME/src/github.com/lucapette
 
 # LS colors
 export CLICOLOR=1
@@ -37,12 +36,10 @@ export EDITOR=vim
 
 export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin/
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export GOPATH=$HOME/code
-export GOBIN=$HOME/bin
+export GOPATH=$HOME
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
