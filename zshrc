@@ -43,6 +43,8 @@ export GOPATH=$HOME
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+export TERM=xterm-256color
+
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
