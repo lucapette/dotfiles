@@ -16,7 +16,7 @@ up() {
 
 # List all my code dirs
 projects() {
-  ls -d ~/src/*/ ~/src/github.com/lucapette/*/ | grep -E -w -v  'bin|pkg|github\.com\/'
+  ls -d ~/src/*/ ~/src/github.com/lucapette/*/ | grep -E -w -v  'bin|pkg|github\.com|golang\.org|gopkg\.in\/'
 }
 
 # Show git status with no args, delegate to git otherwise
