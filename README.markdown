@@ -12,6 +12,7 @@ In this repository I have the configuration of the following tools:
 
 - ack
 - git
+- phoenix
 - pry
 - tmux
 - zsh
