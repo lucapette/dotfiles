@@ -56,12 +56,3 @@ compinit
 
 compdef g=git
 compdef hub=git
-
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-precmd_functions+=("chruby_auto") # correctly show the ruby version in the prompt
-
-# complete versions, thanks to @sickill
-# https://github.com/postmodern/chruby/issues/27
-compctl -g '~/.rubies/*(:t)' chruby

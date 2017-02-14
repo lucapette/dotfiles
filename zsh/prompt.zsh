@@ -2,8 +2,6 @@ setopt prompt_subst
 
 RESET_COLOR="%f%b"
 
-__ruby() { echo "%B%F{yellow}$(chruby | grep '*' | tr -d '* ' | sed 's/ruby-//')" }
-
 __branch() {
         ref=$(git symbolic-ref --short HEAD 2> /dev/null)
         if [ -z "$ref" ]; then
@@ -27,4 +25,4 @@ __status() {
         echo $STATUS
 }
 
-PROMPT='$(__ruby) %B%F{cyan}%c$RESET_COLOR$(__branch)$(__status)%F{red} ➜ $RESET_COLOR'
+PROMPT='%B%F{cyan}%c$RESET_COLOR$(__branch)$(__status)%F{red} ➜ $RESET_COLOR'
