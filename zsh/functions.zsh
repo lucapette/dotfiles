@@ -32,16 +32,6 @@ loop() {
   while true; do $@ || break; done
 }
 
-w() {
-  tmux new-window
-  tmux send "$*" C-m
-}
-
-p() {
-  tmux split
-  tmux send "$*" C-m
-}
-
 # Small trick that makes local scripts look like
 # "native" docker commands. See
 # http://lucapette.me/a-couple-of-useful-aliases-for-docker
