@@ -1,5 +1,6 @@
 alias be='bundle exec'
 alias git='hub'
+alias gv='vim $(g | ff 2 | fzf)'
 alias h='history'
 alias ls='ls --color=auto'
 alias mkdir='mkdir -p'
