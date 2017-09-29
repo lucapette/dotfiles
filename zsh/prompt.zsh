@@ -1,5 +1,5 @@
 function powerline_precmd() {
-    PS1="$($GOPATH/bin/powerline-go -error $? -shell zsh -cwd-max-depth 1 -modules "cwd,perms,git,jobs,exit,root")"
+    PS1="$($GOPATH/bin/powerline-go -error $? -shell zsh -cwd-max-depth 1 -modules "cwd,perms,git,jobs,exit,root" -theme low-contrast)"
 }
 
 function install_powerline_precmd() {
