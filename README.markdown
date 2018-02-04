@@ -4,9 +4,9 @@ This repository contains my shell-related configuration files. It doesn't
 contain Vim configuration, I use another
 [repository](https://github.com/lucapette/vimfiles) for Vim.
 
-As for my vimfiles, I do *not* recommend to use my configuration files as they
-are. I think you won't learn much about zsh, tmux and so on just copying
-someone else configuration.
+As for my vim configuration, I do *not* recommend to use my configuration
+files as they are. I think you won't learn much about zsh, tmux and so on just
+copying someone else configuration.
 
 I have some small scripts in `~/bin`:
 
@@ -37,8 +37,8 @@ I have some small scripts in `~/bin`:
   that is not working well with my `set autochdir` in Vim. The script fixes my
   problem and works in combination with `CDPATH` a very nice feature that is
   very useful if you keep all your code in one directory. I even added
-  autocompletion for the script. I said *even* because zsh autocompletion is
-  still black magic for me.
+  autocompletion for the script. I wrote *even* because zsh autocompletion is
+  still magic for me.
 
 # License
 
