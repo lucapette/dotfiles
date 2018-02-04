@@ -1,4 +1,5 @@
 alias be='bundle exec'
+alias d='du -d1 -h'
 alias git='hub'
 alias gv='vim $(g | ff 2 | fzf)'
 alias h='history'
