@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+dirs = File.readlines(File.expand_path('~/.projects')).map(&:chomp)
+
+projects = dirs.flat_map { |e| Dir.glob(File.join(File.expand_path(e), '*')) }
+
+projects.reject! { |e| File.basename(e) =~ /bin|pkg/ }
+
+# If a dir is completely included in the next entry then it's not a project
+drop_index = projects.each_index.map {|i| projects[i+1].to_s.include?(projects[i]) }
+
+projects = projects.zip(drop_index).delete_if {|_, i| i}.map {|e,_| e}
+
+puts projects.sort

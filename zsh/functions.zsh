@@ -14,11 +14,6 @@ up() {
   cd $d
 }
 
-# List all my code dirs
-projects() {
-  ls -d ~/src/*/ ~/src/github.com/lucapette/*/ | grep -E -w -v  '(bin|pkg|[^/]+\.[^/]+)\/'
-}
-
 # Show git status with no args, delegate to git otherwise
 g() {
   if [[ $# > 0 ]]; then
