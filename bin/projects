@@ -2,6 +2,11 @@
 
 dirs = File.readlines(File.expand_path('~/.projects')).map(&:chomp)
 
+if ARGV[0] == "--cdpath"
+  puts dirs.map { |d| File.expand_path(d) }.join(":")
+  exit(0)
+end
+
 projects = dirs.flat_map { |e| Dir.glob(File.join(File.expand_path(e), '*')) }
 
 projects.reject! { |e| File.basename(e) =~ /bin|pkg/ }.sort!
@@ -12,3 +17,4 @@ drop_index = projects.each_index.map { |i| projects[i+1].to_s.include?(projects[
 projects = projects.zip(drop_index).delete_if { |_, i| i }.map { |e,_| e }
 
 puts projects
+exit(0)
