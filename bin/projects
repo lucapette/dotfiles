@@ -7,9 +7,7 @@ if ARGV[0] == "--cdpath"
   exit(0)
 end
 
-projects = dirs.flat_map { |e| Dir.glob(File.join(File.expand_path(e), '*')) }
-
-projects.reject! { |e| File.basename(e) =~ /bin|pkg/ }.sort!
+projects = dirs.flat_map { |e| Dir.glob(File.join(File.expand_path(e), '*')) }.sort
 
 # If a dir is completely included in the next entry then it's not a project
 drop_index = projects.each_index.map { |i| projects[i+1].to_s.include?(projects[i]) }
