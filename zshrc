@@ -45,9 +45,6 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export TERM=xterm-256color
 
-export FZF_DEFAULT_OPTS='--reverse'
-export FZF_DEFAULT_COMMAND='ag -g ""'
-
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
 
@@ -59,6 +56,3 @@ compinit
 
 compdef g=git
 compdef hub=git
-
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
