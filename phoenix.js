@@ -1,8 +1,8 @@
-var ctrlAltCmd = ['ctrl', 'alt', 'cmd'];
+const ctrlAltCmd = ['ctrl', 'alt', 'cmd'];
 
 Key.on('m', ctrlAltCmd, () => {
-  var screen = Screen.main().flippedVisibleFrame();
-  var window = Window.focused();
+  const screen = Screen.main().flippedVisibleFrame();
+  const window = Window.focused();
 
   if (window) {
     window.setTopLeft({
@@ -18,8 +18,8 @@ Key.on('m', ctrlAltCmd, () => {
 });
 
 Key.on('left', ctrlAltCmd, () => {
-  var screen = Screen.main().flippedVisibleFrame();
-  var window = Window.focused();
+  const screen = Screen.main().flippedVisibleFrame();
+  const window = Window.focused();
 
   if (window) {
     window.setTopLeft({
@@ -35,8 +35,8 @@ Key.on('left', ctrlAltCmd, () => {
 });
 
 Key.on('right', ctrlAltCmd, () => {
-  var screen = Screen.main().flippedVisibleFrame();
-  var window = Window.focused();
+  const screen = Screen.main().flippedVisibleFrame();
+  const window = Window.focused();
 
   if (window) {
     window.setTopLeft({
@@ -52,8 +52,8 @@ Key.on('right', ctrlAltCmd, () => {
 });
 
 Key.on('up', ctrlAltCmd, () => {
-  var screen = Screen.main().flippedVisibleFrame();
-  var window = Window.focused();
+  const screen = Screen.main().flippedVisibleFrame();
+  const window = Window.focused();
 
   if (window) {
     window.setTopLeft({
@@ -69,8 +69,8 @@ Key.on('up', ctrlAltCmd, () => {
 });
 
 Key.on('down', ctrlAltCmd, () => {
-  var screen = Screen.main().flippedVisibleFrame();
-  var window = Window.focused();
+  const screen = Screen.main().flippedVisibleFrame();
+  const window = Window.focused();
 
   if (window) {
     window.setTopLeft({

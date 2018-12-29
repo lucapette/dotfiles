@@ -1,5 +1,5 @@
 # Use Pry everywhere
-# http://lucapette.me/pry-everywhere
+# https://lucapette.me/pry-everywhere
 
 require "rubygems"
 require 'pry'

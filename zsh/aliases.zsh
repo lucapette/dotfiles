@@ -1,4 +1,3 @@
-alias be='bundle exec'
 alias d='du -d1 -h'
 alias git='hub'
 alias h='history'

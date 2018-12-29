@@ -29,7 +29,7 @@ loop() {
 
 # Small trick that makes local scripts look like
 # "native" docker commands. See
-# http://lucapette.me/a-couple-of-useful-aliases-for-docker
+# https://lucapette.me/a-couple-of-useful-aliases-for-docker
 docker() {
   if command -v "docker-$1" > /dev/null 2>&1; then
     subcommand=$1
