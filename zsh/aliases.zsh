@@ -1,6 +1,7 @@
 alias d='du -d1 -h'
 alias git='hub'
 alias h='history'
+alias k='kubectl'
 alias ls='ls --color=auto'
 alias mkdir='mkdir -p'
 alias rm='rm -i'
