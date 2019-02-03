@@ -12,7 +12,6 @@
     ck = checkout
     ca = !git add -A . && git commit -v
     co = commit
-    ct = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
     df = diff
     h  = help
     latest = diff @{1}
@@ -22,8 +21,8 @@
     rb = rebase -i @{u}
     st = stash -u
     sw = show
-    un = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git lg origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
     vi = !vim -O `git status --porcelain | awk '/^[^D]/ {print $NF}'`
+    wip = !git add -A . && git commit -m 'WIP' && git push origin
 [color]
     ui = auto
   [color "branch"]
@@ -37,8 +36,6 @@
     added = yellow
     changed = green
     untracked = cyan
-[init]
-	templatedir = ~/.git_template
 [credential]
 	helper = cache --timeout=3600
 [merge]
