@@ -39,15 +39,13 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export GOPATH=$HOME
+export GOPATH=$HOME/go
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-export CONFLUENT_CURRENT=~/.kafka
 
 # Use a menu for multiple options
 zstyle ':completion:*:*:*:*:*' menu select
