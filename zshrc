@@ -37,6 +37,8 @@ export EDITOR=vim
 export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin::$PATH
 
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export GOPATH=$HOME/go
@@ -58,3 +60,6 @@ compinit
 
 compdef g=git
 compdef hub=git
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
