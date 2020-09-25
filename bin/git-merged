@@ -13,7 +13,7 @@ cat << EOF
   -r [remote] Show remote merged branches. Active by default. remote defaults
   to origin if not specified.
   -i Ignored branches regex for remotes.
-  -l Show local merged. Current branch and master are ignored.
+  -l Show local merged. Current branch, master, and main are ignored.
   -h Show this message.
 EOF
 }
@@ -47,14 +47,14 @@ do
 done
 
 : ${remote_name:="origin"}
-: ${exclude_pattern:="master|ci"}
+: ${exclude_pattern:="master|main|ci"}
 
 shift $((OPTIND-1))
 
 delete=$1
 
 if [ $branch_type == "local" ]; then
-  branches=$(git branch --merged | grep -Ev "^\*|master")
+  branches=$(git branch --merged | grep -Ev "^\*|master|main")
   echo $branches
   if [ "$delete" == "delete" ]; then
     echo $branches | xargs git branch -d
