@@ -13,7 +13,7 @@ I have some small scripts in `~/bin`:
 - [bkdir](/bin/bkdir)
 
   Some time ago I needed to type `cp -R project project.bak` very often so I
-  wrote this stupid script to save some keystrokes.
+  wrote this simple script to save some keystrokes.
 
 - [ff](/bin/ff)
 
