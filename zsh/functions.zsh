@@ -39,7 +39,3 @@ docker() {
     /usr/local/bin/docker $@
   fi
 }
-
-acd() {
-  export AWS_PROFILE=$1
-}

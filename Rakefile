@@ -1,12 +1,12 @@
 require 'pathname'
 
-IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.markdown$/, /\.DS_Store$/]
+IGNORE_FILES = [/^bin/,/^\.git.*$/, /^Rakefile$/,/^README.md$/, /\.DS_Store$/, /^LICENSE/]
 
 files = `git ls-files -co`.split("\n")
 
 files.reject! { |f| IGNORE_FILES.any? { |re| f.match(re) } }
 
-target_dir=File.expand_path('~')
+target_dir = File.expand_path('~')
 
 desc 'installs dotfiles in home dir'
 task :install do

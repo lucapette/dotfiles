@@ -1,4 +1,3 @@
-alias a='aws'
 alias d='du -d1 -h'
 alias git='hub'
 alias k='kubectl'
