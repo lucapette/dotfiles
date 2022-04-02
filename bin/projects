@@ -5,7 +5,7 @@ directories = File.readlines(File.expand_path('~/.projects'))
 
 
 if ARGV[0] == "--cdpath"
-  puts directories.map {|d| d.sub("/*", "") }.join(":")
+  puts directories.map {|d| d.sub("/*", "") }.map { |d| File.expand_path(d) }.join(":")
 else
   puts directories.map {|d| Dir.glob(File.expand_path(d)) }.sort
 end
