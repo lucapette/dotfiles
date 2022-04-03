@@ -15,14 +15,6 @@ tmux send -t $session_name:1 "bin/kafka-server-start.sh config/server.properties
 tmux attach
 }
 
-kafka-stop() {
-session_name="kafka-server-local"
-tmux split-window -t $session_name:1 -c "#{pane_current_path}"
-tmux send -t $session_name:1 "bin/kafka-server-stop.sh" C-m
-tmux send -t $session_name:1 "bin/zookeeper-server-stop.sh" C-m
-tmux kill-session -t $session_name
-}
-
 kafka-clean-console-groups() {
 for group in $(kafka-consumer-groups.sh --bootstrap-server ${BOOTSTRAP_SERVER:-localhost:9092} --list | grep console-); do
   kafka-consumer-groups --bootstrap-server ${BOOTSTRAP_SERVER:-localhost:9092} --delete --group $group
