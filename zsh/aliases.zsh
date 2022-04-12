@@ -1,4 +1,5 @@
 alias d='du -d1 -h'
+alias docker='podman'
 alias git='hub'
 alias k='kubectl'
 alias kcd='k config use-context'
