@@ -1,3 +1,4 @@
+alias cat="bat --theme=\"$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo Nord || echo 'Solarized (light)')\""
 alias d='du -d1 -h'
 alias git='hub'
 alias k='kubectl'
