@@ -1,5 +1,5 @@
 function powerline_precmd() {
-    PS1="$($HOME/bin/powerline-go -error $? -shell zsh -cwd-max-depth 1 -modules "aws,kube,perms,cwd,git,jobs,exit,root" -theme default)"
+    PS1="$($HOME/bin/powerline-go -error $? -shell zsh -cwd-max-depth 1 -modules "kube,perms,cwd,git,jobs,exit,root" -theme default)"
 }
 
 function install_powerline_precmd() {
