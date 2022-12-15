@@ -36,6 +36,7 @@ export EDITOR=vim
 
 export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin::$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 export GOPATH=$HOME/go
 
