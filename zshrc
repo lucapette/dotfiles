@@ -60,3 +60,5 @@ compdef hub=git
 
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
