@@ -2,23 +2,19 @@ add_newline = false
 
 format = """
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](fg:#5e81ac bg:#81a1c1)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
+[](fg:#81a1c1 bg:#88c0d0)\
 $golang\
 $java\
 $nodejs\
 $rust\
-[](fg:#86BBD8 bg:#06969A)\
-$docker_context\
-[](fg:#06969A bg:#33658A)\
-$time\
-[ ](fg:#33658A)\
+[ ](fg:#88c0d0)\
 """
 
 [directory]
-style = "bg:#DA627D"
+style = "bg:#5e81ac"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -31,37 +27,37 @@ truncation_symbol = "…/"
 
 [docker_context]
 symbol = " "
-style = "bg:#06969A"
+style = "bg:#8fbcbb"
 format = '[ $symbol $context ]($style) $path'
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D"
+style = "bg:#81a1c1"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D"
+style = "bg:#81a1c1"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
-symbol = " "
-style = "bg:#86BBD8"
+symbol = ""
+style = "bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 detect_extensions = []
 
 
 [rust]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
