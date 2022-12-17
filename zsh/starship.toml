@@ -1,3 +1,5 @@
+add_newline = false
+
 format = """
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
@@ -62,3 +64,4 @@ detect_extensions = []
 symbol = ""
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+
