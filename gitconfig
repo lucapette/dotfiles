@@ -6,6 +6,7 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore
+    pager = delta
 [alias]
     amend = commit --amend
     br = branch
@@ -42,3 +43,11 @@
     tool = vimdiff
 [push]
 	default = simple
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+    syntax-theme = GitHub
