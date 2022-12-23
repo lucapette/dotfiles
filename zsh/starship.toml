@@ -14,7 +14,7 @@ $rust\
 """
 
 [directory]
-style = "bg:#5e81ac"
+style = "bold bg:#5e81ac"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -32,7 +32,7 @@ format = '[ $symbol $context ]($style) $path'
 
 [git_branch]
 symbol = ""
-style = "bg:#81a1c1"
+style = "bold bg:#81a1c1"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
@@ -49,23 +49,23 @@ diverged = '[  ](bg:#bf616a)'
 
 [golang]
 symbol = ""
-style = "bg:#88c0d0"
+style = "bold bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:#88c0d0"
+style = "bold bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#88c0d0"
+style = "bold bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 detect_extensions = []
 
 
 [rust]
 symbol = ""
-style = "bg:#88c0d0"
+style = "bold bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
