@@ -45,6 +45,7 @@ untracked = '[  ](bg:#a3be8c)'
 ahead = '[  ](bg:#d08770)'
 behind = '[  ](bg:#d08770)'
 diverged = '[  ](bg:#bf616a)'
+deleted = '[ ✘ ](bg:#bf616a)'
 
 
 [golang]
