@@ -20,9 +20,9 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
+"Documents" = ""
+"Downloads" = ""
+"Music" = ""
 "Pictures" = " "
 
 [docker_context]
