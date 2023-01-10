@@ -40,6 +40,7 @@ style = "bg:#81a1c1"
 format = '[$all_status$ahead_behind ]($style)'
 stashed = '[ ⚑ ](bg:#5e81ac)'
 modified = '[  ](bg:#ebcb8b)'
+renamed = '[  ](bg:#ebcb8b)'
 staged = '[  ](bg:#b48ead)'
 untracked = '[  ](bg:#a3be8c)'
 ahead = '[  ](bg:#d08770)'
