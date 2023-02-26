@@ -3,6 +3,8 @@
 	email = ciao@lucapette.me
 [apply]
     whitespace = nowarn
+[init]
+	defaultBranch = main
 [core]
     editor = vim
     excludesfile = ~/.gitignore
@@ -43,10 +45,8 @@
     tool = vimdiff
 [push]
 	default = simple
-
 [interactive]
     diffFilter = delta --color-only
-
 [delta]
     navigate = true    # use n and N to move between diff sections
     side-by-side = true
