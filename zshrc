@@ -63,3 +63,4 @@ source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(mcfly init zsh)"
+eval "$(kubectl completion zsh)"
