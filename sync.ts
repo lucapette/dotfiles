@@ -2,6 +2,11 @@ import {execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
+type Task = {
+  src: string;
+  dest: string;
+};
+
 const IGNORE_FILES = [
     /^bin/,
     /^\.git.*$/,
@@ -31,44 +36,36 @@ function copyFileWithPreserve(src: string, dest: string) {
 }
 
 async function main() {
-    const files = execSync('git ls-files -co --exclude-standard', {encoding: 'utf8'})
-        .split('\n')
-        .filter(Boolean)
-        .filter(file => !IGNORE_FILES.some(re => re.test(file)));
-
     const targetDir = process.env.HOME;
     if (!targetDir) {
         throw new Error('HOME environment variable not set');
     }
 
+    const files = execSync('git ls-files -co --exclude-standard', {encoding: 'utf8'})
+        .split('\n')
+        .filter(Boolean)
+        .filter(file => !IGNORE_FILES.some(re => re.test(file)));
+
     console.log(`Installing ${files.length} dotfiles to ${targetDir}`);
 
+    const tasks: Task[] = [];
+
     for (const file of files) {
-        if (!fs.existsSync(file)) {
-            continue;
-        }
-
-        const targetFile = path.join(targetDir, `.${file}`);
-        const parentDir = path.dirname(targetFile);
-
-        // If parentDir exists and is a file, remove it
-        if (fs.existsSync(parentDir) && !fs.statSync(parentDir).isDirectory()) {
-            fs.unlinkSync(parentDir);
-        }
-
-        if (!fs.existsSync(parentDir)) {
-            fs.mkdirSync(parentDir, {recursive: true});
-        }
-
-        copyFileWithPreserve(file, targetFile);
-        console.log(`Installed ${file} to ${targetFile}`);
+        tasks.push({ src: file, dest: `.${file}` });
     }
 
-    // Handle bin files
     const binFiles = getAllFilesInDir('bin');
     for (const file of binFiles) {
         const relativePath = path.relative('bin', file);
-        const targetFile = path.join(targetDir, 'bin', relativePath);
+        tasks.push({ src: file, dest: path.join('bin', relativePath) });
+    }
+
+    for (const { src, dest } of tasks) {
+        if (!fs.existsSync(src)) {
+            continue;
+        }
+
+        const targetFile = path.join(targetDir, dest);
         const parentDir = path.dirname(targetFile);
 
         if (fs.existsSync(parentDir) && !fs.statSync(parentDir).isDirectory()) {
@@ -79,8 +76,8 @@ async function main() {
             fs.mkdirSync(parentDir, {recursive: true});
         }
 
-        copyFileWithPreserve(file, targetFile);
-        console.log(`Installed ${file} to ${targetFile}`);
+        copyFileWithPreserve(src, targetFile);
+        console.log(`Installed ${src} to ${targetFile}`);
     }
 }
 
