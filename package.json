@@ -1,0 +1,19 @@
+{
+  "name": "dotfiles-sync",
+  "description": "Sync dotfiles to home directory",
+  "scripts": {
+    "sync": "node sync.ts",
+    "build": "tsc",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.6",
+    "typescript": "^5.7.3"
+  },
+  "keywords": [
+    "dotfiles",
+    "sync"
+  ],
+  "type": "module",
+  "license": "MIT"
+}
