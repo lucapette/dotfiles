@@ -16,7 +16,6 @@
     ca = !git add -A . && git commit -v
     co = commit
     df = diff
-    h  = help
     latest = diff @{1}
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ls = ls-files
@@ -24,8 +23,6 @@
     rb = rebase -i @{u}
     st = stash -u
     sw = show
-    vi = !vim -O `git status --porcelain | awk '/^[^D]/ {print $NF}'`
-    wip = !git add -A . && git commit -m 'WIP' && git push origin
 [color]
     ui = auto
   [color "branch"]

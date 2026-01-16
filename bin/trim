@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-awk '{$1=$1;print}'

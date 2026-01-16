@@ -34,7 +34,7 @@ export GREP_OPTIONS=--color=auto
 # Of course
 export EDITOR=vim
 
-export PATH=.:./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=.:$HOME/bin:$HOME/bin/ai:$HOME/.opencode/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin::$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
@@ -57,9 +57,6 @@ compinit
 
 compdef g=git
 compdef hub=git
-
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(mcfly init zsh)"
