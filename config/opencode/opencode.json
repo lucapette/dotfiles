@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "nord",
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "deepseek/deepseek-reasoner",
+      "temperature": 0.0,
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "deepseek/deepseek-chat",
+      "temperature": 0.0,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    }
+  }
+}
