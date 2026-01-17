@@ -48,17 +48,13 @@ async function main() {
 
     console.log(`Installing ${files.length} dotfiles to ${targetDir}`);
 
-    const tasks: Task[] = [];
-
-    for (const file of files) {
-        tasks.push({ src: file, dest: `.${file}` });
-    }
-
-    const binFiles = getAllFilesInDir('bin');
-    for (const file of binFiles) {
-        const relativePath = path.relative('bin', file);
-        tasks.push({ src: file, dest: path.join('bin', relativePath) });
-    }
+    const tasks: Task[] = [
+        ...files.map(file => ({src: file, dest: `.${file}`})),
+        ...getAllFilesInDir('bin').map(file => ({
+            src: file,
+            dest: path.join('bin', path.relative('bin', file))
+        }))
+    ];
 
     for (const { src, dest } of tasks) {
         if (!fs.existsSync(src)) {
