@@ -48,14 +48,13 @@ behind = '[  ](bg:#d08770)'
 diverged = '[  ](bg:#bf616a)'
 deleted = '[ ✘ ](bg:#bf616a)'
 
-
 [golang]
 symbol = ""
 style = "bold bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
-symbol = " "
+symbol = ""
 style = "bold bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 
@@ -64,10 +63,3 @@ symbol = ""
 style = "bold bg:#88c0d0"
 format = '[ $symbol ($version) ]($style)'
 detect_extensions = []
-
-
-[rust]
-symbol = ""
-style = "bold bg:#88c0d0"
-format = '[ $symbol ($version) ]($style)'
-
