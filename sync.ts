@@ -21,18 +21,14 @@ const IGNORE_FILES = [
     /^dist/,
 ];
 
-function copyFilePreservingMode(src: string, dest: string, preserveMode = false) {
+function copyFile(src: string, dest: string) {
     fs.copyFileSync(src, dest);
-    if (preserveMode) {
+
+    if (src.startsWith('bin/')) {
         const srcStat = fs.statSync(src);
         fs.chmodSync(dest, srcStat.mode);
         fs.utimesSync(dest, srcStat.atime, srcStat.mtime);
     }
-}
-
-function copyFileWithPreserve(src: string, dest: string) {
-    const preserveMode = src.startsWith('bin/');
-    copyFilePreservingMode(src, dest, preserveMode);
 }
 
 async function main() {
@@ -72,7 +68,7 @@ async function main() {
             fs.mkdirSync(parentDir, {recursive: true});
         }
 
-        copyFileWithPreserve(src, targetFile);
+        copyFile(src, targetFile);
         console.log(`Installed ${src} to ${targetFile}`);
     }
 }
@@ -82,19 +78,11 @@ function getAllFilesInDir(dir: string): string[] {
         return [];
     }
 
-    const entries = fs.readdirSync(dir, {withFileTypes: true});
-    const files: string[] = [];
-
-    for (const entry of entries) {
+    return fs.readdirSync(dir, {withFileTypes: true}).flatMap(entry => {
         const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-            files.push(...getAllFilesInDir(fullPath));
-        } else {
-            files.push(fullPath);
-        }
-    }
 
-    return files;
+        return entry.isDirectory() ? getAllFilesInDir(fullPath) : fullPath;
+    });
 }
 
 main().catch(err => {
