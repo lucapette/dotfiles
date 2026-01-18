@@ -9,7 +9,7 @@ fi
 
 for ((i=1; i<=$1; i++)); do
   result=$(opencode run \
-"@.ai/wip/tasks.md @ai/wip/progress.txt \
+"@.ai/wip/tasks.md @.ai/wip/progress.txt \
 1. Decide which task to work on next. \
 This should be the one YOU decide has the highest priority, \
 - not necessarily the first in the list. \

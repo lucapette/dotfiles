@@ -3,7 +3,7 @@
 set -e
 
 opencode run \
-"@.ai/wip/tasks.md @ai/wip/progress.txt \
+"@.ai/wip/tasks.md @.ai/wip/progress.txt \
 1. Find the next task to work on. \
 2. Check any feedback loops, such as types and tests. \
 3. Append your progress to the progress.txt file. \
