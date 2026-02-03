@@ -38,7 +38,7 @@
         "bash": false
       }
     },
-    "coder": {
+    "fixer": {
       "mode": "primary",
       "model": "qwen-coding-plan/qwen3-coder-plus",
       "temperature": 0.0,
