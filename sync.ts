@@ -10,7 +10,6 @@ type Task = {
 const IGNORE_FILES = [
     /^bin/,
     /^\.git.*$/,
-    /^Rakefile$/,
     /^README\.md$/,
     /^LICENSE$/,
     /^sync\.ts$/,
