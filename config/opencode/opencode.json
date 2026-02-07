@@ -1,9 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "nord",
-  "model": "deepseek/deepseek-chat",
+  "model": "qwen/qwen3-coder-plus",
   "provider": {
-    "qwen-coding-plan": {
+    "qwen": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "Qwen Coding Plan",
       "options": {
@@ -13,6 +12,9 @@
       "models": {
         "qwen3-coder-plus": {
           "name": "qwen3-coder-plus"
+        },
+        "qwen3-max-2026-01-23": {
+          "name": "qwen3-max-2026-01-23"
         }
       }
     }
@@ -20,7 +22,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "deepseek/deepseek-reasoner",
+      "model": "qwen/qwen3-coder-plus",
       "temperature": 0.0,
       "tools": {
         "write": true,
@@ -38,21 +40,45 @@
         "bash": false
       }
     },
-    "fixer": {
+    "deep-coder": {
       "mode": "primary",
-      "model": "qwen-coding-plan/qwen3-coder-plus",
+      "model": "deepseek/deepseek-reasoner",
       "temperature": 0.0,
       "tools": {
         "write": true,
         "edit": true,
         "bash": true
       }
+    },
+    "qwen-coder-max": {
+      "mode": "primary",
+      "model": "qwen/qwen3-max-2026-01-23",
+      "temperature": 0.0,
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "qwen-planner": {
+      "mode": "primary",
+      "model": "qwen/qwen3-max-2026-01-23",
+      "temperature": 0.0,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
     }
   },
   "mcp": {
     "chrome-devtools": {
       "type": "local",
-      "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
       "enabled": false
     },
     "context7": {
