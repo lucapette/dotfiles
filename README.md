@@ -1,8 +1,6 @@
 # dotfiles
 
-This repository contains my shell related configuration files. It doesn't
-contain Vim configuration as I use [another
-repository](https://github.com/lucapette/vimfiles) for that.
+This repository contains my shell related configuration files.
 
 I do _not_ recommend to use my configuration files as they are:
 
