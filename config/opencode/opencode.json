@@ -40,6 +40,16 @@
         "bash": false
       }
     },
+    "creative-planner": {
+      "mode": "primary",
+      "model": "deepseek/deepseek-chat",
+      "temperature": 1.5,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
     "deep-coder": {
       "mode": "primary",
       "model": "deepseek/deepseek-reasoner",
@@ -58,16 +68,6 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
-    },
-    "qwen-planner": {
-      "mode": "primary",
-      "model": "qwen/qwen3-max-2026-01-23",
-      "temperature": 0.0,
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": false
       }
     }
   },
