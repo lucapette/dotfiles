@@ -1,5 +1,7 @@
 # dotfiles
 
+> **Archived**: This repository has been moved to [code/dotfiles](https://github.com/lucapette/code/tree/main/dotfiles)
+
 This repository contains my shell related configuration files.
 
 I do _not_ recommend to use my configuration files as they are:
